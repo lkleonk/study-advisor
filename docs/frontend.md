@@ -21,7 +21,13 @@ the project's `frontend/` directory.
   "Copy" button (tooltip explains it) that renders the loaded catalogue
   client-side as plain-text degree rules for pasting into an external AI
   (`buildDegreeRulesText` in `degreeRulesText.ts`: two framing lines plus the
-  rules; Modulio's backend prompts are never included).
+  rules; Modulio's backend prompts are never included). For M.Sc. Informatik,
+  the catalogue orders the four degree components first (70/10/10/30 LP), then
+  the shared restrictions; the overall-structure accordion opens by default.
+  The same corrected catalogue supplies chat reference context and copied rules.
+  Its checklist-planning section explains course-to-module placement, preserving
+  flexible slots for future courses, and external recognition; the module-slot
+  lists come from the backend catalogue rather than frontend-owned data.
 - `Course Registry`: read-only, locally filterable rendering of the selected
   degree's `GET /api/course-offerings` projection. It lists only courses present
   in the local semester-offering data and does not consume the request allowance.
@@ -79,6 +85,10 @@ container runs in production. `NEXT_PUBLIC_API_BASE_URL` and
   fetch `GET /api/program-rules?degree=<id>` and
   `GET /api/course-offerings?degree=<id>` respectively.
 - The session ID and rendered chat are kept in `sessionStorage`.
+- Study Plan totals keep Informatik, Anwendungsbereich, and Wahlbereich separate.
+  Modules show known Bachelor/admission credit reuse or unconfirmed Bachelor-level
+  history. Older saved plans may omit the two prior-use fields and display them
+  as unknown; the frontend does not infer recognition eligibility.
 - The welcome-dialog version is kept in `localStorage` so material disclosure
   changes can display the dialog again. The dialog also reopens when no degree
   choice is stored.

@@ -37,30 +37,34 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
 
     module_area_lp = _sum_lp(plan, lambda module: module.area != "thesis")
     thesis_lp = _sum_lp(plan, lambda module: module.area == "thesis")
-    informatics_lp = _sum_lp(plan, lambda module: module.area in INFORMATICS_AREAS)
-    application_lp = _sum_lp(plan, lambda module: module.area == "application")
-    ungraded_lp = _sum_lp(plan, lambda module: module.is_ungraded)
-    bachelor_lp = _sum_lp(plan, lambda module: module.is_bachelor_module)
-    wahlbereich_lp = _sum_lp(plan, lambda module: module.is_wahlbereich)
+    informatics_lp = _sum_lp(plan, lambda module: module.area in INFORMATICS_AREAS and not module.is_wahlbereich)
+    application_lp = _sum_lp(plan, lambda module: module.area == "application" and not module.is_wahlbereich)
+    ungraded_lp = _sum_lp(plan, lambda module: module.area != "thesis" and module.is_ungraded)
+    graded_lp = module_area_lp - ungraded_lp
+    bachelor_lp = _sum_lp(plan, lambda module: module.area != "thesis" and module.is_bachelor_module)
+    wahlbereich_lp = _sum_lp(plan, lambda module: module.area != "thesis" and module.is_wahlbereich)
     core_scientific_work_count = sum(
-        1 for module in plan.modules if module.is_scientific_work and not module.is_wahlbereich
+        1 for module in plan.modules
+        if module.is_scientific_work and module.area in INFORMATICS_AREAS and not module.is_wahlbereich
     )
     total_scientific_work_count = sum(1 for module in plan.modules if module.is_scientific_work)
     core_software_project_count = sum(
-        1 for module in plan.modules if module.is_software_project and not module.is_wahlbereich
+        1 for module in plan.modules
+        if module.is_software_project and module.area in INFORMATICS_AREAS and not module.is_wahlbereich
     )
     total_software_project_count = sum(1 for module in plan.modules if module.is_software_project)
 
     area_totals = {
-        "practical_lp": _sum_lp(plan, lambda module: module.area == "practical"),
-        "theoretical_lp": _sum_lp(plan, lambda module: module.area == "theoretical"),
-        "technical_lp": _sum_lp(plan, lambda module: module.area == "technical"),
+        "practical_lp": _sum_lp(plan, lambda module: module.area == "practical" and not module.is_wahlbereich),
+        "theoretical_lp": _sum_lp(plan, lambda module: module.area == "theoretical" and not module.is_wahlbereich),
+        "technical_lp": _sum_lp(plan, lambda module: module.area == "technical" and not module.is_wahlbereich),
         "application_lp": application_lp,
         "informatics_lp": informatics_lp,
         "module_area_lp": module_area_lp,
         "thesis_lp": thesis_lp,
         "master_total_lp": module_area_lp + thesis_lp if thesis_lp else module_area_lp + 30,
         "ungraded_lp": ungraded_lp,
+        "graded_lp": graded_lp,
         "bachelor_module_lp": bachelor_lp,
         "wahlbereich_lp": wahlbereich_lp,
         "core_scientific_work_count": core_scientific_work_count,
@@ -73,7 +77,7 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
         add_issue(
             "module_area_lp_total",
             "error",
-            "The module area before the thesis must total exactly 90 LP.",
+            "The taught modules must total exactly 90 LP: 70 Informatik, 10 Anwendungsbereich, and 10 Wahlbereich.",
             current_lp=module_area_lp,
             required_lp=90,
             delta=module_area_lp - 90,
@@ -88,24 +92,22 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
             required_lp=30,
         )
 
-    if not 70 <= informatics_lp <= 80:
+    if informatics_lp != 70:
         add_issue(
             "informatics_area_lp",
             "error",
-            "The Informatik area must contain 70 to 80 LP.",
+            "The Informatik area must contain exactly 70 LP, excluding Wahlbereich modules.",
             current_lp=informatics_lp,
-            minimum_lp=70,
-            maximum_lp=80,
+            required_lp=70,
         )
 
-    if not 10 <= application_lp <= 20:
+    if application_lp != 10:
         add_issue(
             "application_area_lp",
             "error",
-            "The Anwendungsbereich must contain 10 to 20 LP.",
+            "The Anwendungsbereich must contain exactly 10 LP, excluding Wahlbereich modules.",
             current_lp=application_lp,
-            minimum_lp=10,
-            maximum_lp=20,
+            required_lp=10,
         )
 
     specialization = plan.specialization_area
@@ -129,21 +131,25 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
                 specialization_area=specialization,
             )
 
-    if wahlbereich_lp > 10:
+    if wahlbereich_lp != 10:
         add_issue(
             "wahlbereich_lp",
             "error",
-            "The Wahlbereich can contain at most 10 LP.",
+            "The separate Wahlbereich must contain exactly 10 LP from Informatik or other scientific subjects.",
             current_lp=wahlbereich_lp,
-            maximum_lp=10,
+            required_lp=10,
         )
 
-    if core_scientific_work_count < 2 or core_scientific_work_count > 4:
+    if any(module.area == "thesis" and module.is_wahlbereich for module in plan.modules):
+        add_issue("wahlbereich_thesis", "error", "The Masterarbeit cannot be allocated to Wahlbereich.")
+
+    if core_scientific_work_count < 2 or total_scientific_work_count > 4:
         add_issue(
             "scientific_work_count",
             "error",
-            "Students must complete at least 2 and at most 4 core Wissenschaftliches Arbeiten modules; extra Wissenschaftliches Arbeiten modules may be placed in the Wahlbereich.",
-            current_count=core_scientific_work_count,
+            "Choose 2 to 4 Wissenschaftliches Arbeiten modules, with at least 2 in Informatik; the maximum includes Wahlbereich.",
+            current_count=total_scientific_work_count,
+            core_count=core_scientific_work_count,
             minimum_count=2,
             maximum_count=4,
             total_count=total_scientific_work_count,
@@ -162,12 +168,13 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
                 specialization_area=specialization,
             )
 
-    if core_software_project_count < 1 or core_software_project_count > 2:
+    if core_software_project_count < 1 or total_software_project_count > 2:
         add_issue(
             "software_project_count",
             "error",
-            "Students must complete at least 1 and at most 2 core Softwareprojekt modules; one extra Softwareprojekt may be placed in the Wahlbereich.",
-            current_count=core_software_project_count,
+            "Choose 1 or 2 Softwareprojekt modules, with at least 1 in Informatik; the maximum includes Wahlbereich.",
+            current_count=total_software_project_count,
+            core_count=core_software_project_count,
             minimum_count=1,
             maximum_count=2,
             total_count=total_software_project_count,
@@ -190,6 +197,52 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
             "Bachelor modules can only be counted up to 15 LP.",
             current_lp=bachelor_lp,
             maximum_lp=15,
+        )
+
+    if not 60 <= graded_lp <= 65:
+        add_issue(
+            "graded_lp", "error", "Graded taught modules must total 60 to 65 LP, excluding the Masterarbeit.",
+            current_lp=graded_lp, minimum_lp=60, maximum_lp=65,
+        )
+
+    reused_modules = [module.name for module in plan.modules if module.counted_in_bachelor is True]
+    if reused_modules:
+        add_issue(
+            "bachelor_credit_reuse", "error",
+            "Modules already counted toward the Bachelor degree cannot count again in the Master, including Master-level modules.",
+            modules=reused_modules,
+        )
+    admission_modules = [module.name for module in plan.modules if module.used_for_master_admission is True]
+    if admission_modules:
+        add_issue(
+            "admission_credit_reuse", "error",
+            "Modules used to satisfy Master admission requirements cannot also count toward the Master degree.",
+            modules=admission_modules,
+        )
+    unknown_bachelor_history = [
+        module.name for module in plan.modules
+        if module.is_bachelor_module
+        and module.counted_in_bachelor is not True
+        and module.used_for_master_admission is not True
+        and (module.counted_in_bachelor is None or module.used_for_master_admission is None)
+    ]
+    if unknown_bachelor_history:
+        add_issue(
+            "bachelor_credit_history_unknown", "warning",
+            "Confirm that these Bachelor-level modules are outside the Bachelor degree credits (normally 180 LP) and were not used for Master admission; the 15 LP cap alone does not establish eligibility.",
+            modules=unknown_bachelor_history,
+        )
+
+    names = {normalize_module_name(module.name) for module in plan.modules}
+    incompatible = names & {
+        normalize_module_name("Grundlagen des Managements von IT-Projekten"),
+        normalize_module_name("Projektmanagement - Vertiefung"),
+    }
+    if normalize_module_name("Projektmanagement") in names and incompatible:
+        add_issue(
+            "project_management_conflict", "error",
+            "Projektmanagement cannot be combined with Grundlagen des Managements von IT-Projekten or Projektmanagement - Vertiefung (SPO §7(9)).",
+            conflicting_modules=sorted(incompatible),
         )
 
     normalized_names = [normalize_module_name(module.name) for module in plan.modules if module.name.strip()]
@@ -216,6 +269,8 @@ def validate_study_plan(raw_plan: StudyPlan | dict[str, Any]) -> RuleCheckResult
     is_valid = not any(issue.severity == "error" for issue in issues)
     if is_valid:
         summary = "The supplied study plan satisfies the implemented 2014 Master Informatik checks."
+        if any(issue.severity == "warning" for issue in issues):
+            summary += " Warnings require confirmation before credit eligibility can be established."
     else:
         error_count = sum(1 for issue in issues if issue.severity == "error")
         summary = f"The supplied study plan has {error_count} blocking issue(s) under the implemented checks."

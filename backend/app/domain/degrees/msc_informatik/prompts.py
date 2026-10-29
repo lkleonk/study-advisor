@@ -22,6 +22,8 @@ STUDY_PLAN_SCHEMA = {
                     "is_wahlbereich": {"type": "boolean"},
                     "is_ungraded": {"type": "boolean"},
                     "is_bachelor_module": {"type": "boolean"},
+                    "counted_in_bachelor": {"type": ["boolean", "null"]},
+                    "used_for_master_admission": {"type": ["boolean", "null"]},
                     "is_scientific_work": {"type": "boolean"},
                     "is_software_project": {"type": "boolean"},
                 },
@@ -32,6 +34,8 @@ STUDY_PLAN_SCHEMA = {
                     "is_wahlbereich",
                     "is_ungraded",
                     "is_bachelor_module",
+                    "counted_in_bachelor",
+                    "used_for_master_admission",
                     "is_scientific_work",
                     "is_software_project",
                 ],
@@ -78,6 +82,30 @@ SPEC = DegreePromptSpec(
     ),
     selector_examples=SELECTOR_EXAMPLES,
     study_plan_schema=STUDY_PLAN_SCHEMA,
+    extra_composer_rules=(
+        "Explain the degree as 70 LP Informatik, 10 LP Anwendungsbereich, 10 LP\n"
+        "  Wahlbereich, and 30 LP Masterarbeit. Never fold Wahlbereich into the\n"
+        "  other area totals or count its credits toward specialization minima.",
+        "Seminar and Softwareprojekt limits apply across the whole plan, including\n"
+        "  Wahlbereich. Wahlbereich never permits a third project or fifth seminar.",
+        "Distinguish Bachelor-level modules from credits already used for a Bachelor\n"
+        "  degree or Master admission. Unknown credit history needs confirmation;\n"
+        "  do not infer eligibility from the 15 LP cap alone.",
+        "For course-placement advice, check the supplied canonical checklist module\n"
+        "  slots and module_catalog_name first. Prefer a suitable dedicated named\n"
+        "  module over a broad slot when approved and consistent with the plan;\n"
+        "  explain that alternative courses can fit a module without creating\n"
+        "  additional copies of that module.",
+        "Before proposing a broad module slot, consider which slots are already used\n"
+        "  and courses the student wants in later semesters. Keep flexible slots\n"
+        "  available for those courses where possible; ask for missing preferences\n"
+        "  and mapping information, and state assumptions in provisional advice.\n"
+        "  Do not invent future offerings or silently change the student's plan.",
+        "External courses may be proposed for recognition against matching module\n"
+        "  learning outcomes and workload. Help justify the target module, but do\n"
+        "  not treat thematic fit, a matching name, or an arithmetic validation\n"
+        "  result as official recognition. Refer the decision to the Prüfungsausschuss.",
+    ),
     study_plan_parser_rules=(
         "Do not invent modules.",
         "If a module area is explicit, use one of: practical, theoretical, technical,\n"
@@ -91,6 +119,20 @@ SPEC = DegreePromptSpec(
         "Mark Softwareprojekt modules as is_software_project=true.",
         "Mark ungraded/non-differentiated modules as is_ungraded=true when stated or\n"
         "  obvious from the module name.",
-        "Mark Bachelor modules as is_bachelor_module=true when stated.",
+        "Mark is_bachelor_module=true only for Bachelor-level modules. A Master-level\n"
+        "  module taken during Bachelor enrollment is not a Bachelor-level module.",
+        "For each module, set counted_in_bachelor and used_for_master_admission\n"
+        "  only from explicit information; otherwise use null. A Bachelor-level\n"
+        "  module is not automatically a module already counted in a Bachelor degree.",
+        "If a module was part of the Bachelor degree (including a Master-level\n"
+        "  module taken in the Bachelor), set counted_in_bachelor=true. If it was\n"
+        "  used to meet Master admission requirements, set used_for_master_admission=true.",
+        "Extra credits explicitly outside the completed Bachelor degree (normally\n"
+        "  the 180 LP) have counted_in_bachelor=false; keep admission use null\n"
+        "  unless the user also clarifies it. Do not add a historical Bachelor\n"
+        "  transcript's modules to the Master plan unless they are proposed for credit.",
+        "Wahlbereich is a separate 10 LP allocation. Never automatically mark\n"
+        "  surplus Informatik or Anwendungsbereich modules as Wahlbereich; if\n"
+        "  their allocation is unspecified, leave it for clarification.",
     ),
 )

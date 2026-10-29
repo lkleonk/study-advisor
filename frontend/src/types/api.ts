@@ -39,6 +39,9 @@ export type PlannedModule = {
   is_wahlbereich: boolean;
   is_ungraded: boolean;
   is_bachelor_module: boolean;
+  /** Unknown or absent for older stored plans; independent of module level. */
+  counted_in_bachelor?: boolean | null;
+  used_for_master_admission?: boolean | null;
   is_scientific_work: boolean;
   is_software_project: boolean;
 };

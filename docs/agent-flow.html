@@ -301,6 +301,18 @@
       package (<code>msc_informatik</code>, <code>msc_data_science</code>). For a chat
       follow-up, the parser receives the existing plan JSON plus the latest user
       message and returns one complete updated plan before validation.
+      For <code>msc_informatik</code>, validation separates 70 LP Informatik,
+      10 LP Anwendungsbereich, 10 LP Wahlbereich, and the 30 LP thesis.
+      Wahlbereich credits do not satisfy subject or specialization minima and do not
+      raise the whole-plan caps of 2 Softwareprojekte and 4 seminars.
+      Nullable <code>counted_in_bachelor</code> and <code>used_for_master_admission</code>
+      fields distinguish module level from prior credit use; confirmed reuse is an
+      error, while missing Bachelor-level credit history produces a warning.
+      The always-included <code>checklist-planning</code> reference lists canonical
+      module slots and LP. The composer checks dedicated named modules before broad
+      topic slots and considers desired future courses to preserve flexible slots.
+      This advice remains available when the detailed HU/TU section is excluded;
+      external module recognition still requires a Prüfungsausschuss decision.
     </div>
 
     <div class="callout">

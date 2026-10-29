@@ -224,7 +224,10 @@ rule_check_result
 
 This node owns the actual pass/fail decision. For the Master Informatik that
 covers LP totals, specialization requirements, seminar/project counts,
-Wahlbereich caveats, ungraded LP, Bachelor-module LP, and duplicate modules.
+separate Wahlbereich allocation, whole-plan seminar/project maxima, graded and
+ungraded LP, Bachelor-module LP, prior Bachelor/admission credit reuse, duplicate
+modules, and incompatible project-management modules. Prior-use fields remain
+unknown unless supplied; unknown Bachelor-level credit history produces a warning.
 For Data Science it covers Grundlagen completeness, profile inference and
 mandatory modules, elective quotas, thesis LP/admission, and duplicates.
 
@@ -251,6 +254,15 @@ Inputs:
   true.
 - Course-offering context from exact local lookup, when applicable
 - Optional deterministic rule-check result
+
+For M.Sc. Informatik, the always-included `checklist-planning` rule section also
+provides the canonical Informatik module slots and their LP, generated from the
+catalogue. The composer checks dedicated named modules before suggesting broad
+topic slots, considers slots already used and desired future courses, and asks
+for missing mapping/preference information. This guidance remains available
+when the detailed `cross-university-courses` section is excluded. External
+equivalence and recognition are decisions for the Prüfungsausschuss; the
+composer must not interpret thematic fit or an arithmetic pass as approval.
 
 Rules:
 

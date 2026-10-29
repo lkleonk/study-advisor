@@ -123,6 +123,8 @@ class PlannedModule(BaseModel):
     is_wahlbereich: bool
     is_ungraded: bool
     is_bachelor_module: bool
+    counted_in_bachelor: bool | None
+    used_for_master_admission: bool | None
     is_scientific_work: bool
     is_software_project: bool
 ```
@@ -137,6 +139,8 @@ Field meaning:
 | `is_wahlbereich` | Whether the module is explicitly counted in Wahlbereich. |
 | `is_ungraded` | Whether the module is ungraded or non-differentiated. |
 | `is_bachelor_module` | Whether the module counts toward the Bachelor-module cap. |
+| `counted_in_bachelor` | Whether this credit was already used for the Bachelor degree; `None` when unknown. Independent of module level. |
+| `used_for_master_admission` | Whether this credit was used to meet Master admission requirements; `None` when unknown. |
 | `is_scientific_work` | Whether it is a Wissenschaftliches Arbeiten module. |
 | `is_software_project` | Whether it is a Softwareprojekt module. |
 
@@ -158,6 +162,7 @@ User-provided data can include:
 - whether a module is in Wahlbereich
 - whether a module is ungraded
 - whether a module is a Bachelor module
+- whether its credits were counted in the Bachelor degree or used for Master admission
 
 Catalog-inferred data can include:
 
@@ -175,23 +180,57 @@ The implementation intentionally keeps the LLM out of final validation. The LLM 
 
 `is_wahlbereich` is separate from `area`.
 
-This matters because a module can still belong to a subject area, for example `technical`, while being counted in Wahlbereich for the seminar/project maximum caveat.
+The four credit allocations are 70 LP Informatik, 10 LP Anwendungsbereich,
+10 LP Wahlbereich, and 30 LP Masterarbeit. Informatik comprises the 20/10/10 LP
+subject minima, 20 additional LP in one specialization subject, and 10 LP freely
+distributed within Informatik. Those free Informatik credits are distinct from
+the separate 10 LP Wahlbereich.
+
+A module can retain its subject, for example `technical`, while being allocated
+only to Wahlbereich. Its LP are excluded from the Informatik/Anwendungsbereich
+totals and from subject and specialization minima. The parser requires explicit
+allocation; it does not silently move surplus credits into Wahlbereich.
 
 Current behavior:
 
 - Wahlbereich LP is reported as `wahlbereich_lp`.
-- Wahlbereich LP must not exceed 10 LP.
+- Wahlbereich must contain exactly 10 LP.
 - Core Softwareprojekt count excludes modules with `is_wahlbereich=true`.
 - Total Softwareprojekt count includes them.
 - Core Wissenschaftliches Arbeiten count excludes modules with `is_wahlbereich=true`.
 - Total Wissenschaftliches Arbeiten count includes them.
 
-This implements the caveat:
+The limits apply to the entire plan:
 
-- Core Softwareprojekt modules: at least 1 and at most 2.
-- One extra Softwareprojekt can be placed in Wahlbereich, allowing 3 total.
-- Core Wissenschaftliches Arbeiten modules: at least 2 and at most 4.
-- Up to 2 extra Wissenschaftliches Arbeiten modules can be placed in Wahlbereich, because seminars are 5 LP and Wahlbereich is 10 LP.
+- At least 1 Softwareprojekt belongs in Informatik; no more than 2 count in total.
+- At least 2 Wissenschaftliches Arbeiten modules belong in Informatik; no more
+  than 4 count in total. At least one Informatik seminar belongs to the specialization.
+- Placing a project or seminar in Wahlbereich does not increase these maxima.
+- Grading totals cover all 90 LP taught modules, including Wahlbereich, and exclude
+  the thesis: 60–65 LP graded and 25–30 LP ungraded.
+- The thesis cannot be allocated to Wahlbereich. Its 30 LP are separate; the
+  90 LP taught-module requirement is not a thesis-admission prerequisite (the
+  SPO requires at least 60 LP of completed Master modules for admission).
+
+## Prior Bachelor Credits
+
+The 15 LP cap covers Bachelor-level modules across Informatik, Anwendungsbereich,
+and Wahlbereich. It is independent of when a module was taken. Credits already
+used for the Bachelor degree or Master admission cannot count again, even if the
+module itself is at Master level. Additional credits outside the Bachelor degree
+(normally 180 LP) remain subject to recognition and the cap.
+
+The parser extracts `counted_in_bachelor` and `used_for_master_admission` only from
+explicit evidence, otherwise leaving them `None`. Older stored plans default to
+unknown. Confirmed reuse produces `bachelor_credit_reuse` or
+`admission_credit_reuse`. Missing history on a Bachelor-level module produces
+`bachelor_credit_history_unknown`, a warning, so an arithmetic pass is not a
+confirmed recognition decision. The plan checker cannot compare with an unseen
+Bachelor transcript.
+
+Duplicate modules within the plan remain errors. `project_management_conflict`
+also rejects Projektmanagement combined with Grundlagen des Managements von
+IT-Projekten or Projektmanagement - Vertiefung, regardless of allocation (§7(9)).
 
 ## RuleCheckResult Schema
 
@@ -219,6 +258,7 @@ module_area_lp
 thesis_lp
 master_total_lp
 ungraded_lp
+graded_lp
 bachelor_module_lp
 wahlbereich_lp
 core_scientific_work_count
@@ -250,6 +290,16 @@ class RuleIssue(BaseModel):
   in the Study Plan tab.
 - The parser may miss modules when the user writes an ambiguous or incomplete plan.
 - Unknown modules can still be included, but they need explicit LP and area data or they produce validation issues/warnings.
+- A module slot ("box") on the checklist can accept different suitable courses,
+  but course-to-module recognition is not established by LP/area arithmetic or
+  a title match. The adviser sees canonical module slots and explains how to
+  check a dedicated slot first, justify external equivalence, and keep broad
+  slots available for desired future courses. Official recognition belongs to
+  the Prüfungsausschuss.
+- Proposed alternative placements and reservations for future courses are
+  advisory conversation context, not separate persisted slot-reservation state.
+  The adviser must not silently change the plan, invent future availability,
+  or assume that a broad target module can be counted more than once.
 
 ## Recommended Phase 2 Persistence
 

@@ -77,7 +77,7 @@ const AREA_CARDS: AreaCardSpec[] = [
   {
     id: "wahlbereich",
     title: "Wahlbereich",
-    predicate: (m) => m.is_wahlbereich,
+    predicate: (m) => m.is_wahlbereich && m.area !== "thesis",
     emptyHint: "No Wahlbereich modules yet.",
   },
   {
@@ -205,6 +205,16 @@ function ModuleRow({ module }: { module: PlannedModule }) {
   if (module.is_software_project) flags.push("Softwareprojekt");
   if (module.is_ungraded) flags.push("unbenotet");
   if (module.is_bachelor_module) flags.push("Bachelor");
+  if (module.counted_in_bachelor) flags.push("Already counted in Bachelor");
+  if (module.used_for_master_admission) flags.push("Used for Master admission");
+  if (
+    module.is_bachelor_module &&
+    !module.counted_in_bachelor &&
+    !module.used_for_master_admission &&
+    (module.counted_in_bachelor == null || module.used_for_master_admission == null)
+  ) {
+    flags.push("Prior credit use unconfirmed");
+  }
 
   return (
     <Stack
@@ -293,10 +303,15 @@ export function StudyPlanTab({
   const modules = displayedStudyPlan?.modules ?? [];
   const specialization = displayedStudyPlan?.specialization_area ?? null;
   const totalLp = sumLp(modules);
+  const informaticsLp = sumLp(modules.filter((m) =>
+    ["practical", "technical", "theoretical"].includes(m.area) && !m.is_wahlbereich,
+  ));
+  const applicationLp = sumLp(modules.filter((m) => m.area === "application" && !m.is_wahlbereich));
+  const wahlbereichLp = sumLp(modules.filter((m) => m.is_wahlbereich && m.area !== "thesis"));
   const scientificCount = modules.filter((m) => m.is_scientific_work).length;
   const softwareProjectCount = modules.filter((m) => m.is_software_project).length;
-  const ungradedLp = sumLp(modules.filter((m) => m.is_ungraded));
-  const bachelorLp = sumLp(modules.filter((m) => m.is_bachelor_module));
+  const ungradedLp = sumLp(modules.filter((m) => m.is_ungraded && m.area !== "thesis"));
+  const bachelorLp = sumLp(modules.filter((m) => m.is_bachelor_module && m.area !== "thesis"));
 
   useEffect(() => {
     const updateGeneratedAt = () => setGeneratedAt(formatGeneratedAt());
@@ -410,6 +425,9 @@ export function StudyPlanTab({
           <Paper variant="outlined" sx={{ p: 1.5, bgcolor: "background.paper" }}>
             <Stack direction="row" spacing={0.75} sx={{ flexWrap: "wrap" }}>
               <Chip label={`Total: ${totalLp} LP`} color="primary" />
+              <Chip label={`Informatik: ${informaticsLp} LP`} />
+              <Chip label={`Anwendungsbereich: ${applicationLp} LP`} />
+              <Chip label={`Wahlbereich: ${wahlbereichLp} LP`} />
               <Chip
                 label={
                   specialization

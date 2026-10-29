@@ -33,6 +33,18 @@ export const issueChipSx = {
 export const ISSUE_CHIP_MARKER = { "data-rule-issue-chip": "true" } as const;
 
 function formatKey(key: string) {
+  const labels: Record<string, string> = {
+    informatics_lp: "Informatik (excluding Wahlbereich)",
+    application_lp: "Anwendungsbereich (excluding Wahlbereich)",
+    wahlbereich_lp: "Wahlbereich",
+    module_area_lp: "Taught modules",
+    master_total_lp: "Degree total (including planned thesis)",
+    total_scientific_work_count: "Seminars (whole plan)",
+    total_software_project_count: "Softwareprojekte (whole plan)",
+    core_scientific_work_count: "Seminars in Informatik",
+    core_software_project_count: "Softwareprojekte in Informatik",
+  };
+  if (labels[key]) return labels[key];
   return key.replace(/_/g, " ");
 }
 
@@ -68,15 +80,15 @@ export function RuleCheckPanel({ result, compact = false }: RuleCheckPanelProps)
         >
           <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
             <CheckCircleOutlineIcon
-              color={result.is_valid ? "success" : "disabled"}
+              color={result.is_valid ? (warnings ? "warning" : "success") : "disabled"}
               fontSize="small"
             />
             <Typography variant="h3">Rule Check</Typography>
           </Stack>
           <Stack direction="row" spacing={0.75} sx={{ flexWrap: "wrap" }}>
             <Chip
-              label={result.is_valid ? "Valid" : "Needs changes"}
-              color={result.is_valid ? "success" : "default"}
+              label={result.is_valid ? (warnings ? "Review warnings" : "Checks passed") : "Needs changes"}
+              color={result.is_valid ? (warnings ? "warning" : "success") : "default"}
               size="small"
               sx={result.is_valid ? undefined : issueChipSx}
               {...(result.is_valid ? {} : ISSUE_CHIP_MARKER)}
@@ -95,7 +107,7 @@ export function RuleCheckPanel({ result, compact = false }: RuleCheckPanelProps)
           </Stack>
         </Stack>
 
-        <Alert severity={result.is_valid ? "success" : "warning"} variant="outlined">
+        <Alert severity={result.is_valid && !warnings ? "success" : "warning"} variant="outlined">
           {result.summary}
         </Alert>
 

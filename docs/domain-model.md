@@ -55,8 +55,9 @@ output schema), `enrich_study_plan` (deterministic post-parse enrichment),
 Validation styles differ by degree and should stay per-degree functions behind
 the common interface, not a generic rule engine:
 
-- `msc_informatik`: LP arithmetic over areas plus flags (specialization
-  minimums, Wahlbereich caveats, ungraded/Bachelor caps).
+- `msc_informatik`: LP arithmetic over separate credit allocations plus flags
+  (specialization minimums, whole-plan seminar/project caps, grading and
+  Bachelor-level limits, prior-credit reuse, incompatible management modules).
 - `msc_data_science`: checklist matching against the canonical module list; the
   profile (Life Sciences vs Technologies) is inferred from its mandatory marker
   modules, never declared by the LLM.
@@ -198,10 +199,32 @@ When rule behavior changes, update in the affected degree package, in order:
 3. focused tests (`test_rule_checker.py` for msc_informatik,
    `test_data_science_rules.py` for msc_data_science)
 
-The Softwareprojekt and Wissenschaftliches Arbeiten Wahlbereich caveats must
-stay visible in both validation and display rules. For msc_informatik,
-`is_wahlbereich` is separate from `area`: a module can have area `technical`
-while still being counted in Wahlbereich for the seminar/project maximum caveat.
+For msc_informatik, validation and display rules use four separate allocations:
+70 LP Informatik, 10 LP Anwendungsbereich, 10 LP Wahlbereich, and 30 LP thesis.
+`is_wahlbereich` is separate from `area`: a technical module placed in
+Wahlbereich retains its subject but contributes only to Wahlbereich, not the
+Informatik total or specialization minima. Seminar/project maxima apply across
+the whole plan; Wahlbereich does not increase them. The catalogue presents the
+four degree components first and then the cross-cutting restrictions, with
+public links to the SPO, checklist, and examination-board guidance.
+
+The always-included `checklist-planning` catalogue section explains courses vs.
+module slots, checking dedicated named modules before broad topic modules,
+preserving flexible slots for future courses, and proposing recognition of
+external courses against learning outcomes and workload. Its subject-specific
+slot lists are generated from `courses.json` and the M.Sc. Informatik module
+mappings, so the UI, copied rules, and composer see the same canonical names and
+LP. A slot can have many eligible course alternatives without becoming reusable
+multiple times. The list is not a semester offering projection or an automatic
+recognition decision; the Prüfungsausschuss decides external equivalence.
+
+`is_bachelor_module` describes module level. Student-specific prior use is
+separate: `counted_in_bachelor` and `used_for_master_admission` are nullable
+booleans on `PlannedModule`. Confirmed reuse is an error even for Master-level
+modules. Unknown history on Bachelor-level modules produces a warning; catalogue
+metadata cannot establish an individual student's eligibility. Surplus credits
+outside the Bachelor degree (normally 180 LP) are candidates only when not used
+for admission; the 15 LP Bachelor-level cap and recognition requirements remain.
 
 ## Study-plan validation principle
 

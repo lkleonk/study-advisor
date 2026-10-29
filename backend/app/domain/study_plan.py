@@ -41,6 +41,9 @@ class PlannedModule(BaseModel):
     is_wahlbereich: bool = False
     is_ungraded: bool = False
     is_bachelor_module: bool = False
+    # Module level is separate from prior credit use. None means not established.
+    counted_in_bachelor: bool | None = None
+    used_for_master_admission: bool | None = None
     is_scientific_work: bool = False
     is_software_project: bool = False
 

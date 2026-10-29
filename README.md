@@ -25,6 +25,25 @@ Study plan check (visualizes the proposed study plan, then validates it against 
 - LLM provider can be AcademicCloud or FU/local Ollama.
 - Answers are advisory. Official FU Berlin documents and the examination office remain authoritative for real study decisions.
 
+For M.Sc. Informatik (SPO 2014), the degree has four separate parts: **70 LP
+Informatik + 10 LP Anwendungsbereich + 10 LP Wahlbereich + 30 LP Masterarbeit**.
+The Informatik part comprises the 20/10/10 LP subject minima, 20 additional LP in
+one specialization, and 10 LP of free Informatik choice. Wahlbereich credits do
+not satisfy those minima. The whole-plan limits remain 1–2 Softwareprojekte and
+2–4 Wissenschaftliches Arbeiten modules, including Wahlbereich. Bachelor-level
+modules are capped at 15 LP across all allocations; credits already used for a
+Bachelor degree or Master admission cannot count again. Unknown prior use is
+flagged for confirmation. The structured Degree Rules catalogue, chat context,
+and Python checks share this model; see [study-plan data](docs/study-plan-data.md).
+
+Course choice also depends on fitting the checklist's module slots: check a
+course's dedicated named module before using a broad topic module, and preserve
+flexible slots for courses you want in later semesters. The Degree Rules tab,
+copied rules, and chat adviser share the canonical slot list and this planning
+guidance. External courses can be proposed for recognition with a reasoned
+mapping of learning outcomes and workload; the Prüfungsausschuss decides the
+recognition, and each target module can be counted only once.
+
 ## Documentation
 
 Paths and commands are relative to this project root, regardless of its

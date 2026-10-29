@@ -39,6 +39,16 @@ as a successful response.
 chat context: `rule_check_result` is `null` and the reply says that automatic
 validation is unavailable.
 
+For M.Sc. Informatik, chat and transcript responses include the parsed plan's
+nullable module fields `counted_in_bachelor` and `used_for_master_admission`.
+Missing fields in older plans default to unknown, independently of
+`is_bachelor_module` (module level). Confirmed prior use produces validation
+errors; unknown Bachelor-level credit history produces a warning. Rule-check
+totals now separate 70 LP Informatik, 10 LP Anwendungsbereich, and 10 LP Wahlbereich;
+subject minima exclude Wahlbereich. `graded_lp` and `ungraded_lp` exclude the
+thesis. Existing `core_*_count` and `total_*_count` keys are retained: core counts
+refer to the Informatik allocation and total counts include Wahlbereich.
+
 ## Read-only endpoints (no quota, no LLM)
 
 These must never consume quota or invoke the LLM:
@@ -53,6 +63,9 @@ These must never consume quota or invoke the LLM:
 - `GET /api/program-rules` returns the structured display catalogue for the
   frontend Degree Rules tab, selected by the `degree` query parameter
   (default `msc_informatik`). It must not require LangGraph or an LLM.
+  For M.Sc. Informatik it includes `checklist-planning`: practical placement
+  advice and canonical module-slot names/LP generated from the course and degree
+  catalogues. These slots describe credit targets, not semester availability.
 - `GET /api/course-offerings` returns the selected degree's projected local
   course offerings for the Course Registry tab. It joins the canonical course,
   degree-mapping, and semester-offering layers in the domain model; the route

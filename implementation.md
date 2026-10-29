@@ -60,17 +60,21 @@ Phase 1 goal: backend-only LLM consultant for FU Berlin Informatik Master questi
 [x] Master total: 120 LP including thesis.
 [x] Module area before thesis: 90 LP.
 [x] Master thesis: 30 LP.
-[x] Informatik area: 70-80 LP.
-[x] Anwendungsbereich: 10-20 LP.
+[x] Informatik area: exactly 70 LP (20/10/10 LP minima + 20 LP specialization + 10 LP free Informatik choice).
+[x] Anwendungsbereich: exactly 10 LP.
+[x] Wahlbereich: exactly 10 LP, separate from subject totals and specialization minima.
 [x] Practical Informatics minimum 20 LP, or 40 LP if specialization.
 [x] Technical Informatics minimum 10 LP, or 30 LP if specialization.
 [x] Theoretical Informatics minimum 10 LP, or 30 LP if specialization.
 [x] Exactly one specialization area.
-[x] Scientific work modules: at least 2, at most 4.
+[x] Scientific work modules: at least 2 in Informatik, at most 4 overall including Wahlbereich.
 [x] At least one scientific work module in the specialization area.
-[x] Software projects: at least 1, at most 2.
+[x] Software projects: at least 1 in Informatik, at most 2 overall including Wahlbereich.
 [x] Ungraded modules: 25-30 LP.
 [x] Bachelor modules: max 15 LP.
+[x] Reject Bachelor/admission credit reuse at either module level; warn on unknown Bachelor-level credit history.
+[x] Check 60–65 LP graded taught modules and excluded project-management combinations.
+[x] Explain checklist module slots, dedicated vs. broad placements, preserving future options, and external recognition; generate slot names/LP from canonical data for display, copied rules, and chat context.
 [x] Same exact module cannot count twice.
 [x] Return structured validation results: pass/fail/warning, missing LP, excess LP, explanation.
 

@@ -1,6 +1,8 @@
 import asyncio
 import json
 
+import pytest
+
 from app.services.nodes import study_plan_parser
 
 
@@ -78,3 +80,27 @@ def test_initial_plan_keeps_original_parser_input_shape(monkeypatch):
     )
 
     assert captured["message"] == "User message:\nHere is my study plan."
+
+
+@pytest.mark.parametrize("bachelor_level", [False, True])
+def test_parser_preserves_prior_credit_use_through_enrichment(monkeypatch, bachelor_level):
+    module = _module("Rechnersicherheit", 10, "technical")
+    module.update(is_bachelor_module=bachelor_level, counted_in_bachelor=True, used_for_master_admission=False)
+
+    class FakeModelService:
+        async def invoke(self, **kwargs):
+            return {"content": json.dumps({"specialization_area": None, "modules": [module]})}
+
+    monkeypatch.setattr(study_plan_parser, "ModelService", FakeModelService)
+    plan = asyncio.run(study_plan_parser.parse_study_plan("This module was counted in my Bachelor degree."))
+    assert plan.modules[0].counted_in_bachelor is True
+    assert plan.modules[0].used_for_master_admission is False
+    assert plan.modules[0].is_bachelor_module is bachelor_level
+
+
+def test_older_plans_keep_unknown_credit_history():
+    from app.domain.study_plan import StudyPlan
+
+    plan = StudyPlan.model_validate({"modules": [_module("Bachelor course", 5)]})
+    assert plan.modules[0].counted_in_bachelor is None
+    assert plan.modules[0].used_for_master_admission is None

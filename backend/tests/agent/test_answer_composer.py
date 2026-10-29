@@ -53,3 +53,9 @@ def test_answer_composer_conditionally_includes_cross_university_rules(
     has_cross_university_context = "COURSES AT HU BERLIN AND TU BERLIN" in captured["message"]
     assert has_cross_university_context is expect_cross_university_context
     assert "SOFTWAREPROJEKT" in captured["message"]
+    # Slot planning applies even when the detailed HU/TU section is excluded.
+    assert "CHECKLIST AND KEEP OPTIONS OPEN" in captured["message"]
+    assert "Telematik (10 LP)" in captured["message"]
+    assert "future course may need it" in captured["message"]
+    assert "Prefer a suitable dedicated named" in captured["prompt"]
+    assert "approval is not automatic" in captured["message"]

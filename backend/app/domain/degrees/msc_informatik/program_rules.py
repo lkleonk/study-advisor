@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from app.domain.catalog_data import course_lp, course_name, module_entries_by_id
 from app.domain.program_rules import (
     ProgramRuleItem,
     ProgramRuleSection,
@@ -10,14 +11,26 @@ from app.domain.program_rules import (
 
 DEFAULT_SOURCES = [
     ProgramRuleSource(
-        label="Informatik Master Ablauf",
-        path="ressources/Informatik_Master_Ablauf.txt",
+        label="Studien- und Prüfungsordnung 2014 (§§7, 9)",
+        path="https://www.imp.fu-berlin.de/fbv/pruefungsbuero/Studien--und-Pruefungsordnungen/0089c_SPO_2014.pdf",
     ),
     ProgramRuleSource(
         label="Checkliste Master Informatik 2014",
-        path="ressources/Checkliste-MSc-Informatik-_2014_.pdf",
+        path="https://www.imp.fu-berlin.de/fbv/pruefungsbuero/Formulare/PDFs/Checkliste-MSc-Informatik-_2014_.pdf",
     ),
 ]
+
+EXAM_BOARD_SOURCE = ProgramRuleSource(
+    label="Prüfungsausschuss Informatik: Anerkennung und 15-LP-Grenze",
+    path="https://www.mi.fu-berlin.de/w/Inf/PruefungsAusschuss",
+    note="The 26 October 2023 decision retains the 15 LP cap even when a Bachelor exceeds 180 LP.",
+)
+
+APPLICATION_SOURCE = ProgramRuleSource(
+    label="Anwendungsgebiet/Nebenfach: Zugang zu Modulen",
+    path="https://www.mi.fu-berlin.de/inf/stud/nebenfachFuerInformatiker/index.html",
+    note="Capacity agreements primarily concern Bachelor students; Master students have no entitlement to these places.",
+)
 
 CROSS_UNIVERSITY_SOURCES = [
     ProgramRuleSource(
@@ -35,30 +48,49 @@ CROSS_UNIVERSITY_SOURCES = [
 ]
 
 
+def _checklist_slot_items() -> list[ProgramRuleItem]:
+    """Expose canonical module slots without duplicating catalogue data."""
+    modules = module_entries_by_id("msc_informatik").values()
+    return [
+        ProgramRuleItem(
+            label=label,
+            text="\n".join(
+                f"- {course_name(module['course_id'])} ({module.get('lp', course_lp(module['course_id']))} LP)"
+                for module in modules if module["area"] == area
+            ),
+        )
+        for area, label in (
+            ("practical", "Praktische Informatik module slots"),
+            ("technical", "Technische Informatik module slots"),
+            ("theoretical", "Theoretische Informatik module slots"),
+        )
+    ]
+
+
 @lru_cache(maxsize=1)
 def get_program_rules() -> ProgramRulesCatalogue:
     return ProgramRulesCatalogue(
         degree_program="FU Berlin Master Informatik",
-        regulation="2014 study and examination checklist",
-        catalogue_version="master-informatik-2014-v1",
+        regulation="2014 Studien- und Prüfungsordnung (FU-Mitteilungen 35/2014)",
+        catalogue_version="master-informatik-2014-v2",
         source_note=(
             "Overview of the official degree requirements for the FU Berlin Master Informatik "
-            "(2014 study regulations). Use this catalogue as a reference; for a binding plan check, "
-            "submit your study plan in the Chat tab."
+            "(2014 study regulations). Chat plan checks are advisory and cover the implemented rules; "
+            "binding recognition and eligibility decisions belong to the Prüfungsausschuss / Prüfungsbüro."
         ),
         sections=[
             ProgramRuleSection(
                 id="overall-structure",
                 title="Overall Structure",
                 description=(
-                    "The Master Informatik comprises 120 LP in total: 90 LP of modules before the thesis "
-                    "and a 30 LP Masterarbeit. The regular study duration is 4 semesters."
+                    "120 LP in four separate parts: 70 LP Informatik + 10 LP Anwendungsbereich "
+                    "+ 10 LP Wahlbereich + 30 LP Masterarbeit. Regular duration: 4 semesters."
                 ),
                 items=[
                     ProgramRuleItem(label="Total degree volume", text="120 LP total", minimum=120, maximum=120, unit="LP"),
                     ProgramRuleItem(
-                        label="Module area before thesis",
-                        text="Exactly 90 LP must be completed before the Masterarbeit.",
+                        label="Taught modules",
+                        text="70 LP Informatik, 10 LP Anwendungsbereich, and 10 LP Wahlbereich add up to exactly 90 LP; each module is allocated once.",
                         minimum=90,
                         maximum=90,
                         unit="LP",
@@ -70,43 +102,54 @@ def get_program_rules() -> ProgramRulesCatalogue:
                         maximum=30,
                         unit="LP",
                     ),
-                    ProgramRuleItem(label="Compulsory modules", text="There are no compulsory modules."),
+                    ProgramRuleItem(label="Module choice", text="Choose modules within the area, specialization, seminar, project, and grading requirements below."),
                 ],
                 related_issue_codes=["module_area_lp_total", "master_thesis_lp"],
                 sources=DEFAULT_SOURCES,
             ),
             ProgramRuleSection(
                 id="informatics-area",
-                title="Informatik Area",
+                title="1. Informatik (70 LP)",
                 description=(
-                    "The Informatik area contains the practical, technical, and theoretical study areas. "
-                    "Exactly one of these areas must be selected as the specialization area."
+                    "Build 70 LP in three steps: 40 LP of subject minima, 20 additional LP in one "
+                    "specialization, and 10 LP freely distributed across the three Informatik subjects. "
+                    "Wahlbereich is a separate 10 LP allocation."
                 ),
                 items=[
                     ProgramRuleItem(
                         label="Informatik total",
-                        text="The Informatik area must contain 70 to 80 LP.",
+                        text="Exactly 70 LP, excluding every module allocated to Wahlbereich.",
                         minimum=70,
-                        maximum=80,
+                        maximum=70,
                         unit="LP",
                     ),
                     ProgramRuleItem(
-                        label="Praktische Informatik",
-                        text="At least 20 LP, or at least 40 LP if it is the specialization area.",
+                        label="Step 1 - Praktische Informatik",
+                        text="At least 20 LP in Praktische Informatik.",
                         minimum=20,
                         unit="LP",
                     ),
                     ProgramRuleItem(
-                        label="Technische Informatik",
-                        text="At least 10 LP, or at least 30 LP if it is the specialization area.",
+                        label="Step 1 - Technische Informatik",
+                        text="At least 10 LP in Technische Informatik.",
                         minimum=10,
                         unit="LP",
                     ),
                     ProgramRuleItem(
-                        label="Theoretische Informatik",
-                        text="At least 10 LP, or at least 30 LP if it is the specialization area.",
+                        label="Step 1 - Theoretische Informatik",
+                        text="At least 10 LP in Theoretische Informatik.",
                         minimum=10,
                         unit="LP",
+                    ),
+                    ProgramRuleItem(
+                        label="Step 2 - Specialization (Vertiefung)",
+                        text="Choose exactly one subject for 20 additional LP: at least 40 LP total in Praktische, or 30 LP total in Technische or Theoretische Informatik.",
+                        minimum=20, maximum=20, unit="additional LP",
+                    ),
+                    ProgramRuleItem(
+                        label="Step 3 - Free Informatik choice",
+                        text="Distribute the remaining 10 LP freely across Praktische, Technische, and Theoretische Informatik. These 10 LP are part of Informatik, not the separate Wahlbereich.",
+                        minimum=10, maximum=10, unit="LP",
                     ),
                 ],
                 related_issue_codes=[
@@ -120,51 +163,171 @@ def get_program_rules() -> ProgramRulesCatalogue:
             ),
             ProgramRuleSection(
                 id="application-area",
-                title="Anwendungsbereich",
+                title="2. Anwendungsbereich (10 LP)",
                 description=(
-                    "The Anwendungsbereich, formerly Nebenfach, is counted separately from the Informatik area."
+                    "10 LP from scientific subjects outside Informatik, separate from Informatik and Wahlbereich."
                 ),
                 items=[
                     ProgramRuleItem(
                         label="Application area LP",
-                        text="The Anwendungsbereich must contain 10 to 20 LP.",
+                        text="Exactly 10 LP; extra modules from these subjects may be allocated to the separate Wahlbereich.",
                         minimum=10,
-                        maximum=20,
+                        maximum=10,
                         unit="LP",
+                    ),
+                    ProgramRuleItem(
+                        label="Subjects and advising",
+                        text="Scientific subjects outside Informatik are eligible; the SPO particularly recommends Mathematics, Bioinformatics, Physics, Philosophy, Psychology, or Chemistry. Discuss your choice, examinations, and timetable with your study adviser first (§4(5)).",
+                    ),
+                    ProgramRuleItem(
+                        label="Access to courses",
+                        text="Check prerequisites and available places with the offering department. The linked Nebenfach page mainly describes Bachelor arrangements; Master students have no entitlement to its reserved places, though remaining places may be available.",
                     ),
                 ],
                 related_issue_codes=["application_area_lp"],
+                sources=[*DEFAULT_SOURCES, APPLICATION_SOURCE],
+            ),
+            ProgramRuleSection(
+                id="wahlbereich",
+                title="3. Wahlbereich (10 LP)",
+                description=(
+                    "A separate 10 LP choice from Informatik or other scientific subjects. "
+                    "These credits are not added to the 70 LP Informatik or 10 LP Anwendungsbereich."
+                ),
+                items=[
+                    ProgramRuleItem(
+                        label="Wahlbereich volume",
+                        text="Exactly 10 LP, explicitly allocated to Wahlbereich.",
+                        minimum=10,
+                        maximum=10,
+                        unit="LP",
+                    ),
+                    ProgramRuleItem(
+                        label="Choose the subject freely",
+                        text=(
+                            "Choose Informatik modules or modules from scientific subjects eligible for the "
+                            "Anwendungsbereich. A module retains its subject label but counts only in Wahlbereich, "
+                            "not again toward subject minima or specialization."
+                        ),
+                    ),
+                    ProgramRuleItem(label="Limits still apply", text="The overall limits of 2 Softwareprojekte, 4 seminars, 15 LP Bachelor-level modules, and the grading requirements still apply."),
+                ],
+                related_issue_codes=["wahlbereich_lp"],
                 sources=DEFAULT_SOURCES,
+            ),
+            ProgramRuleSection(
+                id="masterarbeit",
+                title="4. Masterarbeit (30 LP)",
+                description="30 LP for the thesis and presentation; admission is possible after at least 60 LP of completed Master modules (§9).",
+                items=[
+                    ProgramRuleItem(label="Admission", text="At least 60 LP of completed Master modules and the enrollment and supervision requirements of §9(2)-(3). The 90 LP taught-module total is not a prerequisite for starting the thesis.", minimum=60, unit="completed LP"),
+                    ProgramRuleItem(label="Thesis volume", text="30 LP including presentation; it is separate from the 90 LP taught modules.", minimum=30, maximum=30, unit="LP"),
+                    ProgramRuleItem(label="Written work and presentation", text="The SPO provides 23 weeks for the written part and a presentation with discussion of about 30 minutes. The written part contributes three quarters and the presentation one quarter of the thesis grade."),
+                ],
+                related_issue_codes=["master_thesis_lp", "wahlbereich_thesis"],
+                sources=DEFAULT_SOURCES,
+            ),
+            ProgramRuleSection(
+                id="checklist-planning",
+                title="Fit Courses into the Checklist and Keep Options Open",
+                description=(
+                    "Plan with the checklist's module slots ('boxes'), not just course titles or LP. "
+                    "Check for a dedicated named module before using a broader slot, and keep room "
+                    "for courses you want to take in later semesters."
+                ),
+                items=[
+                    ProgramRuleItem(
+                        label="Courses and module slots are different",
+                        text=(
+                            "A checklist box represents a degree module, not necessarily one particular "
+                            "course. Different suitable courses may fit a broader module such as Aktuelle "
+                            "Forschungsthemen, Spezielle Aspekte, or Ausgewählte Themen. Compare the "
+                            "module description's learning outcomes, content, workload, and examination "
+                            "requirements; a similar title or enough LP alone does not establish a fit."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="Check for the course's own named module first",
+                        text=(
+                            "Check the canonical module slots below and the credited module shown in "
+                            "the course listing before suggesting a broad slot. If the course has a "
+                            "suitable dedicated module, prefer that approved placement when it fits the "
+                            "rest of the plan. For example, a course confirmed as Telematik can use the "
+                            "Telematik slot instead of consuming Ausgewählte Themen der Technischen "
+                            "Informatik. Do not infer approval just from a matching name."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="Keep flexible slots available for later semesters",
+                        text=(
+                            "Before filling a broad module slot, list courses you want to take now and "
+                            "later and their possible target modules. Reserve a slot when a future "
+                            "course may need it and use a suitable dedicated slot for today's course "
+                            "where possible. Ask which slots are already used and which future courses "
+                            "matter to you; make provisional suggestions if this is unknown. Future "
+                            "course availability still needs confirmation from the offering university."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="Courses at other universities",
+                        text=(
+                            "Courses from other universities can be candidates for a checklist module "
+                            "when their learning outcomes and workload fit. Prepare a reasoned mapping "
+                            "from the external course or combination of courses to the intended FU "
+                            "module, supported by both module descriptions and the Leistungsnachweis. "
+                            "Discuss recognition with the Prüfungsausschuss, preferably before committing "
+                            "to the course. A convincing proposal supports the request; approval is not "
+                            "automatic, and attendance/exam access must also be arranged with the host."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="One module slot is not an unlimited container",
+                        text=(
+                            "Many alternative courses may fit one module, but that does not allow you "
+                            "to count that target module repeatedly or count the same course twice. "
+                            "Respect the module's LP and assessment requirements, subject allocation, "
+                            "specialization, and all seminar, project, grading, and prior-credit limits. "
+                            "Distinct A/B modules are separate slots only where the catalogue lists them."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="Read the slot list correctly",
+                        text=(
+                            "The following Informatik modules are checklist slots from the canonical "
+                            "catalogue, not an exhaustive list of eligible courses or a timetable. "
+                            "Anwendungsbereich and Wahlbereich follow their separate subject and "
+                            "recognition rules. An arithmetic plan check does not decide whether an "
+                            "external course fits a module or approve a recognition request."
+                        ),
+                    ),
+                    *_checklist_slot_items(),
+                ],
+                sources=[*DEFAULT_SOURCES, EXAM_BOARD_SOURCE],
             ),
             ProgramRuleSection(
                 id="wissenschaftliches-arbeiten",
                 title="Wissenschaftliches Arbeiten",
                 description=(
-                    "Students must complete Wissenschaftliches Arbeiten modules in the core Informatik selection. "
-                    "Additional modules can be placed in Wahlbereich under the 10 LP Wahlbereich cap."
+                    "Choose 2 to 4 Wissenschaftliches Arbeiten modules (seminars), 5 LP each. "
+                    "The maximum of 4 applies to the whole plan, including Wahlbereich."
                 ),
                 items=[
                     ProgramRuleItem(
                         label="Core count",
-                        text="At least 2 and at most 4 core Wissenschaftliches Arbeiten modules are required.",
+                        text="At least 2 in the 70 LP Informatik area; at most 4 across the whole plan, including Wahlbereich.",
                         minimum=2,
                         maximum=4,
                         unit="modules",
                     ),
                     ProgramRuleItem(
                         label="Specialization coverage",
-                        text="At least one Wissenschaftliches Arbeiten module must be from the specialization area.",
+                        text="At least one Wissenschaftliches Arbeiten module in the Informatik allocation must come from your specialization subject.",
                         minimum=1,
                         unit="module",
                     ),
                     ProgramRuleItem(
-                        label="Wahlbereich caveat",
-                        text=(
-                            "Up to 2 additional Wissenschaftliches Arbeiten modules can be placed in Wahlbereich, "
-                            "because each seminar has 5 LP and Wahlbereich has 10 LP."
-                        ),
-                        maximum=2,
-                        unit="additional modules",
+                        label="No extra seminar allowance",
+                        text="Allocating a seminar to Wahlbereich does not permit a fifth or sixth seminar.",
                     ),
                     ProgramRuleItem(
                         label="Duplicate modules",
@@ -183,25 +346,20 @@ def get_program_rules() -> ProgramRulesCatalogue:
                 id="softwareprojekt",
                 title="Softwareprojekt",
                 description=(
-                    "Students must complete Softwareprojekt modules in the core Informatik selection. "
-                    "A third Softwareprojekt is possible only when one Softwareprojekt is counted in Wahlbereich."
+                    "Choose 1 or 2 Softwareprojekt modules, 10 LP each. "
+                    "The maximum of 2 applies to the whole plan, including Wahlbereich."
                 ),
                 items=[
                     ProgramRuleItem(
                         label="Core count",
-                        text="At least 1 and at most 2 core Softwareprojekt modules are required.",
+                        text="At least 1 in the 70 LP Informatik area; at most 2 across the whole plan, including Wahlbereich.",
                         minimum=1,
                         maximum=2,
                         unit="modules",
                     ),
                     ProgramRuleItem(
-                        label="Wahlbereich caveat",
-                        text=(
-                            "One additional Softwareprojekt can be placed in Wahlbereich, allowing 3 "
-                            "Softwareprojekt modules total when the Wahlbereich cap is still respected."
-                        ),
-                        maximum=1,
-                        unit="additional module",
+                        label="No extra project allowance",
+                        text="Allocating a Softwareprojekt to Wahlbereich does not permit a third project.",
                     ),
                     ProgramRuleItem(
                         label="Grading",
@@ -212,37 +370,14 @@ def get_program_rules() -> ProgramRulesCatalogue:
                 sources=DEFAULT_SOURCES,
             ),
             ProgramRuleSection(
-                id="wahlbereich",
-                title="Wahlbereich",
-                description=(
-                    "Wahlbereich is tracked separately from the module's academic area. This matters for the "
-                    "seminar and Softwareprojekt caveats."
-                ),
-                items=[
-                    ProgramRuleItem(
-                        label="LP cap",
-                        text="The Wahlbereich can contain at most 10 LP.",
-                        maximum=10,
-                        unit="LP",
-                    ),
-                    ProgramRuleItem(
-                        label="Area identity",
-                        text=(
-                            "A module can still belong to practical, technical, theoretical, or application area "
-                            "while being counted in Wahlbereich for caveat handling."
-                        ),
-                    ),
-                ],
-                related_issue_codes=["wahlbereich_lp"],
-                sources=DEFAULT_SOURCES,
-            ),
-            ProgramRuleSection(
                 id="ungraded-modules",
-                title="Ungraded Modules",
+                title="Graded and Ungraded Modules",
                 description=(
-                    "Modules with non-differentiated assessment or no assessment are capped across the full plan."
+                    "Across the 90 LP taught modules, including Wahlbereich: 60 to 65 LP graded "
+                    "and 25 to 30 LP ungraded. The Masterarbeit is separate."
                 ),
                 items=[
+                    ProgramRuleItem(label="Graded LP", text="60 to 65 LP with differentiated grades, excluding the Masterarbeit.", minimum=60, maximum=65, unit="LP"),
                     ProgramRuleItem(
                         label="Ungraded LP",
                         text="Ungraded or non-differentiated modules must total 25 to 30 LP.",
@@ -260,13 +395,13 @@ def get_program_rules() -> ProgramRulesCatalogue:
                         ),
                     ),
                 ],
-                related_issue_codes=["ungraded_lp"],
+                related_issue_codes=["ungraded_lp", "graded_lp"],
                 sources=DEFAULT_SOURCES,
             ),
             ProgramRuleSection(
                 id="bachelor-modules",
-                title="Bachelor Modules",
-                description="Bachelor modules can be included only within a strict LP cap.",
+                title="Bachelor-Level Modules and Earlier Credits",
+                description="Up to 15 LP of Bachelor-level modules may count, subject to eligibility and no double use of prior credits.",
                 items=[
                     ProgramRuleItem(
                         label="Bachelor-module LP",
@@ -275,14 +410,51 @@ def get_program_rules() -> ProgramRulesCatalogue:
                         unit="LP",
                     ),
                     ProgramRuleItem(
+                        label="Additional credits only",
+                        text="Credits earned while enrolled in a Bachelor may count only if they were additional to the credits used for that degree (normally 180 LP) and were not used to satisfy Master admission requirements. Recognition is decided by the Prüfungsausschuss.",
+                    ),
+                    ProgramRuleItem(
+                        label="No double use",
+                        text="A module already counted toward the Bachelor degree cannot count again, even if it is a Master-level module taken during the Bachelor. Merely exceeding 180 LP does not raise the 15 LP Bachelor-module cap (exam board decision, 26 October 2023).",
+                    ),
+                    ProgramRuleItem(
+                        label="Unknown history",
+                        text="The plan check needs your prior credit use to assess eligibility. If that information is missing, it reports a warning rather than assuming that Bachelor-level modules are transferable.",
+                    ),
+                    ProgramRuleItem(
                         label="Application modules",
                         text=(
-                            "Application-area modules may also be Bachelor modules and must be included in this "
-                            "15 LP cap when applicable."
+                            "The 15 LP cap covers Bachelor-level modules in all three allocations, "
+                            "including Anwendungsbereich and Wahlbereich. It does not automatically apply to "
+                            "a Master-level module merely because it was taken during Bachelor enrollment."
                         ),
                     ),
                 ],
-                related_issue_codes=["bachelor_module_lp"],
+                related_issue_codes=["bachelor_module_lp", "bachelor_credit_reuse", "admission_credit_reuse", "bachelor_credit_history_unknown"],
+                sources=[*DEFAULT_SOURCES, EXAM_BOARD_SOURCE],
+            ),
+            ProgramRuleSection(
+                id="duplicates",
+                title="Duplicate and Incompatible Modules",
+                description="Count each module once and check earlier Bachelor credit use as well as excluded module combinations.",
+                items=[
+                    ProgramRuleItem(
+                        label="Exact duplicate",
+                        text="The same exact module cannot count twice in the Master.",
+                    ),
+                    ProgramRuleItem(
+                        label="Incompatible project-management modules",
+                        text="Projektmanagement cannot be combined with Grundlagen des Managements von IT-Projekten or Projektmanagement - Vertiefung (§7(9)); moving one into Wahlbereich does not remove this restriction.",
+                    ),
+                    ProgramRuleItem(
+                        label="Previously used Master modules",
+                        text=(
+                            "A Master module already used in a prior Bachelor specialization cannot be reused "
+                            "for the Master."
+                        ),
+                    ),
+                ],
+                related_issue_codes=["duplicate_modules", "bachelor_credit_reuse", "admission_credit_reuse", "project_management_conflict"],
                 sources=DEFAULT_SOURCES,
             ),
             ProgramRuleSection(
@@ -375,10 +547,11 @@ def get_program_rules() -> ProgramRulesCatalogue:
                     ProgramRuleItem(
                         label="General-area recognition",
                         text=(
-                            "Courses in a suitable scientific subject can be recognized directly in the "
+                            "Courses in a suitable scientific subject may be proposed for recognition in the "
                             "Anwendungsbereich (which is explicitly meant to draw on subjects outside "
-                            "Informatik) or, with Prüfungsausschuss approval, in the Wahlbereich, without "
-                            "needing to match an existing FU module title."
+                            "Informatik) or in the Wahlbereich, without needing to match an existing "
+                            "Informatik module title. Both routes require the appropriate recognition "
+                            "decision; a thematic match alone is not approval."
                         ),
                     ),
                     ProgramRuleItem(
@@ -408,26 +581,6 @@ def get_program_rules() -> ProgramRulesCatalogue:
                     ),
                 ],
                 sources=CROSS_UNIVERSITY_SOURCES,
-            ),
-            ProgramRuleSection(
-                id="duplicates",
-                title="Duplicate Modules",
-                description="The same exact module cannot count twice in the Master.",
-                items=[
-                    ProgramRuleItem(
-                        label="Exact duplicate",
-                        text="The same exact module cannot count twice in the Master.",
-                    ),
-                    ProgramRuleItem(
-                        label="Previously used Master modules",
-                        text=(
-                            "A Master module already used in a prior Bachelor specialization cannot be reused "
-                            "for the Master."
-                        ),
-                    ),
-                ],
-                related_issue_codes=["duplicate_modules"],
-                sources=DEFAULT_SOURCES,
             ),
         ],
     )

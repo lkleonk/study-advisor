@@ -152,7 +152,7 @@ export function DegreeRulesTab() {
         {catalogue && (
           <Stack spacing={1}>
             {catalogue.sections.map((section) => (
-              <Accordion key={section.id} disableGutters variant="outlined">
+              <Accordion key={`${effectiveDegreeId}-${section.id}`} defaultExpanded={section.id === "overall-structure"} disableGutters variant="outlined">
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                   <Box>
                     <Typography variant="h3">{section.title}</Typography>
