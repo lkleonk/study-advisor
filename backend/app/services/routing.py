@@ -1,0 +1,12 @@
+from app.services.states.consultant_state import ConsultantState
+
+
+def route_after_classifier(state: ConsultantState) -> str:
+    message_type = state.get("message_type")
+    if message_type == "plan_check":
+        return "plan_check"
+    if message_type == "degree_question":
+        return "degree_question"
+    if message_type == "course_offering_question":
+        return "course_offering_question"
+    return "off_topic"

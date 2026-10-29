@@ -1,0 +1,46 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "set NEXT_PUBLIC_ENABLE_DEV_TOOLS=true&& set NEXT_PUBLIC_API_BASE_URL=http://localhost:8000&& npm run dev"
+      ],
+      "cwd": "frontend",
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "static-out",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "npx serve out -l 3005"
+      ],
+      "cwd": "frontend",
+      "port": 3005
+    },
+    {
+      "name": "backend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "set LLM_PROVIDER=local_ollama&& uv run --isolated --python 3.12.10 --with-requirements requirements.txt uvicorn app.main:app --port 8000"
+      ],
+      "cwd": "backend",
+      "port": 8000
+    },
+    {
+      "name": "backend-quota-exhausted",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "set LLM_PROVIDER=local_ollama&& set DAILY_USER_ACTIONS=0&& set CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001&& uv run --isolated --python 3.12.10 --with-requirements requirements.txt uvicorn app.main:app --port 8000"
+      ],
+      "cwd": "backend",
+      "port": 8000
+    }
+  ]
+}

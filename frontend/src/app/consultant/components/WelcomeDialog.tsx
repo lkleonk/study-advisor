@@ -1,0 +1,172 @@
+"use client";
+
+import DataUsageOutlinedIcon from "@mui/icons-material/DataUsageOutlined";
+import CloseIcon from "@mui/icons-material/Close";
+import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
+import TimerOutlinedIcon from "@mui/icons-material/TimerOutlined";
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Stack from "@mui/material/Stack";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+
+import { useDegree } from "@/context/DegreeContext";
+import { useSettings } from "@/context/SettingsContext";
+import { useUsage } from "@/context/UsageContext";
+
+type WelcomeDialogProps = {
+  open: boolean;
+  onClose: (degreeId: string) => void;
+  onViewUsage: (degreeId: string) => void;
+};
+
+export function WelcomeDialog({ open, onClose, onViewUsage }: WelcomeDialogProps) {
+  const { usage } = useUsage();
+  const { degreeId, degrees, effectiveDegreeId } = useDegree();
+  const { tracingEnabled, setTracingEnabled } = useSettings();
+  const [pickedDegree, setPickedDegree] = useState<string | null>(null);
+  // An explicit pick wins; otherwise preselect the previously stored choice.
+  const selectedDegree = pickedDegree ?? degreeId;
+  const retentionHours = usage ? Math.round(usage.session_inactivity_ttl_seconds / 3600) : null;
+
+  return (
+    <Dialog open={open} fullWidth maxWidth="sm" aria-labelledby="welcome-title">
+      <DialogTitle id="welcome-title" sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 2 }}>
+        Welcome to Modulio
+        <IconButton
+          aria-label="Close welcome dialog"
+          edge="end"
+          onClick={() => onClose(selectedDegree ?? effectiveDegreeId)}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent>
+        <Typography variant="subtitle2" sx={{ mb: 1 }}>
+          Choose your degree program
+        </Typography>
+        <ToggleButtonGroup
+          exclusive
+          fullWidth
+          value={selectedDegree}
+          onChange={(_, nextDegree: string | null) => {
+            if (nextDegree) {
+              setPickedDegree(nextDegree);
+            }
+          }}
+          aria-label="Degree program"
+          orientation="vertical"
+          sx={{ mb: 2 }}
+        >
+          {degrees.map((degree) => (
+            <ToggleButton
+              key={degree.id}
+              value={degree.id}
+              sx={{
+                justifyContent: "flex-start",
+                textAlign: "left",
+                textTransform: "none",
+                py: 1.25,
+              }}
+            >
+              <Stack spacing={0.25}>
+                <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                  {degree.display_name}
+                </Typography>
+                <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                  {degree.regulation}
+                </Typography>
+              </Stack>
+            </ToggleButton>
+          ))}
+        </ToggleButtonGroup>
+        <Alert severity="info" sx={{ mb: 1.5 }}>
+          This is an unofficial service. Answers may be incomplete or incorrect and should be verified using official FU Berlin sources.
+        </Alert>
+        <List disablePadding>
+          <ListItem disableGutters alignItems="flex-start">
+            <ListItemIcon sx={{ minWidth: 36, mt: 0.5 }}>
+              <DataUsageOutlinedIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText
+              primary="Daily request allowance"
+              secondary={
+                usage
+                  ? `${usage.remaining} of ${usage.limit} requests remain today. Messages and transcript uploads each use one request.`
+                  : "Messages and transcript uploads use your daily request allowance."
+              }
+            />
+          </ListItem>
+          <ListItem disableGutters alignItems="flex-start">
+            <ListItemIcon sx={{ minWidth: 36, mt: 0.5 }}>
+              <TimerOutlinedIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText
+              primary="Temporary session data"
+              secondary={
+                retentionHours
+                  ? `In-memory session data expires after ${retentionHours} hours of inactivity. Download your chat if you want to keep a copy.`
+                  : "Session data is held temporarily. Download your chat if you want to keep a copy."
+              }
+            />
+          </ListItem>
+          <ListItem disableGutters alignItems="flex-start">
+            <ListItemIcon sx={{ minWidth: 36, mt: 0.5 }}>
+              <PictureAsPdfOutlinedIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText
+              primary="Transcript processing"
+              secondary="Extracted transcript text is processed by the configured language model. Original PDF files are not included in chat exports."
+            />
+          </ListItem>
+        </List>
+        {usage?.diagnostic_tracing_enabled && (
+          <Box sx={{ mt: 1, p: 1.5, border: 1, borderColor: "divider", borderRadius: 1.5 }}>
+            <FormControlLabel
+              sx={{ m: 0 }}
+              control={
+                <Checkbox
+                  checked={tracingEnabled}
+                  onChange={(_, checked) => setTracingEnabled(checked)}
+                />
+              }
+              label="Allow diagnostic tracing"
+            />
+            <Typography variant="caption" sx={{ display: "block", color: "text.secondary" }}>
+              This deployment can retain unredacted prompts and transcript text in local trace files
+              on the application server, separately from session state. Unticking this stops those
+              traces being written for your requests. You can change this later in Settings.
+            </Typography>
+          </Box>
+        )}
+      </DialogContent>
+      <DialogActions>
+        <Button disabled={!selectedDegree} onClick={() => selectedDegree && onViewUsage(selectedDegree)}>
+          View daily request allowance
+        </Button>
+        <Button
+          onClick={() => selectedDegree && onClose(selectedDegree)}
+          variant="contained"
+          autoFocus
+          disabled={!selectedDegree}
+        >
+          Start consultation
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+}

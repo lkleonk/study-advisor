@@ -1,0 +1,17 @@
+{$APP_DOMAIN:localhost}, {$APP_WWW_DOMAIN:www.localhost} {
+	encode zstd gzip
+
+	@www host {$APP_WWW_DOMAIN:www.localhost}
+	redir @www https://{$APP_DOMAIN:localhost}{uri} permanent
+
+	@backend path /api/* /health /docs /docs/* /redoc /redoc/* /openapi.json
+	handle @backend {
+		reverse_proxy backend:{$CONSULTANT_PORT:8000}
+	}
+
+	handle {
+		root * /srv
+		try_files {path} {path}.html {path}/index.html
+		file_server
+	}
+}

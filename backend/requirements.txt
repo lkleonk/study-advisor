@@ -1,0 +1,11 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.9
+pydantic==2.7.4
+httpx==0.27.2
+python-dotenv==1.0.0
+paramiko==3.4.1
+sshtunnel==0.4.0
+langgraph==0.2.76
+pypdf==5.1.0
+wizardflow==0.9.0

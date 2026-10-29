@@ -1,0 +1,1872 @@
+[
+  {
+    "id": "introduction_to_profile_areas",
+    "name": "Introduction to Profile Areas",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "statistics_for_data_science",
+    "name": "Statistics for Data Science",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "machine_learning_for_data_science",
+    "name": "Machine Learning for Data Science",
+    "lp": 10,
+    "aliases": [
+      "ML for Data Science"
+    ]
+  },
+  {
+    "id": "programming_for_data_science",
+    "name": "Programming for Data Science",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "data_science_in_life_sciences",
+    "name": "Data Science in Life Sciences",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "forschungspraxis",
+    "name": "Forschungspraxis",
+    "lp": 10,
+    "aliases": [
+      "Research Practice"
+    ]
+  },
+  {
+    "id": "ethical_foundations_of_data_science",
+    "name": "Ethical Foundations of Data Science",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_data_science_a",
+    "name": "Softwareprojekt Data Science A",
+    "lp": 10,
+    "aliases": [
+      "Software Project Data Science A"
+    ]
+  },
+  {
+    "id": "spezielle_aspekte_ds_life_sciences",
+    "name": "Spezielle Aspekte der Data Science in Life Sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "aktuelle_forschungsthemen_ds_life_sciences",
+    "name": "Aktuelle Forschungsthemen der Data Science in Life Sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "masterseminar_ds_life_sciences",
+    "name": "Masterseminar Data Science in Life Sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "ausgewaehlte_themen_ds_life_sciences",
+    "name": "Ausgewählte Themen der Data Science in Life Sciences",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "machine_learning_in_bioinformatics",
+    "name": "Machine Learning in Bioinformatics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "big_data_analysis_in_bioinformatics",
+    "name": "Big Data Analysis in Bioinformatics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "applied_machine_learning_in_bioinformatics",
+    "name": "Applied Machine Learning in Bioinformatics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_ds_technologies",
+    "name": "Spezielle Aspekte der Data Science Technologies",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "aktuelle_forschungsthemen_ds_technologies",
+    "name": "Aktuelle Forschungsthemen der Data Science Technologies",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "ausgewaehlte_themen_ds_technologies_a",
+    "name": "Ausgewählte Themen der Data Science Technologies A",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "ausgewaehlte_themen_ds_technologies_b",
+    "name": "Ausgewählte Themen der Data Science Technologies B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "masterseminar_ds_technologies",
+    "name": "Masterseminar in Data Science Technologies",
+    "lp": 5,
+    "aliases": [
+      "Masterseminar Data Science Technologies"
+    ]
+  },
+  {
+    "id": "softwareprojekt_data_science_b",
+    "name": "Softwareprojekt Data Science B",
+    "lp": 10,
+    "aliases": [
+      "Software Project Data Science B"
+    ]
+  },
+  {
+    "id": "datenbanksysteme_data_science",
+    "name": "Datenbanksysteme Data Science",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "verteilte_systeme",
+    "name": "Verteilte Systeme",
+    "lp": 5,
+    "aliases": [
+      "Distributed Systems"
+    ]
+  },
+  {
+    "id": "mobilkommunikation",
+    "name": "Mobilkommunikation",
+    "lp": 5,
+    "aliases": [
+      "Mobile Communication"
+    ]
+  },
+  {
+    "id": "telematik",
+    "name": "Telematik",
+    "lp": 10,
+    "aliases": [
+      "Telematics"
+    ]
+  },
+  {
+    "id": "hoehere_algorithmik",
+    "name": "Höhere Algorithmik",
+    "lp": 10,
+    "aliases": [
+      "Advanced Algorithms"
+    ]
+  },
+  {
+    "id": "rechnersicherheit",
+    "name": "Rechnersicherheit",
+    "lp": 10,
+    "aliases": [
+      "Computer Security"
+    ]
+  },
+  {
+    "id": "mustererkennung",
+    "name": "Mustererkennung",
+    "lp": 5,
+    "aliases": [
+      "Pattern Recognition"
+    ]
+  },
+  {
+    "id": "netzbasierte_informationssysteme",
+    "name": "Netzbasierte Informationssysteme",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "kuenstliche_intelligenz",
+    "name": "Künstliche Intelligenz",
+    "lp": 5,
+    "aliases": [
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": "spezielle_aspekte_der_datenverwaltung",
+    "name": "Spezielle Aspekte der Datenverwaltung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "interdisziplinaere_zugaenge_data_science_a",
+    "name": "Interdisziplinäre Zugänge im Rahmen von Data Science A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "interdisziplinaere_zugaenge_data_science_b",
+    "name": "Interdisziplinäre Zugänge im Rahmen von Data Science B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "masterarbeit_data_science",
+    "name": "Masterarbeit mit begleitendem Kolloquium",
+    "lp": 30,
+    "aliases": [
+      "Masterarbeit",
+      "Master Thesis",
+      "Master's Thesis"
+    ]
+  },
+  {
+    "id": "aktuelle_forschungsthemen_der_praktischen_informatik",
+    "name": "Aktuelle Forschungsthemen der Praktischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "ausgewahlte_themen_der_praktischen_informatik",
+    "name": "Ausgewählte Themen der Praktischen Informatik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "bildverarbeitung",
+    "name": "Bildverarbeitung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "computergrafik",
+    "name": "Computergrafik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "computer_vision",
+    "name": "Computer-Vision",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "datenbanktechnologie",
+    "name": "Datenbanktechnologie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "empirische_bewertung_in_der_informatik",
+    "name": "Empirische Bewertung in der Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "existenzgrundung_in_der_it_industrie",
+    "name": "Existenzgründung in der IT-Industrie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "grundlagen_des_softwaretestens",
+    "name": "Grundlagen des Softwaretestens",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "grundlagen_des_managements_von_it_projekten",
+    "name": "Grundlagen des Managements von IT-Projekten",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "medizinische_bildverarbeitung",
+    "name": "Medizinische Bildverarbeitung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "modellgetriebene_softwareentwicklung",
+    "name": "Modellgetriebene Softwareentwicklung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "praktiken_professioneller_softwareentwicklung",
+    "name": "Praktiken professioneller Softwareentwicklung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "projektmanagement",
+    "name": "Projektmanagement",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "projektmanagement_vertiefung",
+    "name": "Projektmanagement - Vertiefung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "semantisches_geschaftsprozessmanagement",
+    "name": "Semantisches Geschäftsprozessmanagement",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_praktische_informatik_a",
+    "name": "Softwareprojekt Praktische Informatik A",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_praktische_informatik_b",
+    "name": "Softwareprojekt Praktische Informatik B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "softwareprozesse",
+    "name": "Softwareprozesse",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_der_praktischen_informatik",
+    "name": "Spezielle Aspekte der Praktischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_der_softwareentwicklung",
+    "name": "Spezielle Aspekte der Softwareentwicklung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "ubersetzerbau",
+    "name": "Übersetzerbau",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_praktische_informatik_a",
+    "name": "Wissenschaftliches Arbeiten Praktische Informatik A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_praktische_informatik_b",
+    "name": "Wissenschaftliches Arbeiten Praktische Informatik B",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "xml_technologien",
+    "name": "XML-Technologien",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "aktuelle_forschungsthemen_der_theoretischen_informatik",
+    "name": "Aktuelle Forschungsthemen der Theoretischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "algorithmische_geometrie",
+    "name": "Algorithmische Geometrie",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "ausgewahlte_themen_der_theoretischen_informatik",
+    "name": "Ausgewählte Themen der Theoretischen Informatik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "fortgeschrittene_themen_der_theoretischen_informatik",
+    "name": "Fortgeschrittene Themen der Theoretischen Informatik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "kryptographie_und_sicherheit_in_verteilten_systemen",
+    "name": "Kryptographie und Sicherheit in Verteilten Systemen",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "modelchecking",
+    "name": "Modelchecking",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "semantik_von_programmiersprachen",
+    "name": "Semantik von Programmiersprachen",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_theoretische_informatik_a",
+    "name": "Softwareprojekt - Theoretische Informatik A",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_theoretische_informatik_b",
+    "name": "Softwareprojekt - Theoretische Informatik B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_der_theoretischen_informatik",
+    "name": "Spezielle Aspekte der Theoretischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_theoretische_informatik_a",
+    "name": "Wissenschaftliches Arbeiten Theoretische Informatik A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_theoretische_informatik_b",
+    "name": "Wissenschaftliches Arbeiten Theoretische Informatik B",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "aktuelle_forschungsthemen_der_technischen_informatik",
+    "name": "Aktuelle Forschungsthemen der Technischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "ausgewahlte_themen_der_technischen_informatik",
+    "name": "Ausgewählte Themen der Technischen Informatik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "betriebssysteme",
+    "name": "Betriebssysteme",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "mikroprozessor_praktikum",
+    "name": "Mikroprozessor-Praktikum",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "robotik",
+    "name": "Robotik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_technische_informatik_a",
+    "name": "Softwareprojekt - Technische Informatik A",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_technische_informatik_b",
+    "name": "Softwareprojekt - Technische Informatik B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_der_technischen_informatik",
+    "name": "Spezielle Aspekte der Technischen Informatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_technische_informatik_a",
+    "name": "Wissenschaftliches Arbeiten Technische Informatik A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_technische_informatik_b",
+    "name": "Wissenschaftliches Arbeiten Technische Informatik B",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "masterarbeit",
+    "name": "Masterarbeit",
+    "lp": 30,
+    "aliases": []
+  },
+  {
+    "id": "cluster_computing",
+    "name": "Cluster Computing",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "bild_und_videocodierung",
+    "name": "Bild- und Videocodierung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "cybersecurity_and_ai_iv_angriffe",
+    "name": "Cybersecurity and AI IV: Angriffe",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_telematik",
+    "name": "Softwareprojekt: Telematik",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_verteilte_systeme",
+    "name": "Softwareprojekt: Verteilte Systeme",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_internet_of_things_security_technische_informatik",
+    "name": "Seminar/Proseminar: Internet of Things & Security (Technische Informatik)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_telematik",
+    "name": "Seminar/Proseminar: Telematik",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "angewandte_biometrie",
+    "name": "Angewandte Biometrie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "human_centered_data_science",
+    "name": "Human Centered Data Science",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "ethics_and_epistemology_of_ai",
+    "name": "Ethics and Epistemology of AI",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "advanced_data_visualization_for_artificial_intelligence",
+    "name": "Advanced Data Visualization for Artificial Intelligence",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "empirische_methoden_im_software_engineering",
+    "name": "Empirische Methoden im Software Engineering",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "markovketten",
+    "name": "Markovketten",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_datenverwaltung",
+    "name": "Softwareprojekt: Datenverwaltung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_semantische_technologien",
+    "name": "Softwareprojekt: Semantische Technologien",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_amos_projekt",
+    "name": "Softwareprojekt: AMOS-Projekt",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_secure_identity",
+    "name": "Softwareprojekt: Secure Identity",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_open_source_source_development",
+    "name": "Softwareprojekt: Open Source Source Development",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_reinforcement_learning_in_computer_chess_and_beyond_towards_absolute_sustainability",
+    "name": "Seminar: Reinforcement Learning in Computer Chess and Beyond: Towards Absolute Sustainability",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "projektseminar_probleme_bei_planungssystemen_der_nachsten_generation_mit_schwerpunkt_auf_navigationssystemen",
+    "name": "Projektseminar: Probleme bei Planungssystemen der nächsten Generation, mit Schwerpunkt auf Navigationssystemen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_beitrage_zum_software_engineering",
+    "name": "Seminar: Beiträge zum Software Engineering",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_agile_methoden_technische_praktiken",
+    "name": "Seminar/Proseminar: Agile Methoden & Technische Praktiken",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_security_engineering",
+    "name": "Seminar: Security Engineering",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_new_trends_in_informationsystems_ntis",
+    "name": "Seminar/Proseminar: New Trends in Informationsystems (NTIS)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_continual_learning",
+    "name": "Seminar: Continual Learning",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_how_to_startup",
+    "name": "Seminar/Proseminar: How to Startup",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_netzwerke_dynamische_modelle_und_ml_fur_datenintegration_in_den_lebenswissenschaften",
+    "name": "Seminar: Netzwerke, dynamische Modelle und ML für Datenintegration in den Lebenswissenschaften",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "elektronische_krankenakten_und_ihre_nutzung_in_der_aktuellen_forschung",
+    "name": "Elektronische Krankenakten und ihre Nutzung in der aktuellen Forschung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_time_series_modelling",
+    "name": "Seminar/Proseminar: Time Series Modelling",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "projektmanagement_in_agilen_umgebungen_teil_2_sose",
+    "name": "Projektmanagement in agilen Umgebungen Teil 2 (SoSe)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_aktuelle_themen_der_kryptographie",
+    "name": "Seminar: Aktuelle Themen der Kryptographie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "kryptoanalyse_asymmetrischer_verfahren",
+    "name": "Kryptoanalyse asymmetrischer Verfahren",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "advanced_topics_on_post_quantum_cryptography",
+    "name": "Advanced topics on Post quantum cryptography",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "approximationsalgorithmen",
+    "name": "Approximationsalgorithmen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_anwendungen_von_algorithmen",
+    "name": "Softwareprojekt: Anwendungen von Algorithmen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_uber_algorithmen",
+    "name": "Seminar über Algorithmen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "betriebs_und_kommunikationssysteme",
+    "name": "Betriebs- und Kommunikationssysteme",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "datenbanksysteme_bsc",
+    "name": "Datenbanksysteme",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "programmierpraktikum_bsc",
+    "name": "Programmierpraktikum",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "statistik_fuer_informatik",
+    "name": "Statistik für Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "informationssicherheit_bsc",
+    "name": "Informationssicherheit",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "softwaretechnik_bsc",
+    "name": "Softwaretechnik",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_in_der_informatik",
+    "name": "Wissenschaftliches Arbeiten in der Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "algorithmen_und_datenstrukturen_bsc",
+    "name": "Algorithmen und Datenstrukturen",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "lineare_algebra_fuer_informatik",
+    "name": "Lineare Algebra für Informatik",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "grundlagen_des_datenschutzrechts",
+    "name": "Grundlagen des Datenschutzrechts",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "vertiefung_theoretische_informatik",
+    "name": "Vertiefung Theoretische Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "architektur_eingebetteter_systeme",
+    "name": "Architektur eingebetteter Systeme",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "funktionale_programmierung",
+    "name": "Funktionale Programmierung",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "mensch_computer_interaktion",
+    "name": "Mensch-Computer Interaktion",
+    "lp": 6,
+    "aliases": [
+      "Human Computer Interaction I"
+    ]
+  },
+  {
+    "id": "proseminar_theoretische_informatik",
+    "name": "Proseminar: Theoretische Informatik",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "analysis_ii",
+    "name": "Analysis II",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "lineare_algebra_ii",
+    "name": "Lineare Algebra II",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "computerorientierte_mathematik_ii",
+    "name": "Computerorientierte Mathematik II",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "stochastik_i",
+    "name": "Stochastik I",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "topics_in_stochastic_processes_and_machine_learning",
+    "name": "Topics in Stochastic Processes and Machine Learning",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "methodik_klinischer_studien",
+    "name": "Methodik klinischer Studien",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "complex_data_analysis_in_physiology",
+    "name": "Complex Data Analysis in Physiology",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "complex_systems_in_bioinformatics",
+    "name": "Complex Systems in Bioinformatics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "complex_systems_in_bioinformatics_seminar",
+    "name": "Complex Systems in Bioinformatics (Seminar)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "machine_learning_and_ai_in_the_life_sciences",
+    "name": "Machine Learning and AI in the Life Sciences: Methods and Applications",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "computer_vision_for_biomedical_images",
+    "name": "Computer vision for biomedical images",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "deep_learning_for_biomedical_applications",
+    "name": "Deep Learning for biomedical applications",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "journal_club_computational_biology",
+    "name": "Journal Club Computational Biology",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "journal_club_public_health_data_science",
+    "name": "Journal Club: Public Health Data Science",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_chat_search_and_summaries_llms",
+    "name": "Softwareprojekt: Chat, Search and Summaries: Smarter Apps with LLMs",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "konzepte_der_programmierung",
+    "name": "Konzepte der Programmierung",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "diskrete_strukturen_fuer_informatik",
+    "name": "Diskrete Strukturen für Informatik",
+    "lp": 9,
+    "aliases": [
+      "Diskrete Strukturen für (Bio-)Informatik"
+    ]
+  },
+  {
+    "id": "auswirkungen_der_informatik",
+    "name": "Auswirkungen der Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "rechnerarchitektur",
+    "name": "Rechnerarchitektur",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "grundlagen_der_theoretischen_informatik",
+    "name": "Grundlagen der Theoretischen Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "nebenlaeufige_parallele_und_verteilte_programmierung",
+    "name": "Nebenläufige, parallele und verteilte Programmierung",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "analysis_fuer_informatik",
+    "name": "Analysis für Informatik",
+    "lp": 9,
+    "aliases": [
+      "Analysis für Informatik und Bioinformatik"
+    ]
+  },
+  {
+    "id": "datenvisualisierung",
+    "name": "Datenvisualisierung",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "maschinelles_lernen",
+    "name": "Maschinelles Lernen",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "aktuelle_forschungsthemen_in_der_informatik",
+    "name": "Aktuelle Forschungsthemen in der Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "vertiefte_aspekte_der_informatik",
+    "name": "Vertiefte Aspekte der Informatik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_mobilkommunikation",
+    "name": "Softwareprojekt: Mobilkommunikation",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_coding_ixd",
+    "name": "Softwareprojekt: Coding IxD",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "softwareprojekt_maschinelles_lernen_fur_lebenswissenschaftliche_daten",
+    "name": "Softwareprojekt: Maschinelles Lernen für Lebenswissenschaftliche Daten",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_ai_methods_and_dynamical_systems_in_mathematics_planning_and_sustainability_towards_critical_mathematical_economics",
+    "name": "Seminar: AI-methods and Dynamical Systems in Mathematics, Planning and Sustainability - Towards Critical Mathematical Economics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "projektseminar_datenverwaltung_informatik_und_archaologie",
+    "name": "Projektseminar: Datenverwaltung - Informatik und Archäologie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_kunstliche_intelligenz_autonome_fahrzeuge",
+    "name": "Seminar/Proseminar: Künstliche Intelligenz - Autonome Fahrzeuge",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_adabiatische_quantenalgorithmen",
+    "name": "Seminar: Adabiatische Quantenalgorithmen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "neue_und_alte_fehler_in_ml_und_datenanalyse",
+    "name": "Neue (und alte) Fehler in ML und Datenanalyse",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "secure_software_engineering",
+    "name": "Secure Software Engineering",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "datenkompression",
+    "name": "Datenkompression",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "kryptowahrungen_und_blockchain",
+    "name": "Kryptowährungen und Blockchain",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "integrative_analyse_lebenswissenschaftlicher_daten_und_einbeziehung_von_vorwissen",
+    "name": "Integrative Analyse lebenswissenschaftlicher Daten und Einbeziehung von Vorwissen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_aspekte_der_datenverwaltung_geospatial_databases",
+    "name": "Spezielle Aspekte der Datenverwaltung: Geospatial Databases",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "projektmanagement_in_agilen_umgebungen_teil_1_wise",
+    "name": "Projektmanagement in agilen Umgebungen Teil 1 (WiSe)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_post_quanten_kryptographie",
+    "name": "Seminar/Proseminar: Post-Quanten-Kryptographie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "kryptoanalyse_symmetrischer_verfahren",
+    "name": "Kryptoanalyse symmetrischer Verfahren",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "post_quantum_kryptographie_gitterverfahren",
+    "name": "Post-Quantum-Kryptographie: Gitterverfahren",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "elliptic_curve_cryptography",
+    "name": "Elliptic Curve Cryptography",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "multiplicative_weights_algorithms_optimization_and_learning",
+    "name": "Multiplicative Weights - Algorithms, Optimization, and Learning",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_proseminar_technische_informatik",
+    "name": "Seminar/Proseminar: Technische Informatik",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "proseminar_interactive_data_visualization",
+    "name": "Proseminar: Interactive Data Visualization",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "proseminar_data_algorithms_and_society",
+    "name": "Proseminar: Data, Algorithms and Society",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "statistik_fur_kleine_fallzahlen",
+    "name": "Statistik für kleine Fallzahlen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "computerorientierte_mathematik_i",
+    "name": "Computerorientierte Mathematik I",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "numerik_i",
+    "name": "Numerik I",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "funktionalanalysis",
+    "name": "Funktionalanalysis",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "stochastik_ii",
+    "name": "Stochastik II",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "einfuehrung_in_die_physik",
+    "name": "Einführung in die Physik",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "elektrodynamik_und_optik",
+    "name": "Elektrodynamik und Optik",
+    "lp": 8,
+    "aliases": [
+      "Experimentalphysik 2",
+      "Elektrodynamik und Optik (Exp.2)"
+    ]
+  },
+  {
+    "id": "grundlagen_der_mess_und_labortechnik",
+    "name": "Grundlagen der Mess- und Labortechnik",
+    "lp": 16,
+    "aliases": [
+      "Grundpraktikum",
+      "GP I",
+      "GP II"
+    ]
+  },
+  {
+    "id": "struktur_der_materie",
+    "name": "Struktur der Materie",
+    "lp": 16,
+    "aliases": [
+      "Festkörperphysik",
+      "Atom- und Molekülphysik"
+    ]
+  },
+  {
+    "id": "methodenpraktikum",
+    "name": "Methodenpraktikum",
+    "lp": 6,
+    "aliases": [
+      "Fortgeschrittenenpraktikum"
+    ]
+  },
+  {
+    "id": "analytische_mechanik",
+    "name": "Analytische Mechanik",
+    "lp": 8,
+    "aliases": [
+      "Theo2"
+    ]
+  },
+  {
+    "id": "quantenmechanik",
+    "name": "Quantenmechanik",
+    "lp": 12,
+    "aliases": []
+  },
+  {
+    "id": "theoretische_elektrodynamik",
+    "name": "Theoretische Elektrodynamik",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "lineare_algebra_fuer_physiker",
+    "name": "Lineare Algebra für Physiker",
+    "lp": 8,
+    "aliases": [
+      "Lineare Algebra (Physik)"
+    ]
+  },
+  {
+    "id": "analysis_fuer_die_physik",
+    "name": "Analysis für die Physik",
+    "lp": 16,
+    "aliases": [
+      "Mathematik für Physiker I",
+      "Mathematik für die Physik 3",
+      "Analysis 1 (Physik)",
+      "Analysis 2 (Physik)"
+    ]
+  },
+  {
+    "id": "biophysik",
+    "name": "Biophysik",
+    "lp": 10,
+    "aliases": [
+      "Biophysik für Bachelor"
+    ]
+  },
+  {
+    "id": "astronomie_und_astrophysik",
+    "name": "Astronomie und Astrophysik",
+    "lp": 10,
+    "aliases": [
+      "Einführung in die Astronomie und Astrophysik"
+    ]
+  },
+  {
+    "id": "kern_und_elementarteilchenphysik",
+    "name": "Kern- und Elementarteilchenphysik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "computerphysik",
+    "name": "Computerphysik",
+    "lp": 10,
+    "aliases": [
+      "Computergestützte Methoden der exakten Naturwissenschaften"
+    ]
+  },
+  {
+    "id": "ausgewaehlte_kapitel_der_physik",
+    "name": "Ausgewählte Kapitel der Physik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_themen_der_physik_a",
+    "name": "Spezielle Themen der Physik A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "spezielle_themen_der_physik_b",
+    "name": "Spezielle Themen der Physik B",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "projektpraktikum_physik",
+    "name": "Projektpraktikum (Physik)",
+    "lp": 5,
+    "aliases": [
+      "Projektpraktikum"
+    ]
+  },
+  {
+    "id": "praesentationstechniken_physik",
+    "name": "Präsentationstechniken (Physik)",
+    "lp": 5,
+    "aliases": [
+      "Präsentationstechniken"
+    ]
+  },
+  {
+    "id": "erneuerbare_energien_im_kontext_globaler_klimaveraenderungen",
+    "name": "Erneuerbare Energien im Kontext globaler Klimaveränderungen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "zwischen_tafel_computer_und_labor_physik_als_wissenschaftskultur",
+    "name": "Zwischen Tafel, Computer und Labor: Physik als Wissenschaftskultur",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "biophysik_grundlagen_des_lebens",
+    "name": "Biophysik: Grundlagen des Lebens",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "wer_gehoert_dazu_science_identity_und_zugehoerigkeit_im_studium",
+    "name": "Wer gehört dazu? Science Identity und Zugehörigkeit im Studium",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "erneuerbare_energien",
+    "name": "Erneuerbare Energien",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "praesentationstechniken_im_allgemeinen_und_in_der_spektroskopie",
+    "name": "Präsentationstechniken im Allgemeinen und in der Spektroskopie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "advanced_laboratory_course",
+    "name": "Advanced Laboratory Course",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "selected_topics_scientific_presentations",
+    "name": "Selected Topics: Scientific Presentations",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "advanced_quantum_mechanics",
+    "name": "Advanced Quantum Mechanics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "statistical_physics_and_thermodynamics",
+    "name": "Statistical Physics and Thermodynamics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_statistical_physics",
+    "name": "Advanced Statistical Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "quantum_field_theory_and_many_body_physics",
+    "name": "Quantum Field Theory and Many-Body Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_solid_state_physics",
+    "name": "Advanced Solid State Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_atomic_and_molecular_physics",
+    "name": "Advanced Atomic and Molecular Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_biophysics",
+    "name": "Advanced Biophysics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "theoretical_condensed_matter_physics",
+    "name": "Theoretical Condensed Matter Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "nanophysics",
+    "name": "Nanophysics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "magnetism_and_spin_electronics",
+    "name": "Magnetism and Spin Electronics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "surface_science",
+    "name": "Surface Science",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "theory_of_light_matter_interaction",
+    "name": "Theory of Light-Matter Interaction",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_optics",
+    "name": "Advanced Optics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "ultrafast_spectroscopy_and_nonlinear_optics",
+    "name": "Ultrafast Spectroscopy and Nonlinear Optics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "photobiophysics",
+    "name": "Photobiophysics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "special_topics_in_molecular_biophysics",
+    "name": "Special Topics in Molecular Biophysics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "advanced_biospectroscopy",
+    "name": "Advanced Biospectroscopy",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "semiconductor_physics",
+    "name": "Semiconductor Physics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "advanced_astronomy_and_astrophysics",
+    "name": "Advanced Astronomy and Astrophysics",
+    "lp": 12,
+    "aliases": []
+  },
+  {
+    "id": "quantum_information_theory",
+    "name": "Quantum Information Theory",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "advanced_computational_physics",
+    "name": "Advanced Computational Physics",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "signal_analysis_for_physicist",
+    "name": "Signal Analysis for Physicist",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "physics_and_chemistry_of_sustainability_i_renewable_energy",
+    "name": "Physics and Chemistry of Sustainability I – Renewable Energy",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "science_studies_in_physics",
+    "name": "Science Studies in Physics",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "science_studies_communication",
+    "name": "Science Studies Communication",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "modern_theoretical_physics_a",
+    "name": "Modern Theoretical Physics A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "modern_theoretical_physics_b",
+    "name": "Modern Theoretical Physics B",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "modern_theoretical_physics_c",
+    "name": "Modern Theoretical Physics C",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "modern_experimental_physics_a",
+    "name": "Modern Experimental Physics A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "modern_experimental_physics_b",
+    "name": "Modern Experimental Physics B",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "modern_experimental_physics_c",
+    "name": "Modern Experimental Physics C",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "modern_physics_scientific_presentation",
+    "name": "Modern Physics: Scientific Presentation",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "scientific_specialization",
+    "name": "Scientific Specialization",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "methodology_and_project_planning",
+    "name": "Methodology and Project Planning",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "physical_platforms_of_quantum_information",
+    "name": "Physical Platforms of Quantum Information",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "advanced_statistical_and_stochastic_physics_of_equilibrium_and_non_equilibrium_many_body_systems",
+    "name": "Advanced Statistical and Stochastic Physics of Equilibrium and Non-Equilibrium Many-Body Systems",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "methods_for_reaching_cold_and_ultracold_temperatures_in_the_gas_phase",
+    "name": "Methods for reaching cold and ultracold temperatures in the gas-phase",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "chirality_induced_spin_selectivity",
+    "name": "Chirality-induced spin selectivity",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "molecular_simulations_and_theoretical_biophysics",
+    "name": "Molecular Simulations and Theoretical Biophysics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "quantum_sensing_and_spin_based_technologies_in_biophysics",
+    "name": "Quantum Sensing and Spin-Based Technologies in Biophysics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "plasma_astrophysics",
+    "name": "Plasma Astrophysics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "physics_of_the_interstellar_and_intergalactic_medium",
+    "name": "Physics of the interstellar and intergalactic medium",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "astrophysical_practical_course",
+    "name": "Astrophysical practical course",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "stellar_winds",
+    "name": "Stellar Winds",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "molecular_astrophysics_of_stars_and_galaxies",
+    "name": "Molecular Astrophysics of Stars and Galaxies",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "computational_astrophysical_practical_course_numerikum",
+    "name": "Computational astrophysical practical course (Numerikum)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "gender_and_diversity_in_physics",
+    "name": "Gender and Diversity in Physics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "the_development_of_quantum_theory_since_1925",
+    "name": "The Development of Quantum Theory since 1925",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "science_technology_and_society",
+    "name": "Science, Technology & Society",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "science_as_social_practice_an_introduction_to_science_studies",
+    "name": "Science as social practice. An Introduction to Science Studies",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "gender_and_science_an_introduction",
+    "name": "Gender and Science: An Introduction",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "open_quantum_systems_and_measurement_theory",
+    "name": "Open quantum systems and measurement theory",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "foundations_of_molecular_simulation",
+    "name": "Foundations of Molecular Simulation",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "quantum_measurements",
+    "name": "Quantum Measurements",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "quantum_error_correction",
+    "name": "Quantum Error Correction",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "special_topics_in_molecular_biophysics_biophysics_of_metalloenzymes",
+    "name": "Special Topics in Molecular Biophysics: Biophysics of Metalloenzymes",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "modern_x_ray_and_neutron_scattering_methods",
+    "name": "Modern x-ray and neutron scattering methods for the determination of the structure and symmetry of solids",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "experimental_quantum_optics",
+    "name": "Experimental Quantum Optics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "ultrafast_laserphysics",
+    "name": "Ultrafast Laserphysics",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "ultrafast_nanoscience",
+    "name": "Ultrafast Nanoscience",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "photon_school",
+    "name": "Photon School",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "advanced_spectroscopy",
+    "name": "Advanced Spectroscopy",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "electron_spin_resonance_spectroscopy",
+    "name": "Electron Spin Resonance Spectroscopy",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "physics_of_solar_cells_and_its_characterisation",
+    "name": "Physics of Solar Cells and its Characterisation",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "algorithmische_bioinformatik_i_und_numerik",
+    "name": "Algorithmische Bioinformatik I und Numerik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "praxis_der_algorithmischen_bioinformatik_i_und_numerik",
+    "name": "Praxis der Algorithmischen Bioinformatik I und Numerik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "algorithmische_bioinformatik_ii",
+    "name": "Algorithmische Bioinformatik II",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "algorithmische_bioinformatik_iii_und_statistik",
+    "name": "Algorithmische Bioinformatik III und Statistik",
+    "lp": 7,
+    "aliases": []
+  },
+  {
+    "id": "wissenschaftliches_arbeiten_in_der_bioinformatik",
+    "name": "Wissenschaftliches Arbeiten in der Bioinformatik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "statistik_fuer_bioinformatik_i",
+    "name": "Statistik für Bioinformatik I",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "statistik_fuer_bioinformatik_ii_und_maschinelles_lernen",
+    "name": "Statistik für Bioinformatik II und Maschinelles Lernen",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "allgemeine_chemie",
+    "name": "Allgemeine Chemie",
+    "lp": 7,
+    "aliases": [
+      "Chemie für Studierende der Veterinärmedizin, Biologie und Bioinformatik",
+      "Praktikum Allgemeine Chemie für Studierende der Bioinformatik"
+    ]
+  },
+  {
+    "id": "allgemeine_biologie",
+    "name": "Allgemeine Biologie",
+    "lp": 5,
+    "aliases": [
+      "Allgemeine Biologie für Bioinformatik - Teil Botanik",
+      "Allgemeine Biologie für Bioinformatik - Teil Zoologie"
+    ]
+  },
+  {
+    "id": "molekularbiologie_und_biochemie_i",
+    "name": "Molekularbiologie und Biochemie I",
+    "lp": 6,
+    "aliases": [
+      "Biochemie I - Grundlagen der Biochemie"
+    ]
+  },
+  {
+    "id": "molekularbiologie_und_biochemie_ii",
+    "name": "Molekularbiologie und Biochemie II",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "molekularbiologie_und_biochemie_iii",
+    "name": "Molekularbiologie und Biochemie III",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "genetik_und_genomforschung",
+    "name": "Genetik und Genomforschung",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "medizinische_physiologie",
+    "name": "Medizinische Physiologie",
+    "lp": 7,
+    "aliases": []
+  },
+  {
+    "id": "neurobiologie",
+    "name": "Neurobiologie",
+    "lp": 5,
+    "aliases": [
+      "Einführung in die Neurobiologie und Neuroinformatik für Studierende der Bioinformatik",
+      "Neurobiologie für Studierende der Bioinformatik"
+    ]
+  },
+  {
+    "id": "wahlbereich_bioinformatik",
+    "name": "Wahlbereich (B.Sc. Bioinformatik)",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "projektmanagement_im_softwarebereich",
+    "name": "Projektmanagement im Softwarebereich",
+    "lp": 10,
+    "aliases": [
+      "Softwarepraktikum"
+    ]
+  },
+  {
+    "id": "berufspraktikum_bioinformatik",
+    "name": "Berufspraktikum (B.Sc. Bioinformatik)",
+    "lp": 10,
+    "aliases": [
+      "Berufspraktikum für Bioinformatik"
+    ]
+  },
+  {
+    "id": "abv_wahlbereich_bioinformatik",
+    "name": "ABV-Wahlbereich (B.Sc. Bioinformatik)",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "einfuehrung_in_cpp",
+    "name": "Einführung in C++",
+    "lp": 5,
+    "aliases": [
+      "C++ Blockkurs"
+    ]
+  },
+  {
+    "id": "journal_club_biomedical_data_science",
+    "name": "Journal Club: Biomedical Data Science",
+    "lp": null,
+    "aliases": []
+  }
+]

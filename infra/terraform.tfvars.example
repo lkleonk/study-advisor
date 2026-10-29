@@ -1,0 +1,30 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+# Choose a short value that makes globally named resources unique.
+name_suffix = "lk123"
+
+project_name = "cs-modulio"
+environment  = "prod"
+location     = "West Europe"
+
+# First backend apply: false. After pushing the initial backend image and adding
+# the Key Vault secret, change it to true. The Storage frontend can be created
+# during either phase.
+deploy_backend   = false
+deploy_frontend  = true
+backend_image_tag = "initial"
+
+frontend_origin          = "https://unimodulio.com"
+additional_frontend_origins = []
+# Optional: custom domain on the frontend Storage account. Create the
+# `asverify` CNAME (DNS only) first; see infra/README.md.
+frontend_custom_domain = "unimodulio.com"
+academiccloud_secret_name = "academiccloud-api-key"
+academiccloud_model       = "qwen3-30b-a3b-instruct-2507"
+
+daily_global_actions = 150
+daily_user_actions   = 60
+
+tags = {
+  owner = "your-team"
+}

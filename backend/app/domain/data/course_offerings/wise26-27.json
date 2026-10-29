@@ -1,0 +1,3170 @@
+{
+  "semester": "wise26-27",
+  "offerings": [
+    {
+      "course_id": "praktiken_professioneller_softwareentwicklung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117244?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_mobilkommunikation",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/K63 Hardwarepraktikum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117210?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_semantische_technologien",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117268?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_coding_ixd",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117316?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_amos_projekt",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117366?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_secure_identity",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117419?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_maschinelles_lernen_fur_lebenswissenschaftliche_daten",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117451?sm=1039762"
+    },
+    {
+      "course_id": "seminar_ai_methods_and_dynamical_systems_in_mathematics_planning_and_sustainability_towards_critical_mathematical_economics",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117955?sm=1039762"
+    },
+    {
+      "course_id": "projektseminar_datenverwaltung_informatik_und_archaologie",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117174?sm=1039762"
+    },
+    {
+      "course_id": "seminar_beitrage_zum_software_engineering",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117192?sm=1039762"
+    },
+    {
+      "course_id": "seminar_proseminar_kunstliche_intelligenz_autonome_fahrzeuge",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117248?sm=1039762"
+    },
+    {
+      "course_id": "seminar_adabiatische_quantenalgorithmen",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117344?sm=1039762"
+    },
+    {
+      "course_id": "projektseminar_probleme_bei_planungssystemen_der_nachsten_generation_mit_schwerpunkt_auf_navigationssystemen",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117386?sm=1039762"
+    },
+    {
+      "course_id": "seminar_netzwerke_dynamische_modelle_und_ml_fur_datenintegration_in_den_lebenswissenschaften",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-06",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/137 Konferenzraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117465?sm=1039762"
+    },
+    {
+      "course_id": "neue_und_alte_fehler_in_ml_und_datenanalyse",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117489?sm=1039762"
+    },
+    {
+      "course_id": "secure_software_engineering",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117604?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117340?sm=1039762"
+    },
+    {
+      "course_id": "datenkompression",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117623?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117378?sm=1039762"
+    },
+    {
+      "course_id": "datenvisualisierung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117631?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117394?sm=1039762"
+    },
+    {
+      "course_id": "kryptowahrungen_und_blockchain",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/K40 Multimediaraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117636?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117399?sm=1039762"
+    },
+    {
+      "course_id": "integrative_analyse_lebenswissenschaftlicher_daten_und_einbeziehung_von_vorwissen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117657?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117503?sm=1039762"
+    },
+    {
+      "course_id": "spezielle_aspekte_der_datenverwaltung_geospatial_databases",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117577?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117182?sm=1039762"
+    },
+    {
+      "course_id": "machine_learning_for_data_science",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117647?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117429?sm=1039762"
+    },
+    {
+      "course_id": "projektmanagement_in_agilen_umgebungen_teil_1_wise",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117460?sm=1039762"
+    },
+    {
+      "course_id": "hoehere_algorithmik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117567?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117164?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_anwendungen_von_algorithmen",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117197?sm=1039762"
+    },
+    {
+      "course_id": "seminar_proseminar_post_quanten_kryptographie",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117440?sm=1039762"
+    },
+    {
+      "course_id": "kryptoanalyse_symmetrischer_verfahren",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117599?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117336?sm=1039762"
+    },
+    {
+      "course_id": "post_quantum_kryptographie_gitterverfahren",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117617?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117360?sm=1039762"
+    },
+    {
+      "course_id": "elliptic_curve_cryptography",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117669?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117518?sm=1039762"
+    },
+    {
+      "course_id": "multiplicative_weights_algorithms_optimization_and_learning",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117596?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117302?sm=1039762"
+    },
+    {
+      "course_id": "kryptographie_und_sicherheit_in_verteilten_systemen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117574?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117171?sm=1039762"
+    },
+    {
+      "course_id": "betriebssysteme",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117095?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117089?sm=1039762"
+    },
+    {
+      "course_id": "telematik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117583?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117189?sm=1039762"
+    },
+    {
+      "course_id": "softwareprojekt_verteilte_systeme",
+      "type": "swp",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117292?sm=1039762"
+    },
+    {
+      "course_id": "seminar_proseminar_technische_informatik",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/K63 Hardwarepraktikum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117232?sm=1039762"
+    },
+    {
+      "course_id": "seminar_proseminar_telematik",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117411?sm=1039762"
+    },
+    {
+      "course_id": "konzepte_der_programmierung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "Gr. Hörsaal (Raum B.001) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "Elisabeth-Schiemann-Hörsaal (R 014) (Königin-Luise-Str. 12 / 16)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117101?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1099673?sm=1039762"
+    },
+    {
+      "course_id": "programmierpraktikum_bsc",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-20",
+          "room": "T9/K38 Rechnerpoolraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117478?sm=1039762"
+    },
+    {
+      "course_id": "wissenschaftliches_arbeiten_in_der_informatik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117330?sm=1039762"
+    },
+    {
+      "course_id": "proseminar_theoretische_informatik",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117151?sm=1039762"
+    },
+    {
+      "course_id": "proseminar_interactive_data_visualization",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "Virtueller Raum 01"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117264?sm=1039762"
+    },
+    {
+      "course_id": "proseminar_data_algorithms_and_society",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1119251?sm=1039762"
+    },
+    {
+      "course_id": "diskrete_strukturen_fuer_informatik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "Gr. Hörsaal (Raum B.001) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "Gr. Hörsaal (Raum B.001) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "KöLu24-26/SR 017 (vorrang Schülerlabor) (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "KöLu24-26/SR 017 (vorrang Schülerlabor) (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117107?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1099680?sm=1039762"
+    },
+    {
+      "course_id": "auswirkungen_der_informatik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 115 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117551?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117142?sm=1039762"
+    },
+    {
+      "course_id": "rechnerarchitektur",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/K38 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/K38 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/K48 Rechnerpoolraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117524?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117115?sm=1039762"
+    },
+    {
+      "course_id": "grundlagen_der_theoretischen_informatik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-19",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117540?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117131?sm=1039762"
+    },
+    {
+      "course_id": "nebenlaeufige_parallele_und_verteilte_programmierung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/049 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117608?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117351?sm=1039762"
+    },
+    {
+      "course_id": "analysis_fuer_informatik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117533?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117124?sm=1039762"
+    },
+    {
+      "course_id": "maschinelles_lernen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117654?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117483?sm=1039762"
+    },
+    {
+      "course_id": "analysis_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118101?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1118343?sm=1039762"
+    },
+    {
+      "course_id": "lineare_algebra_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 031 (Arnimallee 7)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118351?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1118350?sm=1039762"
+    },
+    {
+      "course_id": "computerorientierte_mathematik_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117997?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117676?sm=1039762"
+    },
+    {
+      "course_id": "numerik_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118110?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117811?sm=1039762"
+    },
+    {
+      "course_id": "funktionalanalysis",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 115 (Arnimallee 3-5)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118335?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1118326?sm=1039762"
+    },
+    {
+      "course_id": "stochastik_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118371?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1118362?sm=1039762"
+    },
+    {
+      "course_id": "introduction_to_profile_areas",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-30",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1107211?sm=1039762"
+    },
+    {
+      "course_id": "statistics_for_data_science",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1117651?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117436?sm=1039762"
+    },
+    {
+      "course_id": "programming_for_data_science",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/046 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117433?sm=1039762"
+    },
+    {
+      "course_id": "statistik_fur_kleine_fallzahlen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1108027?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1108022?sm=1039762"
+    },
+    {
+      "course_id": "einfuehrung_in_die_physik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "09:00",
+          "end": "11:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14) 1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084029?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084028?sm=1039762"
+    },
+    {
+      "course_id": "analysis_fuer_die_physik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118340?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117752?sm=1039762"
+    },
+    {
+      "course_id": "grundlagen_der_mess_und_labortechnik",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "18:00",
+          "room": "mehrere Räume, siehe LV-Details"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084023?sm=1039762"
+    },
+    {
+      "course_id": "methodenpraktikum",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "20:00",
+          "room": "1.3.48 Seminarraum T3 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084017?sm=1039762"
+    },
+    {
+      "course_id": "quantenmechanik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "0.3.12 Großer Hörsaal (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "18:00",
+          "end": "20:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084049?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084035?sm=1039762"
+    },
+    {
+      "course_id": "lineare_algebra_fuer_physiker",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118059?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117748?sm=1039762"
+    },
+    {
+      "course_id": "biophysik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-22",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084037?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084036?sm=1039762"
+    },
+    {
+      "course_id": "astronomie_und_astrophysik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084039?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084038?sm=1039762"
+    },
+    {
+      "course_id": "computerphysik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.3.01 PC-Pool (Arnimallee 14) 1.3.50 PC-Pool (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.3.01 PC-Pool (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084042?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084040?sm=1039762"
+    },
+    {
+      "course_id": "biophysik_grundlagen_des_lebens",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "18:00",
+          "end": "20:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084081?sm=1039762"
+    },
+    {
+      "course_id": "wer_gehoert_dazu_science_identity_und_zugehoerigkeit_im_studium",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1111234?sm=1039762"
+    },
+    {
+      "course_id": "projektpraktikum_physik",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-22",
+          "start": "09:00",
+          "end": "12:00",
+          "room": "GP-Räume (Schwendenerstr. 1)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084045?sm=1039762"
+    },
+    {
+      "course_id": "erneuerbare_energien",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1099120?sm=1039762"
+    },
+    {
+      "course_id": "praesentationstechniken_im_allgemeinen_und_in_der_spektroskopie",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084078?sm=1039762"
+    },
+    {
+      "course_id": "advanced_laboratory_course",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "19:00",
+          "room": "FP-Räume (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084056?sm=1039762"
+    },
+    {
+      "course_id": "physical_platforms_of_quantum_information",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1099137?sm=1039762"
+    },
+    {
+      "course_id": "chirality_induced_spin_selectivity",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084093?sm=1039762"
+    },
+    {
+      "course_id": "molecular_simulations_and_theoretical_biophysics",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084087?sm=1039762"
+    },
+    {
+      "course_id": "quantum_sensing_and_spin_based_technologies_in_biophysics",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084119?sm=1039762"
+    },
+    {
+      "course_id": "advanced_quantum_mechanics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084060?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084059?sm=1039762"
+    },
+    {
+      "course_id": "advanced_statistical_physics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084064?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084063?sm=1039762"
+    },
+    {
+      "course_id": "advanced_solid_state_physics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-21",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "1.3.48 Seminarraum T3 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.26 Seminarraum E1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084062?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084061?sm=1039762"
+    },
+    {
+      "course_id": "advanced_atomic_and_molecular_physics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084103?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084102?sm=1039762"
+    },
+    {
+      "course_id": "stellar_winds",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084077?sm=1039762"
+    },
+    {
+      "course_id": "molecular_astrophysics_of_stars_and_galaxies",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084089?sm=1039762"
+    },
+    {
+      "course_id": "computational_astrophysical_practical_course_numerikum",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "18:00",
+          "room": "TU Berlin, Hardenbergstr. 36, Eugen-Wigner-Gebäude, Raum EW 809/810"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084076?sm=1039762"
+    },
+    {
+      "course_id": "advanced_computational_physics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "0.1.01 Hörsaal B (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084101?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084100?sm=1039762"
+    },
+    {
+      "course_id": "physics_and_chemistry_of_sustainability_i_renewable_energy",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084084?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084083?sm=1039762"
+    },
+    {
+      "course_id": "gender_and_science_an_introduction",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "18:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084075?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084074?sm=1039762"
+    },
+    {
+      "course_id": "science_technology_and_society",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.1.53 Seminarraum E2 (Arnimallee 14)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1108922?sm=1039762"
+    },
+    {
+      "course_id": "foundations_of_molecular_simulation",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-21",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118172?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117980?sm=1039762"
+    },
+    {
+      "course_id": "quantum_measurements",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-23",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1108389?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1108388?sm=1039762"
+    },
+    {
+      "course_id": "quantum_error_correction",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.3.14 Hörsaal A (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "1.4.03 Seminarraum T2 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084099?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084098?sm=1039762"
+    },
+    {
+      "course_id": "ultrafast_laserphysics",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2027-03-01",
+          "start": "09:00",
+          "end": "13:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2027-03-01",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084058?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084057?sm=1039762"
+    },
+    {
+      "course_id": "special_topics_in_molecular_biophysics_biophysics_of_metalloenzymes",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-23",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.1.16 FB-Raum (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1099129?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1099127?sm=1039762"
+    },
+    {
+      "course_id": "ultrafast_nanoscience",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 115 (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "09:00",
+          "end": "10:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1109798?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1109797?sm=1039762"
+    },
+    {
+      "course_id": "photon_school",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2027-03-15",
+          "start": "08:00",
+          "end": "17:00"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2027-03-22",
+          "start": "08:00",
+          "end": "17:00"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1112809?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1112803?sm=1039762"
+    },
+    {
+      "course_id": "electron_spin_resonance_spectroscopy",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "1.4.31 Seminarraum E3 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084080?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084079?sm=1039762"
+    },
+    {
+      "course_id": "physics_of_solar_cells_and_its_characterisation",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "1.3.21 Seminarraum T1 (Arnimallee 14)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1084086?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1084085?sm=1039762"
+    },
+    {
+      "course_id": "algorithmische_bioinformatik_i_und_numerik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1098938?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098892?sm=1039762"
+    },
+    {
+      "course_id": "praxis_der_algorithmischen_bioinformatik_i_und_numerik",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-19",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/017 Frontalunterrichtsraum (Bioinf) (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/017 Frontalunterrichtsraum (Bioinf) (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-19",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/017 Frontalunterrichtsraum (Bioinf) (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098898?sm=1039762"
+    },
+    {
+      "course_id": "algorithmische_bioinformatik_iii_und_statistik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/055 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1098940?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098896?sm=1039762"
+    },
+    {
+      "course_id": "statistik_fuer_bioinformatik_ii_und_maschinelles_lernen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "Charité, Sauerbruchweg 3: SR 402, SR 403, SR 404"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1098958?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098950?sm=1039762"
+    },
+    {
+      "course_id": "allgemeine_chemie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Gr. Hörsaal (Raum B.001) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Gr. Hörsaal (Raum B.001) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056058?sm=1039762"
+    },
+    {
+      "course_id": "allgemeine_biologie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "Elisabeth-Schiemann-Hörsaal (R 014) (Königin-Luise-Str. 12 / 16)"
+        },
+        {
+          "date": "2026-11-26",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "Hs Zoologie (R 110) (Königin-Luise-Str. 1 / 3)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1065163?sm=1039762"
+    },
+    {
+      "course_id": "molekularbiologie_und_biochemie_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "Hs Kristallographie (Takustr. 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "SR 23.03 (Takustr. 3)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "SR 34.16/17 (Takustr. 3) SR 14.01 (Takustr. 3)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "12:00",
+          "end": "14:00"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "SR 14.01 (Takustr. 3)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056197?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056196?sm=1039762"
+    },
+    {
+      "course_id": "molekularbiologie_und_biochemie_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:15",
+          "end": "11:45",
+          "room": "Hörsaal/Thielallee 67 (Thielallee 67)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-21",
+          "start": "13:15",
+          "end": "14:45",
+          "room": "Hörsaal/Thielallee 67 (Thielallee 67)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056506?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056505?sm=1039762"
+    },
+    {
+      "course_id": "genetik_und_genomforschung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "13:00",
+          "end": "15:00",
+          "room": "Hs Zoologie (R 110) (Königin-Luise-Str. 1 / 3)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2027-01-27",
+          "start": "13:00",
+          "end": "16:00",
+          "room": "Ehrenberg-Saal (R 126-132) (Königin-Luise-Str. 1 / 3)"
+        }
+      ],
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1069051?sm=1039762",
+      "url": "https://www.fu-berlin.de/vv/de/lv/1069050?sm=1039762"
+    },
+    {
+      "course_id": "neurobiologie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "12:15",
+          "end": "13:45",
+          "room": "Gottlieb-Haberlandt-Hörsaal (R 005) (Königin-Luise-Str. 12 / 16)"
+        }
+      ],
+      "uebungen": [],
+      "uebung_url": null,
+      "url": "https://www.fu-berlin.de/vv/de/lv/1069052?sm=1039762"
+    },
+    {
+      "course_id": "wissenschaftliches_arbeiten_in_der_bioinformatik",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2027-02-22",
+          "room": "Charité"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1121312?sm=1039762"
+    },
+    {
+      "course_id": "journal_club_computational_biology",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-19",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/053 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098903?sm=1039762"
+    },
+    {
+      "course_id": "journal_club_biomedical_data_science",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/051 Seminarraum (Takustr. 9)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098934?sm=1039762"
+    },
+    {
+      "course_id": "journal_club_public_health_data_science",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098927?sm=1039762"
+    },
+    {
+      "course_id": "einfuehrung_in_cpp",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-09-28",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-09-28",
+          "start": "13:00",
+          "end": "17:00",
+          "room": "T9/K36 Rechnerpoolraum (Takustr. 9) T9/K38 Rechnerpoolraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-10-01",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1098908?sm=1039762"
+    }
+  ]
+}
