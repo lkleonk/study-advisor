@@ -34,7 +34,6 @@ CLASSIFIER_SCHEMA = {
 def heuristic_classify(message: str, extra_domain_terms: tuple[str, ...] = ()) -> str:
     lowered = _normalize_text(message)
     plan_intent_terms = [
-        "pruef",
         "check",
         "passt",
         "valid",
@@ -79,7 +78,11 @@ def heuristic_classify(message: str, extra_domain_terms: tuple[str, ...] = ()) -
     has_domain_signal = any(term in lowered for term in domain_terms)
     has_concrete_lp_list = lowered.count(" lp") >= 3
 
-    if (any(term in lowered for term in plan_intent_terms) or has_concrete_lp_list) and has_domain_signal:
+    # A request to "pruefe" a plan differs from nouns such as Pruefungsanmeldung.
+    has_plan_intent = bool(re.search(r"\b(?:ueber)?pruef(?:e|en|t)?\b", lowered)) or any(
+        term in lowered for term in plan_intent_terms
+    )
+    if (has_plan_intent or has_concrete_lp_list) and has_domain_signal:
         return "plan_check"
     if heuristic_needs_cross_university_rules(lowered):
         return "degree_question"

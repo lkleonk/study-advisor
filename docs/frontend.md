@@ -28,6 +28,11 @@ the project's `frontend/` directory.
   Its checklist-planning section explains course-to-module placement, preserving
   flexible slots for future courses, and external recognition; the module-slot
   lists come from the backend catalogue rather than frontend-owned data.
+  Additional M.Sc. Informatik sections cover rebooking completed modules,
+  professional-work recognition, exam registration, attempts/grade improvement,
+  and study abroad. They are advisory text with official sources and are included
+  in copied rules; the Study Plan's arithmetic verdict does not verify these
+  administrative conditions or perform any registration/recognition action.
 - `Course Registry`: read-only, locally filterable rendering of the selected
   degree's `GET /api/course-offerings` projection. It lists only courses present
   in the local semester-offering data and does not consume the request allowance.

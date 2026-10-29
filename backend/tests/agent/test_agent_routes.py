@@ -1,3 +1,6 @@
+import pytest
+
+from app.domain.degrees import get_degree
 from app.services.nodes.scope_classifier import (
     heuristic_classify,
     heuristic_needs_cross_university_rules,
@@ -61,6 +64,28 @@ def test_cross_university_heuristic_stays_off_for_unrelated_rules():
 
 def test_heuristic_classifier_detects_incremental_plan_information():
     assert heuristic_classify("I forgot about French (5 ECTS).") == "plan_check"
+
+
+@pytest.mark.parametrize("message", [
+    "Wie viele Prüfungsversuche habe ich?",
+    "Wie funktioniert die Prüfungsanmeldung?",
+    "Kann ich ein abgeschlossenes Modul umbuchen?",
+    "Can professional experience replace a Softwareprojekt?",
+    "How does grade improvement work?",
+    "What should I arrange before study abroad?",
+])
+def test_administrative_questions_fall_back_to_degree_guidance(message):
+    terms = get_degree("msc_informatik").prompts.fallback_domain_terms
+    assert heuristic_classify(message, terms) == "degree_question"
+
+
+@pytest.mark.parametrize("message", [
+    "Bitte prüf meinen Studienplan.",
+    "Prüfen Sie meinen Studienplan.",
+    "Bitte überprüfe: Master Informatik, Rechnersicherheit 10 LP.",
+])
+def test_german_plan_check_verbs_still_trigger_parsing(message):
+    assert heuristic_classify(message) == "plan_check"
 
 
 def _classify_as_plan_check(monkeypatch, degree_id):

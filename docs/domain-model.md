@@ -218,6 +218,22 @@ LP. A slot can have many eligible course alternatives without becoming reusable
 multiple times. The list is not a semester offering projection or an automatic
 recognition decision; the Prüfungsausschuss decides external equivalence.
 
+The catalogue also includes the always-available advisory sections
+`module-rebooking`, `professional-experience`, `exam-registration`,
+`exam-attempts-and-improvement`, and `study-abroad` (catalogue v3). They distinguish
+planning from rebooking completed modules, describe case-by-case professional
+work recognition and its enrollment-period exclusion, explain separate course
+and exam registration plus retake/improvement rules, and recommend advance
+study-abroad agreements. Sources are the SPO (§§10, 13) and the exam-board page,
+including its 31 October 2025 work-recognition clarification.
+
+These sections provide reference guidance to the UI, copied rules, and composer;
+they have no deterministic issue codes. The current plan schema lacks completion
+records, actual grades and exam attempts, employment/enrollment intervals,
+registrations, and recognition/agreement decisions. An arithmetic pass therefore
+cannot authorize rebooking, recognize a job, verify exam eligibility, or approve
+a study-abroad mapping.
+
 `is_bachelor_module` describes module level. Student-specific prior use is
 separate: `counted_in_bachelor` and `used_for_master_admission` are nullable
 booleans on `PlannedModule`. Confirmed reuse is an error even for Master-level

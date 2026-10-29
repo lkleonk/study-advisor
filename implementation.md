@@ -75,6 +75,7 @@ Phase 1 goal: backend-only LLM consultant for FU Berlin Informatik Master questi
 [x] Reject Bachelor/admission credit reuse at either module level; warn on unknown Bachelor-level credit history.
 [x] Check 60–65 LP graded taught modules and excluded project-management combinations.
 [x] Explain checklist module slots, dedicated vs. broad placements, preserving future options, and external recognition; generate slot names/LP from canonical data for display, copied rules, and chat context.
+[x] Add source-linked advisory guidance for completed-module rebooking, professional-work recognition, registration, exam attempts/grade improvement, and study abroad; route related questions to degree guidance without claiming automatic administrative checks.
 [x] Same exact module cannot count twice.
 [x] Return structured validation results: pass/fail/warning, missing LP, excess LP, explanation.
 

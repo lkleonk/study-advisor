@@ -1,3 +1,5 @@
+import pytest
+
 from fastapi.testclient import TestClient
 
 from app.domain.degrees.msc_informatik.program_rules import get_program_rules
@@ -41,6 +43,11 @@ def test_program_rules_endpoint_returns_catalogue():
         "informatics-area",
         "softwareprojekt",
         "wissenschaftliches-arbeiten",
+        "module-rebooking",
+        "professional-experience",
+        "exam-registration",
+        "exam-attempts-and-improvement",
+        "study-abroad",
     }
 
 
@@ -132,3 +139,65 @@ def test_checklist_planning_survives_cross_university_context_filter():
     assert "approval is not automatic" in context
     assert "count that target module repeatedly" in context
     assert "COURSES AT HU BERLIN AND TU BERLIN" not in context
+
+
+@pytest.mark.parametrize("section_id", [
+    "module-rebooking", "professional-experience", "exam-registration",
+    "exam-attempts-and-improvement", "study-abroad",
+])
+def test_administrative_guidance_is_available_without_cross_university_context(section_id):
+    section = section_by_id(section_id)
+    context = render_rules_context(
+        get_program_rules(), exclude_section_ids={CROSS_UNIVERSITY_RULE_SECTION_ID},
+    )
+    assert section.title.upper() in context
+    assert not section.related_issue_codes  # No automatic verdict without the relevant records.
+    assert section.sources and all(s.path.startswith("https://") for s in section.sources)
+
+
+def test_completed_module_rebooking_keeps_its_grade_restrictions():
+    text = " ".join(item.text for item in section_by_id("module-rebooking").items)
+    assert "only when A is ungraded" in text
+    assert "A completed graded A cannot be moved" in text
+    assert "grade 4.0" in text
+    assert "does not authorize a rebooking" in text
+
+
+def test_work_recognition_is_one_project_outside_enrollment_and_requires_assessment():
+    section = section_by_id("professional-experience")
+    text = " ".join(item.text for item in section.items)
+    assert section.items[0].maximum == 10
+    assert "replace one Softwareprojekt" in text
+    assert "31 October 2025" in text
+    assert "outside university enrollment" in text
+    assert "employer letter" in text and "employment reference" in text
+    assert "not add 10 LP on top" in text
+
+
+def test_registration_distinguishes_general_deadline_and_no_cm_exception():
+    text = " ".join(item.text for item in section_by_id("exam-registration").items)
+    assert "7 days before" in text
+    assert "48 hours before" in text
+    assert "genuinely have no access" in text
+    assert "forgetting to book in CM is not this exception" in text
+
+
+def test_exam_attempts_and_passing_grade_improvement_have_different_conditions():
+    section = section_by_id("exam-attempts-and-improvement")
+    assert section.items[0].maximum == 4
+    assert section.items[1].maximum == 2
+    text = section.items[2].text
+    assert "take and pass the first possible exam date" in text
+    assert "one repeat for grade improvement" in text
+    assert "no later than the beginning of the following semester" in text
+    assert "better grade counts" in text
+    assert "excluded for repeat exams after failure" in text
+
+
+def test_study_abroad_requires_advance_planning_not_an_app_generated_approval():
+    section = section_by_id("study-abroad")
+    text = " ".join(item.text for item in section.items)
+    assert "Before departure" in text and "Prüfungsausschuss chair" in text
+    assert "not itself an approved agreement" in text
+    assert "second or third subject semester" in text
+    assert "not a restriction to those semesters" in text

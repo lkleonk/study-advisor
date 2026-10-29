@@ -65,7 +65,9 @@ SPEC = DegreePromptSpec(
     ),
     question_topics=(
         "LP requirements, limits, specialization,\n"
-        "  Wissenschaftliches Arbeiten, Softwareprojekt, Anwendungsbereich, or the checklist"
+        "  Wissenschaftliches Arbeiten, Softwareprojekt, Anwendungsbereich, the checklist,\n"
+        "  rebooking completed modules, recognition of professional work, exam registration,\n"
+        "  exam attempts, grade improvement, or study abroad"
     ),
     offtopic_topics_de="Modulen, LP, Vertiefung und Studienplan-Regeln",
     offtopic_topics_en="modules, LP, specialization, and study-plan rules",
@@ -75,6 +77,12 @@ SPEC = DegreePromptSpec(
         "seminar": "seminar/Wissenschaftliches-Arbeiten bucket",
     },
     thesis_name="Masterarbeit",
+    fallback_domain_terms=(
+        "umbuch", "rebook", "notenverbesserung", "grade improvement", "pruefungsanmeldung",
+        "pruefungsversuch", "exam registration", "exam attempt", "retake", "whiteboard",
+        "campus management", "auslandsstudium", "study abroad", "berufserfahrung",
+        "professional experience", "work experience", "anerkennung", "anrechnung",
+    ),
     extra_selector_rules=(
         'Do not use "::", and do not output old slug-style keys such as\n'
         '  "sose26-tec-swp". Example: "Telematik in SoSe 2026" should select relevant\n'
@@ -105,6 +113,15 @@ SPEC = DegreePromptSpec(
         "  learning outcomes and workload. Help justify the target module, but do\n"
         "  not treat thematic fit, a matching name, or an arithmetic validation\n"
         "  result as official recognition. Refer the decision to the Prüfungsausschuss.",
+        "Before suggesting rebooking, distinguish planned courses from completed\n"
+        "  modules and ask about recorded grading if unknown. Apply the supplied\n"
+        "  rebooking restriction; never suggest freeing a completed graded module\n"
+        "  slot by moving its credit to another module.",
+        "Professional-work recognition, actual exam registrations and attempts,\n"
+        "  grade-improvement eligibility, and study-abroad agreements are not\n"
+        "  established by an arithmetic plan check. Explain their supplied rules\n"
+        "  and request missing facts; do not assume approval or completed bookings.\n"
+        "  Distinguish FU exam procedures from those of a host university.",
     ),
     study_plan_parser_rules=(
         "Do not invent modules.",

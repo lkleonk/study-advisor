@@ -59,3 +59,12 @@ def test_answer_composer_conditionally_includes_cross_university_rules(
     assert "future course may need it" in captured["message"]
     assert "Prefer a suitable dedicated named" in captured["prompt"]
     assert "approval is not automatic" in captured["message"]
+    for title in (
+        "REBOOKING COMPLETED MODULES", "PROFESSIONAL EXPERIENCE AS A SOFTWAREPROJEKT",
+        "COURSE AND EXAM REGISTRATION", "EXAM ATTEMPTS AND GRADE IMPROVEMENT",
+        "PLAN STUDY ABROAD BEFORE DEPARTURE",
+    ):
+        assert title in captured["message"]
+    assert "only when A is ungraded" in captured["message"]
+    assert "outside university enrollment" in captured["message"]
+    assert "ask about recorded grading if unknown" in captured["prompt"]

@@ -44,6 +44,13 @@ guidance. External courses can be proposed for recognition with a reasoned
 mapping of learning outcomes and workload; the Prüfungsausschuss decides the
 recognition, and each target module can be counted only once.
 
+The M.Sc. Informatik guidance also covers restrictions on rebooking completed
+modules, professional work as a possible substitute for one Softwareprojekt,
+separate course/exam registration, exam attempts and grade improvement, and
+advance study-abroad agreements. These rules appear in Degree Rules, copied
+rules, and chat reference context. They remain advisory: the plan checker does
+not track the administrative records or decisions needed to establish eligibility.
+
 ## Documentation
 
 Paths and commands are relative to this project root, regardless of its

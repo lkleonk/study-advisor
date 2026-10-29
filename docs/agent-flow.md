@@ -104,6 +104,11 @@ Behavior:
   cross-registration questions and contextual follow-ups about that topic.
 - Does not receive the full degree-rule catalogue.
 - Falls back to a local heuristic if the LLM call fails.
+- M.Sc. Informatik's degree-question topics and fallback terms include rebooking,
+  professional-work recognition, exam registration/attempts, grade improvement,
+  and study abroad. German plan-check verbs (`prüf`, `prüfe`, `prüfen`,
+  `überprüfe`) are matched as words, so nouns such as `Prüfungsanmeldung` do not
+  themselves trigger plan parsing.
 - Does not answer the user.
 
 ### CourseKeySelector
@@ -263,6 +268,14 @@ for missing mapping/preference information. This guidance remains available
 when the detailed `cross-university-courses` section is excluded. External
 equivalence and recognition are decisions for the Prüfungsausschuss; the
 composer must not interpret thematic fit or an arithmetic pass as approval.
+
+The catalogue's rebooking, professional-experience, registration,
+exam-attempt/improvement, and study-abroad sections are also always included.
+The composer distinguishes merely planned modules from completed ones, asks
+about recorded grading before advising a rebooking, and applies the ungraded-source
+restriction. It explains administrative rules without claiming that the plan
+checker has verified records, recognition decisions, exam bookings, or agreements.
+FU registration procedures must not be applied automatically to host-university exams.
 
 Rules:
 

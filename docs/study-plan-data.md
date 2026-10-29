@@ -300,6 +300,16 @@ class RuleIssue(BaseModel):
   advisory conversation context, not separate persisted slot-reservation state.
   The adviser must not silently change the plan, invent future availability,
   or assume that a broad target module can be counted more than once.
+- The adviser must distinguish a planned placement from rebooking a completed
+  module. The exam board only permits moving a completed source module to free
+  its slot when the source is ungraded; a graded target then receives 4.0.
+  `is_ungraded` describes assessment type, not evidence that a module has already
+  been completed, and the schema has no actual grade or completion-state field.
+- Employment/enrollment intervals, professional-work recognition decisions,
+  exam registrations/dates/attempts, grade-improvement eligibility, and approved
+  study-abroad agreements are not tracked. Their catalogue sections are advisory;
+  an arithmetic pass cannot confirm them. Professional work is not automatically
+  added as a recognized Softwareprojekt or as extra degree credits.
 
 ## Recommended Phase 2 Persistence
 

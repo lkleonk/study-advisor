@@ -66,6 +66,10 @@ These must never consume quota or invoke the LLM:
   For M.Sc. Informatik it includes `checklist-planning`: practical placement
   advice and canonical module-slot names/LP generated from the course and degree
   catalogues. These slots describe credit targets, not semester availability.
+  Catalogue v3 also includes advisory sections for completed-module rebooking,
+  professional-work recognition, exam registration, exam attempts/grade
+  improvement, and study abroad. These add content within the existing response
+  schema, not administrative actions or new plan-validation results.
 - `GET /api/course-offerings` returns the selected degree's projected local
   course offerings for the Course Registry tab. It joins the canonical course,
   degree-mapping, and semester-offering layers in the domain model; the route

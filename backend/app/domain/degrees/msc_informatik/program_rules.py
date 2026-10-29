@@ -11,7 +11,7 @@ from app.domain.program_rules import (
 
 DEFAULT_SOURCES = [
     ProgramRuleSource(
-        label="Studien- und Prüfungsordnung 2014 (§§7, 9)",
+        label="Studien- und Prüfungsordnung 2014 (§§7, 9, 10, 13)",
         path="https://www.imp.fu-berlin.de/fbv/pruefungsbuero/Studien--und-Pruefungsordnungen/0089c_SPO_2014.pdf",
     ),
     ProgramRuleSource(
@@ -21,7 +21,7 @@ DEFAULT_SOURCES = [
 ]
 
 EXAM_BOARD_SOURCE = ProgramRuleSource(
-    label="Prüfungsausschuss Informatik: Anerkennung und 15-LP-Grenze",
+    label="Prüfungsausschuss Informatik: Anerkennung, Prüfungen und Beschlüsse",
     path="https://www.mi.fu-berlin.de/w/Inf/PruefungsAusschuss",
     note="The 26 October 2023 decision retains the 15 LP cap even when a Bachelor exceeds 180 LP.",
 )
@@ -72,7 +72,7 @@ def get_program_rules() -> ProgramRulesCatalogue:
     return ProgramRulesCatalogue(
         degree_program="FU Berlin Master Informatik",
         regulation="2014 Studien- und Prüfungsordnung (FU-Mitteilungen 35/2014)",
-        catalogue_version="master-informatik-2014-v2",
+        catalogue_version="master-informatik-2014-v3",
         source_note=(
             "Overview of the official degree requirements for the FU Berlin Master Informatik "
             "(2014 study regulations). Chat plan checks are advisory and cover the implemented rules; "
@@ -265,7 +265,9 @@ def get_program_rules() -> ProgramRulesCatalogue:
                             "course may need it and use a suitable dedicated slot for today's course "
                             "where possible. Ask which slots are already used and which future courses "
                             "matter to you; make provisional suggestions if this is unknown. Future "
-                            "course availability still needs confirmation from the offering university."
+                            "course availability still needs confirmation from the offering university. "
+                            "Choose placements before completion where possible: a completed graded "
+                            "module cannot simply be moved to free its slot (see Rebooking Completed Modules)."
                         ),
                     ),
                     ProgramRuleItem(
@@ -303,6 +305,33 @@ def get_program_rules() -> ProgramRulesCatalogue:
                     *_checklist_slot_items(),
                 ],
                 sources=[*DEFAULT_SOURCES, EXAM_BOARD_SOURCE],
+            ),
+            ProgramRuleSection(
+                id="module-rebooking",
+                title="Rebooking Completed Modules",
+                description=(
+                    "Choosing a slot for a planned course differs from moving an already completed "
+                    "module. Completed graded modules cannot be rebooked simply to free their old slot."
+                ),
+                items=[
+                    ProgramRuleItem(
+                        label="Only an ungraded source module",
+                        text=(
+                            "The exam-board guidance permits rebooking a completed module A into another "
+                            "module B to free A only when A is ungraded (nicht differenziert bewertet). "
+                            "A completed graded A cannot be moved this way, whether B is graded or ungraded."
+                        ),
+                    ),
+                    ProgramRuleItem(
+                        label="Moving into a graded target",
+                        text="If the permitted ungraded source is rebooked into a graded target module, the target receives grade 4.0. Check the proposed mapping and its consequences with the Prüfungsausschuss / Prüfungsbüro first.",
+                    ),
+                    ProgramRuleItem(
+                        label="Before changing an existing plan",
+                        text="Establish whether the module is merely planned or already completed, and whether its recorded assessment is graded. Keeping flexible slots available is advance planning, not permission to rearrange completed graded modules later. A plan-check pass does not authorize a rebooking.",
+                    ),
+                ],
+                sources=[EXAM_BOARD_SOURCE],
             ),
             ProgramRuleSection(
                 id="wissenschaftliches-arbeiten",
@@ -368,6 +397,28 @@ def get_program_rules() -> ProgramRulesCatalogue:
                 ],
                 related_issue_codes=["software_project_count", "wahlbereich_lp", "ungraded_lp"],
                 sources=DEFAULT_SOURCES,
+            ),
+            ProgramRuleSection(
+                id="professional-experience",
+                title="Professional Experience as a Softwareprojekt",
+                description="Relevant professional work may replace one 10 LP Softwareprojekt after an individual recognition decision; this is not automatic credit for a job.",
+                items=[
+                    ProgramRuleItem(
+                        label="One project, not extra credits",
+                        text="The exam-board decision of 26 October 2023 allows relevant professional activity to replace one Softwareprojekt (10 LP) in the Master. Recognized credit fills that project requirement; it does not add 10 LP on top of the degree or increase the overall project limit.",
+                        maximum=10,
+                        unit="LP",
+                    ),
+                    ProgramRuleItem(
+                        label="Only periods outside enrollment",
+                        text="The clarification of 31 October 2025 limits recognition to work periods outside university enrollment (Immatrikulationszeitraum). Work performed while enrolled does not qualify under this decision; only eligible periods can be considered.",
+                    ),
+                    ProgramRuleItem(
+                        label="Individual assessment and evidence",
+                        text="The responsible Prüfungsausschuss assesses whether the activity is relevant. Provide an employer letter stating the duration and extent of employment, plus an employment reference with a detailed description of the work. Do not treat a recognition request or a seemingly relevant job as an approved Softwareprojekt.",
+                    ),
+                ],
+                sources=[EXAM_BOARD_SOURCE],
             ),
             ProgramRuleSection(
                 id="ungraded-modules",
@@ -455,6 +506,78 @@ def get_program_rules() -> ProgramRulesCatalogue:
                     ),
                 ],
                 related_issue_codes=["duplicate_modules", "bachelor_credit_reuse", "admission_credit_reuse", "project_management_conflict"],
+                sources=DEFAULT_SOURCES,
+            ),
+            ProgramRuleSection(
+                id="exam-registration",
+                title="Course and Exam Registration",
+                description="For the covered FU Informatik exams, course booking in Campus Management and registration for the particular exam are separate steps. Host-university exams follow the host's procedure.",
+                items=[
+                    ProgramRuleItem(
+                        label="Campus Management booking",
+                        text="Make sure the relevant course is booked in Campus Management for the exam or assessment you want to take. An old booking alone does not automatically cover a later attempt; follow the main-exam/resit instructions for the required semester and ask the Prüfungsbüro if unclear.",
+                    ),
+                    ProgramRuleItem(
+                        label="Separate written-exam registration",
+                        text="For written exams covered by the exam-board procedure, register for each main exam or resit in Whiteboard/KVV's Exam Registration tool no later than 7 days before the exam. Course booking alone is insufficient. Check the announced procedure for the particular exam.",
+                    ),
+                    ProgramRuleItem(
+                        label="No Campus Management access",
+                        text="The board describes an exception for students who genuinely have no access to Campus Management: register in KVV at least 48 hours before the written exam and email the examiner explaining the lack of CM access. Merely forgetting to book in CM is not this exception.",
+                    ),
+                    ProgramRuleItem(
+                        label="Seminars, projects, and other exam forms",
+                        text="Follow the teacher's registration instructions for seminar talks, project presentations, and other exam forms. Individually agreed dates for exams other than Klausuren are binding under the board's procedure; withdrawal is possible up to 14 days beforehand, with medical evidence generally required later or for nonattendance. Clarify an individual case with the examiner / Prüfungsbüro.",
+                    ),
+                ],
+                sources=[EXAM_BOARD_SOURCE],
+            ),
+            ProgramRuleSection(
+                id="exam-attempts-and-improvement",
+                title="Exam Attempts and Grade Improvement",
+                description="A repeat after failure and a repeat to improve an already passing grade have different conditions under SPO §10.",
+                items=[
+                    ProgramRuleItem(
+                        label="Failed module exams",
+                        text="A failed module examination may be repeated three times: normally four attempts in total. The board also explains that the final attempt requires two examiners. Ask the Prüfungsbüro about your recorded attempts and any individual circumstances.",
+                        maximum=4,
+                        unit="attempts",
+                    ),
+                    ProgramRuleItem(
+                        label="Failed Masterarbeit",
+                        text="The Masterarbeit may be repeated once after failure, giving two attempts in total (§10(1)). Do not apply the four-attempt module-exam rule to the thesis.",
+                        maximum=2,
+                        unit="attempts",
+                    ),
+                    ProgramRuleItem(
+                        label="One opportunity to improve a passing grade",
+                        text="If you take and pass the first possible exam date immediately following the course, §10(2) allows one repeat for grade improvement, held no later than the beginning of the following semester. The better grade counts. Grade improvement is excluded for repeat exams after failure; it is not a general right to repeat any passed module at a later date.",
+                    ),
+                    ProgramRuleItem(
+                        label="What the plan check cannot establish",
+                        text="The arithmetic plan check does not track completed exam attempts, actual exam dates, bookings, or eligibility for grade improvement. Confirm your own record and the applicable exam arrangements with the Prüfungsbüro / examiner.",
+                    ),
+                ],
+                sources=[*DEFAULT_SOURCES, EXAM_BOARD_SOURCE],
+            ),
+            ProgramRuleSection(
+                id="study-abroad",
+                title="Plan Study Abroad Before Departure",
+                description="SPO §13 recommends study abroad and advance agreement on the courses, target modules, and credits to be recognized.",
+                items=[
+                    ProgramRuleItem(
+                        label="Agree recognition in advance",
+                        text="Before departure, agree the intended equivalent study achievements and LP with the department's study-abroad / scholarship coordinator and the host university, involving the Prüfungsausschuss chair. Record how the courses map to your degree and preserve the agreement and supporting module descriptions.",
+                    ),
+                    ProgramRuleItem(
+                        label="Recognition and checklist slots",
+                        text="Under §13(2), achievements completed in accordance with the agreement or equivalent achievements are recognized. Reserve the intended checklist slots when planning; a proposed exchange course or an app-generated mapping is not itself an approved agreement. Clarify changes to the agreed programme with the responsible offices.",
+                    ),
+                    ProgramRuleItem(
+                        label="Recommended timing",
+                        text="The regulation recommends the second or third subject semester for study abroad (§13(3)); this is a recommendation, not a restriction to those semesters.",
+                    ),
+                ],
                 sources=DEFAULT_SOURCES,
             ),
             ProgramRuleSection(
