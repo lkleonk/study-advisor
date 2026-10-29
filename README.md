@@ -424,7 +424,7 @@ LLM-backed nodes record:
 ```text
 llm_input  -> {"prompt": "...", "msg": "..."}
 llm_output -> raw model response
-llm_error  -> exception type and message, when a fallback is used
+llm_error  -> exception type and message, when an LLM call or output processing fails
 ```
 
 Deterministic nodes record `node_input` and `node_output`. Only executed application nodes

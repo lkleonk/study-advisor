@@ -304,15 +304,26 @@
     </div>
 
     <div class="callout">
-      <strong>WizardFlow 0.9.0 tracing:</strong> workflow and node context managers capture execution timing and finalize requests, including failures; every request receives an SDK-generated workflow ID stored as
-	      <code>wizardflow_message_id</code>. LLM nodes record exact
-	      <code>llm_input</code> payloads containing <code>prompt</code> and <code>msg</code>,
-	      plus <code>llm_output</code>; deterministic nodes record input and output.
-	      The <code>__start__</code> graph step is not logged.
-	      <code>__end__</code> is finalized as a payload-free marker. Transcript
-	      text is unredacted. JSONL traces are written under
-	      <code>backend/traces/</code> and excluded from Git.
-	    </div>
+      <strong>Error handling:</strong> the classifier, course-key selector, and study-plan
+      parser use local heuristics when their LLM calls fail. If
+      <code>AnswerComposer</code> cannot produce a valid, non-empty answer,
+      <code>SessionService</code> returns HTTP 502 with
+      <code>answer_generation_failed</code>; no fallback answer is returned.
+    </div>
+
+    <div class="callout">
+      <strong>WizardFlow 0.9.0 tracing:</strong> workflow and node context managers capture
+      execution timing and finalize requests, including failures. Enabled requests receive
+      an SDK-generated workflow ID stored as <code>wizardflow_message_id</code>;
+      per-request opt-out uses no-op scopes and writes no trace data.
+      LLM nodes record exact <code>llm_input</code> payloads containing
+      <code>prompt</code> and <code>msg</code>, plus <code>llm_output</code> or
+      <code>llm_error</code>; deterministic nodes record input and output.
+      Only executed application nodes are recorded; synthetic
+      <code>__start__</code> and <code>__end__</code> markers are omitted.
+      Transcript text is unredacted. JSONL traces are written under
+      <code>backend/traces/</code> and excluded from Git.
+    </div>
   </main>
 </body>
 </html>

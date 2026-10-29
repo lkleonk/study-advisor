@@ -28,6 +28,11 @@ LangGraph checkpoint at creation and returned in the response. All graph nodes
 and transcript uploads read the session's degree from that state — the LLM never
 chooses or infers it.
 
+`POST /api/sessions/{session_id}/message` returns HTTP 502 with
+`detail.error_code == "answer_generation_failed"` if answer generation fails or
+produces an invalid or empty answer. The backend does not return a fallback reply
+as a successful response.
+
 `POST /api/sessions/{session_id}/transcript` accepts a multipart PDF upload
 (field name `file`). See `docs/pdf_node.md`. For degrees without
 `plan_validation_enabled` the transcript is only parsed into the session's

@@ -144,7 +144,8 @@ Field meaning:
 
 The study plan parser extracts what the user says. Then the degree's
 `enrich_study_plan` fills in deterministic knowledge: `msc_informatik` enriches
-through `module_catalog.py` using `module_catalog.json`; `msc_data_science`
+through `module_catalog.py` using the shared `domain/data/courses.json` and
+`domain/data/degree_modules/msc_informatik.json`; `msc_data_science`
 canonicalizes matched names and default LP from its module catalogue in
 `domain/degrees/msc_data_science/module_catalog.py`.
 

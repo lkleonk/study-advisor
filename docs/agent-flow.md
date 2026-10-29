@@ -137,8 +137,7 @@ Behavior:
 - Receives a configurable recent conversation window
   (`AGENT_COURSE_SELECTOR_HISTORY_TURNS`, default `2`).
 - The prompt includes a semester coverage note derived from the degree's
-  projection of the semester offering files, for example that only `sose26` is
-  currently present.
+  projection of the semester offering files, such as `sose26` and `wise26-27`.
 
 ### CourseLookup
 
@@ -328,12 +327,13 @@ LLM-dependent nodes use local fallbacks where possible:
 - `ScopeClassifier`: heuristic classifier
 - `CourseKeySelector`: heuristic selector
 - `StudyPlanParser`: heuristic module/LP parser
-- `AnswerComposer`: compact fallback answer
 
-Course lookup failures return an empty context, empty citations, or a concise
-clarification/missing-data note.
+`AnswerComposer` raises `AnswerGenerationError` if the provider fails or returns
+an invalid or empty answer. `SessionService` converts that error to HTTP 502 with
+`detail.error_code == "answer_generation_failed"`; no fallback answer is returned.
 
-This keeps the API responsive even when the LLM fails.
+Missing or invalid course lookup keys produce an empty context, empty citations,
+or a concise clarification/missing-data note for the composer.
 
 ## HTML Overview
 
