@@ -520,7 +520,7 @@ export function ConsultantShell() {
             /
           </Box>
           <Link
-            href="https://github.com/lkleonk/CHATBOT-FU-berlin-computer-science-consultant"
+            href="https://github.com/lkleonk/study-advisor"
             target="_blank"
             rel="noopener noreferrer"
             color="inherit"
