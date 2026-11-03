@@ -99,6 +99,15 @@ AREA_LABELS = {
         "elective": "Elective area (Wahlbereich)",
         "research_phase": "Research phase",
     },
+    "msc_computational_sciences": {
+        "synchronisation": "Synchronisierungsbereich",
+        "scientific_computing_a": "Scientific Computing, Angebot A (ungraded)",
+        "scientific_computing_b": "Scientific Computing, Angebot B (graded)",
+        "molecular_sciences": "Specialisation: Molecular Sciences",
+        "geosciences": "Specialisation: Geosciences",
+        "atmospheric_sciences": "Specialisation: Atmospheric Sciences",
+        "specialisation_shared": "Specialisation: all areas",
+    },
 }
 
 

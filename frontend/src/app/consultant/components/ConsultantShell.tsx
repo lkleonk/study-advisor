@@ -8,6 +8,7 @@ import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
+import ListSubheader from "@mui/material/ListSubheader";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import Tab from "@mui/material/Tab";
@@ -16,7 +17,7 @@ import Typography from "@mui/material/Typography";
 import NextLink from "next/link";
 import { useEffect, useState, type ReactElement } from "react";
 
-import { DEGREE_STORAGE_KEY, useDegree } from "@/context/DegreeContext";
+import { DEGREE_STORAGE_KEY, groupDegreesByLevel, useDegree } from "@/context/DegreeContext";
 import { useUsage } from "@/context/UsageContext";
 import { deleteSession } from "@/services/api";
 import type { RuleCheckResult, StudyPlan, UsageResponse } from "@/types/api";
@@ -321,11 +322,22 @@ export function ConsultantShell() {
                       "& .MuiSelect-select": { py: 0, pr: 3 },
                     }}
                   >
-                    {degrees.map((degree) => (
-                      <MenuItem key={degree.id} value={degree.id}>
-                        {degree.display_name}
-                      </MenuItem>
-                    ))}
+                    {/* Select needs flat children, so headers and items are one array. */}
+                    {groupDegreesByLevel(degrees).flatMap((group) => [
+                      // Transparent so the heading shares the menu's elevated dark-mode surface.
+                      <ListSubheader
+                        key={`group-${group.label}`}
+                        disableSticky
+                        sx={{ lineHeight: 2.5, bgcolor: "transparent" }}
+                      >
+                        {group.label}
+                      </ListSubheader>,
+                      ...group.degrees.map((degree) => (
+                        <MenuItem key={degree.id} value={degree.id}>
+                          {degree.display_name}
+                        </MenuItem>
+                      )),
+                    ])}
                   </Select>
                 </Box>
               ) : (

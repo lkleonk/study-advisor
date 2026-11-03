@@ -1539,6 +1539,590 @@
       ],
       "uebungen": [],
       "url": "https://www.fu-berlin.de/vv/de/lv/1071975?sm=965826"
+    },
+    {
+      "course_id": "atombau_und_chemische_bindung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Hs A (Raum B.006, 200 Pl.) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-04-17",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "Hs A (Raum B.006, 200 Pl.) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-06-30",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Hs B (Raum B.004, 100 Pl.) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-24",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-04-27",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "SR Chemie-64 (Raum B.-132, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-04-30",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "SR Anorganik (V005) (Fabeckstr. 34 / 36)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/979411?m=1541748&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/979412?m=1541748&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "seminar_mehrskalenmethoden_in_molekularen_simulationen",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074431?m=1541799&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "numerik_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-04-13",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074257?m=1541810&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074574?m=1541810&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "numerik_iii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-22",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-04-27",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-22",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        },
+        {
+          "date": "2026-05-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074397?m=1541821&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074669?m=1541821&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "lineare_algebra_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-17",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-04-24",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-04-28",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "T9/SR 006 Seminarraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-04-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 025/026 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-04-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-04-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074340?m=1541832&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074622?m=1541832&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "lineare_algebra_geometrie_fuer_das_lehramt",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        },
+        {
+          "date": "2026-04-17",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "T9/Gr. Hörsaal (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-04-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-04-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-06-01",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074244?m=1541832&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074563?m=1541832&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "synoptische_meteorologie_ninjo",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-13",
+          "start": "16:00",
+          "end": "17:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1072190?m=422004&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "dynamik_der_atmosphaere_1",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        },
+        {
+          "date": "2026-04-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "041 Alter Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1071823?m=404926&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1071829?m=404926&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "mathematical_aspects_of_digital_twins",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-17",
+          "start": "12:00",
+          "end": "16:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-07-03",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074317?m=1541883&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "seminar_zur_stochastik_anomalous_diffusions_in_inhomogeneous_media",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074453?m=1541883&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "seminar_stochastik_in_action",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-20",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        },
+        {
+          "date": "2026-04-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074549?m=1541883&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "seminar_nicht_lineare_optimierung",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A7/SR 140 Seminarraum (Hinterhaus) (Arnimallee 7)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074302?m=1542033&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "diskrete_mathematik_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        },
+        {
+          "date": "2026-04-16",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "T9/SR 005 Übungsraum (Takustr. 9)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-04-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074374?m=1542000&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074644?m=1542000&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "density_functional_theory",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "SR PTC (Raum A.006, EG) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-16",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/979457?m=1492199&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/979458?m=1492199&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "seminar_quantum_computational_methods",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074446?m=1542141&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "numerik_iv_stochastische_dynamik_in_der_computerbiologie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-17",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-17",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074309?m=1542148&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074607?m=1542148&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "mathematische_modellierung_in_der_klimaforschung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/SR 115 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074405?m=1542148&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074677?m=1542148&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "functional_analysis_applied_to_modeling_of_molecular_systems",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1074510?m=1542148&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1074700?m=1542148&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "molekueldynamik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/979417?m=1542109&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "molekueldynamik",
+      "type": "praktikum",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/979418?m=1542109&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "modelle_fuer_wetter_und_umwelt",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1071956?m=405252&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1071958?m=405252&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "modelle_fuer_wetter_und_umwelt",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1071960?m=405252&pc=1085377&sm=965826"
+    },
+    {
+      "course_id": "theoretische_meteorologie_ii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-04-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "041 Alter Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        },
+        {
+          "date": "2026-04-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "041 Alter Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        },
+        {
+          "date": "2026-06-02",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        },
+        {
+          "date": "2026-06-03",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-04-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1071952?m=408168&pc=1085377&sm=965826",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1071954?m=408168&pc=1085377&sm=965826"
     }
   ]
 }

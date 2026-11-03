@@ -16,8 +16,26 @@ import type { DegreeInfo } from "@/types/api";
 export const DEGREE_STORAGE_KEY = "fu-consultant-degree";
 export const DEFAULT_DEGREE_ID = "msc_informatik";
 
-// Shown until GET /api/degrees answers; keep in sync with the backend registry.
+// Shown until GET /api/degrees answers; keep in sync with the backend registry (same order).
 const FALLBACK_DEGREES: DegreeInfo[] = [
+  {
+    id: "bsc_informatik",
+    display_name: "B.Sc. Informatik",
+    regulation: "2023 Studien- und Pruefungsordnung (FU-Mitteilungen 23/2023)",
+    plan_validation_enabled: false,
+  },
+  {
+    id: "bsc_bioinformatik",
+    display_name: "B.Sc. Bioinformatik",
+    regulation: "2023 Studien- und Pruefungsordnung (FU-Mitteilungen 34/2023)",
+    plan_validation_enabled: false,
+  },
+  {
+    id: "bsc_physik",
+    display_name: "B.Sc. Physik",
+    regulation: "2024 Studien- und Pruefungsordnung (FU-Mitteilungen 12/2024)",
+    plan_validation_enabled: false,
+  },
   {
     id: DEFAULT_DEGREE_ID,
     display_name: "M.Sc. Informatik",
@@ -31,15 +49,9 @@ const FALLBACK_DEGREES: DegreeInfo[] = [
     plan_validation_enabled: false,
   },
   {
-    id: "bsc_informatik",
-    display_name: "B.Sc. Informatik",
-    regulation: "2023 Studien- und Pruefungsordnung (FU-Mitteilungen 23/2023)",
-    plan_validation_enabled: false,
-  },
-  {
-    id: "bsc_physik",
-    display_name: "B.Sc. Physik",
-    regulation: "2024 Studien- und Pruefungsordnung (FU-Mitteilungen 12/2024)",
+    id: "msc_computational_sciences",
+    display_name: "M.Sc. Computational Sciences",
+    regulation: "2025 Studien- und Pruefungsordnung (FU-Mitteilungen 21/2025), amended 2026 (27/2026)",
     plan_validation_enabled: false,
   },
   {
@@ -47,13 +59,25 @@ const FALLBACK_DEGREES: DegreeInfo[] = [
     display_name: "M.Sc. Physik",
     regulation: "2024 Studien- und Pruefungsordnung (FU-Mitteilungen 12/2024)",
     plan_validation_enabled: false,
-  },  {
-    id: "bsc_bioinformatik",
-    display_name: "B.Sc. Bioinformatik",
-    regulation: "2023 Studien- und Pruefungsordnung (FU-Mitteilungen 34/2023)",
-    plan_validation_enabled: false,
   },
 ];
+
+export type DegreeGroup = { label: string; degrees: DegreeInfo[] };
+
+const DEGREE_LEVELS = [
+  { prefix: "bsc_", label: "Bachelor" },
+  { prefix: "msc_", label: "Master" },
+];
+
+/** Groups degrees by level (from the id prefix), keeping the registry order within each group. */
+export function groupDegreesByLevel(degrees: DegreeInfo[]): DegreeGroup[] {
+  const groups = DEGREE_LEVELS.map(({ prefix, label }) => ({
+    label,
+    degrees: degrees.filter((degree) => degree.id.startsWith(prefix)),
+  }));
+  const other = degrees.filter((degree) => !DEGREE_LEVELS.some(({ prefix }) => degree.id.startsWith(prefix)));
+  return [...groups, { label: "Other", degrees: other }].filter((group) => group.degrees.length > 0);
+}
 
 type DegreeContextValue = {
   /** Chosen degree id, or null until the user has picked one. */

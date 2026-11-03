@@ -24,7 +24,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 
-import { useDegree } from "@/context/DegreeContext";
+import { groupDegreesByLevel, useDegree } from "@/context/DegreeContext";
 import { useSettings } from "@/context/SettingsContext";
 import { useUsage } from "@/context/UsageContext";
 
@@ -59,41 +59,50 @@ export function WelcomeDialog({ open, onClose, onViewUsage }: WelcomeDialogProps
         <Typography variant="subtitle2" sx={{ mb: 1 }}>
           Choose your degree program
         </Typography>
-        <ToggleButtonGroup
-          exclusive
-          fullWidth
-          value={selectedDegree}
-          onChange={(_, nextDegree: string | null) => {
-            if (nextDegree) {
-              setPickedDegree(nextDegree);
-            }
-          }}
-          aria-label="Degree program"
-          orientation="vertical"
-          sx={{ mb: 2 }}
-        >
-          {degrees.map((degree) => (
-            <ToggleButton
-              key={degree.id}
-              value={degree.id}
-              sx={{
-                justifyContent: "flex-start",
-                textAlign: "left",
-                textTransform: "none",
-                py: 1.25,
-              }}
-            >
-              <Stack spacing={0.25}>
-                <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                  {degree.display_name}
-                </Typography>
-                <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                  {degree.regulation}
-                </Typography>
-              </Stack>
-            </ToggleButton>
+        {/* One group per level; all groups share the same selection. */}
+        <Stack spacing={1.5} sx={{ mb: 2 }}>
+          {groupDegreesByLevel(degrees).map((group) => (
+            <Box key={group.label}>
+              <Typography variant="overline" component="p" sx={{ color: "text.secondary", lineHeight: 2 }}>
+                {group.label}
+              </Typography>
+              <ToggleButtonGroup
+                exclusive
+                fullWidth
+                value={selectedDegree}
+                onChange={(_, nextDegree: string | null) => {
+                  if (nextDegree) {
+                    setPickedDegree(nextDegree);
+                  }
+                }}
+                aria-label={`${group.label} degree programs`}
+                orientation="vertical"
+              >
+                {group.degrees.map((degree) => (
+                  <ToggleButton
+                    key={degree.id}
+                    value={degree.id}
+                    sx={{
+                      justifyContent: "flex-start",
+                      textAlign: "left",
+                      textTransform: "none",
+                      py: 1.25,
+                    }}
+                  >
+                    <Stack spacing={0.25}>
+                      <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                        {degree.display_name}
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                        {degree.regulation}
+                      </Typography>
+                    </Stack>
+                  </ToggleButton>
+                ))}
+              </ToggleButtonGroup>
+            </Box>
           ))}
-        </ToggleButtonGroup>
+        </Stack>
         <Alert severity="info" sx={{ mb: 1.5 }}>
           This is an unofficial service. Answers may be incomplete or incorrect and should be verified using official FU Berlin sources.
         </Alert>

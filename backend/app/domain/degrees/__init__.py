@@ -10,17 +10,21 @@ from app.domain.degrees.definition import DegreeDefinition
 from app.domain.degrees.bsc_bioinformatik import DEGREE as BSC_BIOINFORMATIK
 from app.domain.degrees.bsc_informatik import DEGREE as BSC_INFORMATIK
 from app.domain.degrees.bsc_physik import DEGREE as BSC_PHYSIK
+from app.domain.degrees.msc_computational_sciences import DEGREE as MSC_COMPUTATIONAL_SCIENCES
 from app.domain.degrees.msc_data_science import DEGREE as MSC_DATA_SCIENCE
 from app.domain.degrees.msc_informatik import DEGREE as MSC_INFORMATIK
 from app.domain.degrees.msc_physik import DEGREE as MSC_PHYSIK
 
 
+# Display order for the degree pickers: bachelor before master, computer-science
+# programmes first within each level.
 _DEGREES: dict[str, DegreeDefinition] = {
+    BSC_INFORMATIK.id: BSC_INFORMATIK,
+    BSC_BIOINFORMATIK.id: BSC_BIOINFORMATIK,
+    BSC_PHYSIK.id: BSC_PHYSIK,
     MSC_INFORMATIK.id: MSC_INFORMATIK,
     MSC_DATA_SCIENCE.id: MSC_DATA_SCIENCE,
-    BSC_INFORMATIK.id: BSC_INFORMATIK,
-    BSC_PHYSIK.id: BSC_PHYSIK,
-    BSC_BIOINFORMATIK.id: BSC_BIOINFORMATIK,
+    MSC_COMPUTATIONAL_SCIENCES.id: MSC_COMPUTATIONAL_SCIENCES,
     MSC_PHYSIK.id: MSC_PHYSIK,
 }
 

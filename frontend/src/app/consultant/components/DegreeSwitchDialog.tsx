@@ -79,7 +79,7 @@ export function DegreeSwitchDialog({
       </DialogContent>
       <DialogActions>
         <Button onClick={onCancel}>Cancel</Button>
-        <Button onClick={onConfirm} color="warning" variant="contained">
+        <Button onClick={onConfirm} variant="contained">
           Discard and switch
         </Button>
       </DialogActions>

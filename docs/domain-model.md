@@ -14,14 +14,30 @@ LLM never chooses or infers it. Currently registered: `msc_informatik`
 FU-Mitteilungen 18/2021), `bsc_informatik` (B.Sc. Informatik,
 FU-Mitteilungen 23/2023), `bsc_physik` (B.Sc. Physik Monobachelor,
 FU-Mitteilungen 12/2024), `msc_physik` (M.Sc. Physik, FU-Mitteilungen
-12/2024), and `bsc_bioinformatik` (B.Sc. Bioinformatik, FU-Mitteilungen
-34/2023). Both Physik degrees have a rules catalogue, module list, and SoSe 2026 /
+12/2024), `bsc_bioinformatik` (B.Sc. Bioinformatik, FU-Mitteilungen
+34/2023), and `msc_computational_sciences` (M.Sc. Computational Sciences,
+FU-Mitteilungen 21/2025, amended 27/2026). Both Physik degrees have a rules catalogue, module list, and SoSe 2026 /
 WiSe 2026/27 offerings, without plan validation. B.Sc. Bioinformatik is a joint
 FU/Charité programme; its areas follow the regulation's three study areas
 (`informatik`, `mathematik_statistik`, `biologie_chemie`) plus `wahlbereich` and
 `abv`. It reuses the shared B.Sc. Informatik courses (for example Konzepte der
 Programmierung), and the Wahlbereich and free ABV each hold one placeholder module
-with example offerings, not an approved list. No plan validation. The B.Sc. package provides its 2023 programme-rules
+with example offerings, not an approved list. No plan validation.
+M.Sc. Computational Sciences is a joint programme of four Fachbereiche; its areas
+are `synchronisation`, `scientific_computing_a` and `scientific_computing_b`
+(Angebot A and B), the three specialisations (`molecular_sciences`,
+`geosciences`, `atmospheric_sciences`), and `specialisation_shared` for the
+modules every specialisation can use. Each Scientific Computing topic is two
+modules: an ungraded A variant (`is_ungraded: true`) and a graded B variant.
+SoSe 2026 / WiSe 2026/27 offerings come from the programme's 2025 VV tree
+(`modul?id=1085377`; `331811` is the 2016 tree and is ignored). Courses already
+curated for other degrees (Numerik I, Höhere Algorithmik, ...) are reused and
+only get credit mappings. The A/B modules consist of a lecture plus a seminar, so
+their placements carry no LP and a `credit_note`; A-variant topics that are also
+Synchronisierung options get an extra `synchronisation` placement. A course
+listed for several modules of one area is placed once, with an "Also listed for"
+note. Module codes come from the VV. No plan validation, and the 2016 regulations
+(still valid until SoSe 2028) are not modelled. The B.Sc. package provides its 2023 programme-rules
 catalogue and the locally supplied SoSe 2026 and WiSe 2026/27 offering
 projections. Its deterministic study-plan validation remains unavailable. The
 B.Sc. projection does not imply that modules are offered in other semesters;
@@ -64,7 +80,8 @@ the common interface, not a generic rule engine:
 
 **Adding a degree:** create the package (a `prompts.py` `SPEC`, `program_rules.py`,
 `degree_rules.py`, `__init__.py`; `bsc_physik` is the smallest template), add
-`degree_modules/<degree>.json` and offerings, register it in `_DEGREES`, add its
+`degree_modules/<degree>.json` and offerings, register it in `_DEGREES` (its order
+is the picker order: bachelor before master), add its
 area labels to `AREA_LABELS` in `course_offerings.py`, add it to
 `FALLBACK_DEGREES` in the frontend `DegreeContext`, and add focused tests. The
 API, frontend picker, and course-offering validation pick it up from the registry.

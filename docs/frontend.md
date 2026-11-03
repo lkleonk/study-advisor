@@ -102,7 +102,10 @@ container runs in production. `NEXT_PUBLIC_API_BASE_URL` and
 
 The welcome dialog opens with card-style toggle buttons for the degree
 programs; `Start consultation` stays disabled until one is selected. After the
-welcome, the header subtitle is a compact degree switcher (`Select`). Changing
+welcome, the header subtitle is a compact degree switcher (`Select`). Both
+pickers group the degrees under Bachelor/Master headings with
+`groupDegreesByLevel` (by `bsc_`/`msc_` id prefix) and keep the backend
+registry order inside each group. Changing
 it with an active session or chat opens `DegreeSwitchDialog`, which warns that
 the chat, uploaded study plan, and validation results will be discarded and
 offers `Download chat` plus a shortcut to the Study Plan tab to print the

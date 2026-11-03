@@ -236,6 +236,7 @@ Phase 3 — degree packages:
 [x] `bsc_physik`: 2024 rules catalogue, module list, SoSe 2026 / WiSe 2026/27 offerings, per-degree heuristic fallback terms; plan validation disabled.
 [x] `bsc_bioinformatik`: 2023 rules catalogue (joint FU/Charité programme, three study areas, Wahlbereich, ABV), module list, WiSe 2026/27 offerings incl. Übung groups; plan validation disabled.
 [x] `msc_physik`: 2024 rules catalogue (incl. research phase and Polytechnique double master), module list, SoSe 2026 / WiSe 2026/27 offerings; plan validation disabled.
+[x] `msc_computational_sciences`: 2025 rules catalogue incl. 2026 EUMaster4HPC amendment and admission rules, module list (A/B Scientific Computing variants) with FU module codes, SoSe 2026 / WiSe 2026/27 offerings from the programme's VV tree incl. Übung groups; plan validation disabled.
 
 Phase 4 — frontend:
 

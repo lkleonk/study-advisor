@@ -3165,6 +3165,779 @@
         }
       ],
       "url": "https://www.fu-berlin.de/vv/de/lv/1098908?sm=1039762"
+    },
+    {
+      "course_id": "computational_sciences",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "14:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117713?m=1541736&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "computational_sciences",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "16:00",
+          "room": "A6/030 Rechnerpoolraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1118030?m=1541736&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "molekuelspektroskopie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "Hs B (Raum B.004, 100 Pl.) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "Hs B (Raum B.004, 100 Pl.) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056106?m=1490191&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056107?m=1490191&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "einfuehrung_in_die_theoretische_chemie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056130?m=1490275&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056131?m=1490275&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "atombau_und_chemische_bindung",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Hs A (Raum B.006, 200 Pl.) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "Hs A (Raum B.006, 200 Pl.) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "SR Chemie-64 (Raum B.-132, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "SR Chemie-64 (Raum B.-132, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056126?m=1541748&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056127?m=1541748&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "geological_foundations",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "B 029 Seminarraum Geologie (Malteserstr. 74-100 B)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115381?m=433261&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "geological_foundations",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-27",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "C 014 großer Seminarraum (Malteserstr. 74-100 C)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115392?m=433261&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "introduction_to_planetary_sciences_and_planet_formation",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "09:00",
+          "end": "13:00",
+          "room": "D 215 Seminarraum Planetologie/Geophysik (Malteserstr. 74-100 D)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "13:00",
+          "end": "14:00",
+          "room": "D 215 Seminarraum Planetologie/Geophysik (Malteserstr. 74-100 D)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115385?m=433287&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1115395?m=433287&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "introduction_to_planetary_sciences_and_planet_formation",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "D 215 Seminarraum Planetologie/Geophysik (Malteserstr. 74-100 D)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115396?m=433287&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "einfuehrung_in_die_klima_und_hydrogeographie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "G 202 Hörsaal Geographie (Malteserstr. 74-100 G)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1113107?m=320863&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "einfuehrung_in_die_klima_und_hydrogeographie",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "G 204 Luftbildraum (Malteserstr. 74-100 G)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1113109?m=320863&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "fernerkundung_und_geomatik_fuer_fortgeschrittene",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "G 204 Luftbildraum (Malteserstr. 74-100 G)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1116801?m=1493490&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "fernerkundung_und_geomatik_fuer_fortgeschrittene",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "17:00",
+          "room": "G 108 CIP-Pool (Malteserstr. 74-100 G)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1116509?m=1493490&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "principles_of_gis_and_remote_sensing",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "G 110 Hörsaal (Malteserstr. 74-100 G)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1116805?m=433297&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "principles_of_gis_and_remote_sensing",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2027-03-15",
+          "start": "14:00",
+          "end": "17:00",
+          "room": "G 107 CIP-Pool (Malteserstr. 74-100 G)"
+        },
+        {
+          "date": "2027-03-16",
+          "start": "14:00",
+          "end": "17:00",
+          "room": "G 107 CIP-Pool (Malteserstr. 74-100 G)"
+        },
+        {
+          "date": "2027-03-17",
+          "start": "14:00",
+          "end": "17:00",
+          "room": "G 107 CIP-Pool (Malteserstr. 74-100 G)"
+        },
+        {
+          "date": "2027-03-18",
+          "start": "14:00",
+          "end": "17:00",
+          "room": "G 107 CIP-Pool (Malteserstr. 74-100 G)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1116539?m=433297&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "seminar_mehrskalenmethoden_in_molekularen_simulationen",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 115 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117887?m=1541799&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "seminar_machine_learning_from_the_function_space_perspective",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1120007?m=1541799&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "numerik_iii",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-12",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 007/008 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117837?m=1541821&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118116?m=1541821&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "lineare_algebra_i",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/Hs 001 Hörsaal (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "A3/SR 120 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        },
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-10-22",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "KöLu24-26/SR 017 (vorrang Schülerlabor) (Königin-Luise-Str. 24 / 26)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117686?m=1541832&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118010?m=1541832&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "synoptische_meteorologie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "16:00",
+          "end": "19:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115524?m=422004&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "synoptische_meteorologie",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-20",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1119744?m=422004&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "dynamik_der_atmosphaere_2",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        },
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115514?m=404934&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1115516?m=404934&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "masterseminar_stochastik_mathematics_of_reinforcement_learning_for_ai",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2027-01-21",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2027-01-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "A6/SR 032 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2027-02-23",
+          "start": "09:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        },
+        {
+          "date": "2027-02-24",
+          "start": "09:00",
+          "end": "18:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117793?m=1541872&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "diskrete_mathematik_ii_extremal_comb",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        },
+        {
+          "date": "2026-10-14",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "KöLu24-26/SR 006 Neuro/Mathe (Königin-Luise-Str. 24 / 26)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/SR 119 (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117798?m=1542033&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118092?m=1542033&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "seminar_zur_diskreten_mathematik_i",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117705?m=1542000&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "quantenchemie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "Hs A (Raum B.006, 200 Pl.) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-19",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-20",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-21",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056145?m=1491552&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056146?m=1491552&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "quantum_chemistry_on_the_computer_i_correlation_methods",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-13",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-27",
+          "start": "08:00",
+          "end": "10:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22), SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-13",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        },
+        {
+          "date": "2026-10-27",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "SR Chemie-24 (Raum B.-131, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056170?m=1492190&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056171?m=1492190&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "representation_learning",
+      "type": "seminar",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-14",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117515?m=1542141&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "numerik_iv_mathematics_of_interacting_agent_systems",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A3/ 024 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 031 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117845?m=1542148&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118124?m=1542148&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "weiche_materie_mathematische_aspekte_physikalische_modellierung_und_computersimulation",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-12",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        },
+        {
+          "date": "2026-10-13",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "A6/SR 009 Seminarraum (Arnimallee 6)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-15",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "A3/019 Seminarraum (Arnimallee 3-5)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1117880?m=1542148&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1118137?m=1542148&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "introduction_to_relativistic_quantum_chemistry",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "14:00",
+          "end": "16:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-22",
+          "start": "16:00",
+          "end": "18:00",
+          "room": "PC-Pool Chemie (Raum A.-106, UG1) (Arnimallee 22)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1056149?m=1542148&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1056150?m=1542148&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "special_topics_in_data_science_and_machine_learning_in_earth_sciences",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "14:00",
+          "end": "15:00",
+          "room": "189 Neuer Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115299?m=1542148&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "thermodynamik_und_kinetik_von_geologischen_prozessen",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "C 014 großer Seminarraum (Malteserstr. 74-100 C)"
+        },
+        {
+          "date": "2026-10-23",
+          "start": "12:00",
+          "end": "13:00",
+          "room": "C 014 großer Seminarraum (Malteserstr. 74-100 C)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "13:00",
+          "end": "15:00",
+          "room": "G 107 CIP-Pool (Malteserstr. 74-100 G)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115196?m=335771&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1115212?m=335771&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "seismik_iii_inversionsverfahren_und_einfuehrung_in_maschinelles_lernen_in_der_geophysik",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-16",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "D 144 Seminarraum Geophysik (Malteserstr. 74-100 D)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-16",
+          "start": "12:00",
+          "end": "14:00",
+          "room": "D 144 Seminarraum Geophysik (Malteserstr. 74-100 D)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115276?m=336268&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1115285?m=336268&pc=1085377&sm=1039762"
+    },
+    {
+      "course_id": "satellitenmeteorologie",
+      "type": "vl",
+      "lp": null,
+      "first_sessions": [
+        {
+          "date": "2026-10-15",
+          "start": "10:00",
+          "end": "12:00",
+          "room": "041 Alter Hörsaal (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "uebungen": [
+        {
+          "date": "2026-10-12",
+          "start": "09:00",
+          "end": "12:00",
+          "room": "059 PC-Pool 1 (Carl-Heinr.Becker Weg 6-10)"
+        }
+      ],
+      "url": "https://www.fu-berlin.de/vv/de/lv/1115301?m=408198&pc=1085377&sm=1039762",
+      "uebung_url": "https://www.fu-berlin.de/vv/de/lv/1115304?m=408198&pc=1085377&sm=1039762"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { alpha, createTheme, lighten } from "@mui/material/styles";
 
 import { colors } from "./colors";
 
@@ -8,6 +8,14 @@ const sharedPalette = {
   warning: { main: colors.warning },
   error: { main: colors.danger },
 };
+
+// Alert severity -> palette entry carrying its colour (info alerts use the secondary blue).
+const severityPaletteKey = {
+  success: "success",
+  info: "secondary",
+  warning: "warning",
+  error: "error",
+} as const;
 
 let appTheme = createTheme({
   cssVariables: { colorSchemeSelector: "data" },
@@ -77,6 +85,18 @@ appTheme = createTheme(appTheme, {
           }),
         },
       },
+    },
+    MuiAlert: {
+      // MUI's dark standard alerts use a near-black fixed tint that looks like a hole on
+      // elevated surfaces (dialogs). A translucent tint blends with any surface instead.
+      variants: (["success", "info", "warning", "error"] as const).map((severity) => ({
+        props: { variant: "standard" as const, severity },
+        style: appTheme.applyStyles("dark", {
+          backgroundColor: alpha(sharedPalette[severityPaletteKey[severity]].main, 0.16),
+          color: lighten(sharedPalette[severityPaletteKey[severity]].main, 0.7),
+          "& .MuiAlert-icon": { color: lighten(sharedPalette[severityPaletteKey[severity]].main, 0.35) },
+        }),
+      })),
     },
     MuiButton: { styleOverrides: { root: { borderRadius: 6 } } },
     MuiSwitch: {

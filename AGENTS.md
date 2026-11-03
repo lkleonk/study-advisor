@@ -31,7 +31,8 @@ deactivated soon; do not reference it in new code or docs.
 A FU Berlin study consultant for multiple degree programs, with a backend-first
 architecture and a standalone Next.js frontend. Supported degrees live in a
 registry (`backend/app/domain/degrees/`): currently `bsc_informatik`,
-`bsc_physik`, `bsc_bioinformatik`, `msc_informatik`, `msc_data_science`, and `msc_physik`. It answers questions using exact local
+`bsc_physik`, `bsc_bioinformatik`, `msc_informatik`, `msc_data_science`, `msc_physik`, and
+`msc_computational_sciences`. It answers questions using exact local
 course-offering lookup plus rules in prompts. Study-plan validation with
 deterministic Python rules is switched on per degree via
 `DegreeDefinition.plan_validation_enabled`; currently only `msc_informatik` has it
@@ -85,6 +86,7 @@ fu_berlin_cs_consultant/
           bsc_bioinformatik/    # joint FU/Charité programme
           msc_informatik/       # only degree with plan validation enabled
           msc_physik/
+          msc_computational_sciences/  # joint programme of four Fachbereiche
           msc_data_science/     # + module_catalog.py (canonical checklist modules)
       services/
       pdf/

@@ -1868,5 +1868,593 @@
     "name": "Journal Club: Biomedical Data Science",
     "lp": null,
     "aliases": []
+  },
+  {
+    "id": "computational_sciences",
+    "name": "Computational Sciences",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "molekuelspektroskopie",
+    "name": "Molekülspektroskopie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "theoretische_chemie",
+    "name": "Theoretische Chemie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "quantenmechanische_beschreibung_von_atomen_und_chemischer_bindung",
+    "name": "Quantenmechanische Beschreibung von Atomen und chemischer Bindung",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "geological_foundations",
+    "name": "Geological foundations",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "introduction_to_planetary_sciences_and_planet_formation",
+    "name": "Introduction to planetary sciences and planet formation",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "einfuehrung_in_die_klima_und_hydrogeographie",
+    "name": "Einführung in die Klima- und Hydrogeographie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "fernerkundung_und_geomatik_fuer_fortgeschrittene",
+    "name": "Fernerkundung und Geomatik für Fortgeschrittene",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "principles_of_gis_and_remote_sensing",
+    "name": "Principles of GIS and remote sensing",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "synchronisierung_mathematik",
+    "name": "Synchronisierung Mathematik",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "dynamik_der_atmosphaere_1",
+    "name": "Dynamik der Atmosphäre 1",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "dynamik_der_atmosphaere_2",
+    "name": "Dynamik der Atmosphäre 2",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "synoptische_meteorologie",
+    "name": "Synoptische Meteorologie",
+    "lp": 7,
+    "aliases": []
+  },
+  {
+    "id": "einfuehrung_in_die_quantenmechanik",
+    "name": "Einführung in die Quantenmechanik",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "complex_algorithms_a",
+    "name": "Complex Algorithms A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computer_science_and_data_structures_a",
+    "name": "Computer Science and Data Structures A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computer_science_and_fundamentals_of_programming_a",
+    "name": "Computer Science and Fundamentals of Programming A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "fundamentals_of_machine_learning_a",
+    "name": "Fundamentals of Machine Learning A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "introduction_to_numerical_mathematics_a",
+    "name": "Introduction to Numerical Mathematics A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "numerics_of_odes_and_numerical_linear_algebra_a",
+    "name": "Numerics of ODEs and numerical linear algebra A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "numerics_of_partial_differential_equations_a",
+    "name": "Numerics of partial differential equations A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "discrete_mathematics_i_a",
+    "name": "Discrete Mathematics I A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "discrete_mathematics_ii_a",
+    "name": "Discrete Mathematics II A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computational_statistical_physics_i_a",
+    "name": "Computational Statistical Physics I A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computational_statistical_physics_ii_a",
+    "name": "Computational Statistical Physics II A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "probability_theory_i_a",
+    "name": "Probability Theory I A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "probability_theory_ii_a",
+    "name": "Probability Theory II A",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "complex_algorithms_b",
+    "name": "Complex Algorithms B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computer_science_and_data_structures_b",
+    "name": "Computer Science and Data Structures B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computer_science_and_fundamentals_of_programming_b",
+    "name": "Computer Science and Fundamentals of Programming B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "fundamentals_of_machine_learning_b",
+    "name": "Fundamentals of Machine Learning B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "introduction_to_numerical_mathematics_b",
+    "name": "Introduction to Numerical Mathematics B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "numerics_of_odes_and_numerical_linear_algebra_b",
+    "name": "Numerics of ODEs and numerical linear algebra B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "numerics_of_partial_differential_equations_b",
+    "name": "Numerics of partial differential equations B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "discrete_mathematics_i_b",
+    "name": "Discrete Mathematics I B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "discrete_mathematics_ii_b",
+    "name": "Discrete Mathematics II B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computational_statistical_physics_i_b",
+    "name": "Computational Statistical Physics I B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "computational_statistical_physics_ii_b",
+    "name": "Computational Statistical Physics II B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "probability_theory_i_b",
+    "name": "Probability Theory I B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "probability_theory_ii_b",
+    "name": "Probability Theory II B",
+    "lp": 15,
+    "aliases": []
+  },
+  {
+    "id": "advanced_molecular_simulation",
+    "name": "Advanced Molecular Simulation",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "dichtefunktionaltheorie",
+    "name": "Dichtefunktionaltheorie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "quantenchemie",
+    "name": "Quantenchemie",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "scientific_project_a",
+    "name": "Scientific Project A",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "scientific_project_e",
+    "name": "Scientific Project E",
+    "lp": 10,
+    "aliases": []
+  },
+  {
+    "id": "markov_modeling",
+    "name": "Markov Modeling",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "quantenchemische_korrelationsmethoden",
+    "name": "Quantenchemische Korrelationsmethoden",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "quantenreaktionsdynamik",
+    "name": "Quantenreaktionsdynamik",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "elektronenstrukturmethoden",
+    "name": "Elektronenstrukturmethoden",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "physik_der_erde_i",
+    "name": "Physik der Erde I: Physik der Erde",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "seismik_ii_theorie_seismischer_wellen",
+    "name": "Seismik II: Theorie seismischer Wellen",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "physik_der_erde_ii_eiszeiten_als_geodynamisches_werkzeug",
+    "name": "Physik der Erde II: Eiszeiten als geodynamisches Werkzeug",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "seismik_iii_inversions_und_abbildungsverfahren_in_der_geophysik",
+    "name": "Seismik III: Inversions- und Abbildungsverfahren in der Geophysik",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "scientific_project_c",
+    "name": "Scientific Project C",
+    "lp": 7,
+    "aliases": []
+  },
+  {
+    "id": "dynamik_der_erde",
+    "name": "Dynamik der Erde",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "thermodynamik_und_kinetik_von_geologischen_prozessen",
+    "name": "Thermodynamik und Kinetik von geologischen Prozessen",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "geophysical_modelling_of_planets_and_moons",
+    "name": "Geophysical modelling of planets and moons",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "wetter_und_klimadiagnose",
+    "name": "Wetter- und Klimadiagnose",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "klimavariabilitaet_und_modelle",
+    "name": "Klimavariabilität und -modelle",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "modelle_fuer_wetter_und_umwelt",
+    "name": "Modelle für Wetter und Umwelt",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "scientific_project_d",
+    "name": "Scientific Project D",
+    "lp": 9,
+    "aliases": []
+  },
+  {
+    "id": "satellitenmeteorologie",
+    "name": "Satellitenmeteorologie",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "theoretische_meteorologie_i",
+    "name": "Theoretische Meteorologie I",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "theoretische_meteorologie_ii",
+    "name": "Theoretische Meteorologie II",
+    "lp": 8,
+    "aliases": []
+  },
+  {
+    "id": "scientific_project_b",
+    "name": "Scientific Project B",
+    "lp": 6,
+    "aliases": []
+  },
+  {
+    "id": "advances_in_computational_sciences",
+    "name": "Advances in computational sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "selected_topics_in_theoretical_computational_sciences",
+    "name": "Selected topics in theoretical computational sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "selected_topics_in_applied_computational_sciences",
+    "name": "Selected topics in applied computational sciences",
+    "lp": 5,
+    "aliases": []
+  },
+  {
+    "id": "einfuehrung_in_die_theoretische_chemie",
+    "name": "Einführung in die Theoretische Chemie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "atombau_und_chemische_bindung",
+    "name": "Atombau und chemische Bindung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_mehrskalenmethoden_in_molekularen_simulationen",
+    "name": "Seminar Mehrskalenmethoden in molekularen Simulationen",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_machine_learning_from_the_function_space_perspective",
+    "name": "Seminar Machine learning from the function-space perspective",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "numerik_iii",
+    "name": "Numerik III",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "lineare_algebra_i",
+    "name": "Lineare Algebra I",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "masterseminar_stochastik_mathematics_of_reinforcement_learning_for_ai",
+    "name": "Masterseminar Stochastik \"Mathematics of Reinforcement Learning for AI\"",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "diskrete_mathematik_ii_extremal_comb",
+    "name": "Diskrete Mathematik II - Extremal Comb.",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_zur_diskreten_mathematik_i",
+    "name": "Seminar zur Diskreten Mathematik I",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "quantum_chemistry_on_the_computer_i_correlation_methods",
+    "name": "Quantum chemistry on the computer I: Correlation Methods",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "representation_learning",
+    "name": "Representation Learning",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "numerik_iv_mathematics_of_interacting_agent_systems",
+    "name": "Numerik IV - Mathematics of Interacting Agent Systems",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "weiche_materie_mathematische_aspekte_physikalische_modellierung_und_computersimulation",
+    "name": "Weiche Materie: Mathematische Aspekte, Physikalische Modellierung und Computersimulation",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "introduction_to_relativistic_quantum_chemistry",
+    "name": "Introduction to Relativistic Quantum Chemistry",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "special_topics_in_data_science_and_machine_learning_in_earth_sciences",
+    "name": "Special Topics in Data Science and Machine Learning in Earth Sciences",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seismik_iii_inversionsverfahren_und_einfuehrung_in_maschinelles_lernen_in_der_geophysik",
+    "name": "Seismik III: Inversionsverfahren und Einführung in Maschinelles Lernen in der Geophysik",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "numerik_ii",
+    "name": "Numerik II",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "lineare_algebra_geometrie_fuer_das_lehramt",
+    "name": "Lineare Algebra & Geometrie für das Lehramt",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "synoptische_meteorologie_ninjo",
+    "name": "Synoptische Meteorologie (Ninjo)",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "mathematical_aspects_of_digital_twins",
+    "name": "Mathematical Aspects of Digital Twins",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_zur_stochastik_anomalous_diffusions_in_inhomogeneous_media",
+    "name": "Seminar zur Stochastik \"Anomalous Diffusions in Inhomogeneous Media\"",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_stochastik_in_action",
+    "name": "Seminar: Stochastik in Action",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_nicht_lineare_optimierung",
+    "name": "Seminar nicht-lineare Optimierung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "diskrete_mathematik_i",
+    "name": "Diskrete Mathematik I",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "density_functional_theory",
+    "name": "Density functional theory",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "seminar_quantum_computational_methods",
+    "name": "Seminar Quantum Computational Methods",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "numerik_iv_stochastische_dynamik_in_der_computerbiologie",
+    "name": "Numerik IV: Stochastische Dynamik in der Computerbiologie",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "mathematische_modellierung_in_der_klimaforschung",
+    "name": "Mathematische Modellierung in der Klimaforschung",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "functional_analysis_applied_to_modeling_of_molecular_systems",
+    "name": "Functional Analysis Applied to Modeling of Molecular Systems",
+    "lp": null,
+    "aliases": []
+  },
+  {
+    "id": "molekueldynamik",
+    "name": "Moleküldynamik",
+    "lp": null,
+    "aliases": []
   }
 ]

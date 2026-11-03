@@ -89,6 +89,20 @@ def test_degrees_endpoint_lists_known_degrees():
     assert all(entry["display_name"] for entry in body)
 
 
+def test_degrees_endpoint_lists_bachelor_before_master():
+    ids = [entry["id"] for entry in TestClient(app).get("/api/degrees").json()]
+
+    assert ids == [
+        "bsc_informatik",
+        "bsc_bioinformatik",
+        "bsc_physik",
+        "msc_informatik",
+        "msc_data_science",
+        "msc_computational_sciences",
+        "msc_physik",
+    ]
+
+
 def test_only_msc_informatik_has_plan_validation():
     response = TestClient(app).get("/api/degrees")
 
@@ -100,6 +114,7 @@ def test_only_msc_informatik_has_plan_validation():
         "bsc_physik": False,
         "msc_physik": False,
         "bsc_bioinformatik": False,
+        "msc_computational_sciences": False,
     }
 
 
