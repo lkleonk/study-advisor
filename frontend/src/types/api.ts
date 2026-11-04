@@ -110,6 +110,8 @@ export type SessionResponse = {
 export type DegreeInfo = {
   id: string;
   display_name: string;
+  /** Compact header label; the backend falls back to display_name. */
+  short_name?: string;
   regulation: string;
   /** Only degrees with trusted deterministic validation get the Study Plan tab. */
   plan_validation_enabled: boolean;

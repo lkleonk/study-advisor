@@ -105,7 +105,10 @@ programs; `Start consultation` stays disabled until one is selected. After the
 welcome, the header subtitle is a compact degree switcher (`Select`). Both
 pickers group the degrees under Bachelor/Master headings with
 `groupDegreesByLevel` (by `bsc_`/`msc_` id prefix) and keep the backend
-registry order inside each group. Changing
+registry order inside each group. The header switcher reserves the width of
+the longest degree name so the tabs never shift, and shows each degree's
+`short_name` (falling back to `display_name`); its open menu and the welcome
+dialog list full names. Changing
 it with an active session or chat opens `DegreeSwitchDialog`, which warns that
 the chat, uploaded study plan, and validation results will be discarded and
 offers `Download chat` plus a shortcut to the Study Plan tab to print the

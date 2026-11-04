@@ -143,6 +143,7 @@ async def read_degrees():
         DegreeInfo(
             id=degree.id,
             display_name=degree.display_name,
+            short_name=degree.short_name or degree.display_name,
             regulation=degree.regulation,
             plan_validation_enabled=degree.plan_validation_enabled,
         )

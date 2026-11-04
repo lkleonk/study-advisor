@@ -44,3 +44,6 @@ class DegreeDefinition:
     # transcripts are only extracted into chat context, and the frontend hides
     # the Study Plan tab.
     plan_validation_enabled: bool = False
+    # Compact name for the header degree picker, whose width is set by the longest
+    # name. None means display_name is short enough.
+    short_name: str | None = None

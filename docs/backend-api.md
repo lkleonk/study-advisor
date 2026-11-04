@@ -53,7 +53,8 @@ refer to the Informatik allocation and total counts include Wahlbereich.
 
 These must never consume quota or invoke the LLM:
 
-- `GET /api/degrees` lists registered degrees (id, display name, regulation,
+- `GET /api/degrees` lists registered degrees (id, display name, `short_name`
+  for the header picker — falls back to the display name —, regulation,
   `plan_validation_enabled`) for
   the frontend picker. `bsc_informatik` exposes its 2023 degree rules and
   locally supplied SoSe 2026 and WiSe 2026/27 course offerings. It has no deterministic plan

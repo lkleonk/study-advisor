@@ -24,6 +24,7 @@ PLAN_VALIDATION_ENABLED = False
 DEGREE = DegreeDefinition(
     id="msc_computational_sciences",
     display_name="M.Sc. Computational Sciences",
+    short_name="M.Sc. Comp. Sciences",
     regulation="2025 Studien- und Pruefungsordnung (FU-Mitteilungen 21/2025), amended 2026 (27/2026)",
     prompts=build_prompts(prompts.SPEC, plan_validation_enabled=PLAN_VALIDATION_ENABLED),
     get_program_rules=get_program_rules,

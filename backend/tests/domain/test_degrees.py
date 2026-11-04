@@ -87,6 +87,9 @@ def test_degrees_endpoint_lists_known_degrees():
     body = response.json()
     assert {entry["id"] for entry in body} == {degree.id for degree in list_degrees()}
     assert all(entry["display_name"] for entry in body)
+    short_names = {entry["id"]: entry["short_name"] for entry in body}
+    assert short_names["msc_computational_sciences"] == "M.Sc. Comp. Sciences"
+    assert short_names["msc_informatik"] == "M.Sc. Informatik"
 
 
 def test_degrees_endpoint_lists_bachelor_before_master():

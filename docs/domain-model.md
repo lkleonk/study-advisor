@@ -66,7 +66,10 @@ in the code and tests but are not used at runtime until the flag is flipped.
 `DegreeDefinition` fields beyond prompts/rules: `study_plan_schema` (parser LLM
 output schema), `enrich_study_plan` (deterministic post-parse enrichment),
 `course_areas` (area vocabulary for course-offering placements), and
-`course_modules` (canonical id -> display name map).
+`course_modules` (canonical id -> display name map), and `short_name` (optional
+compact header label, e.g. "M.Sc. Comp. Sciences"; set it when `display_name` is
+much longer than the others, since the header picker reserves the longest name's
+width).
 
 Validation styles differ by degree and should stay per-degree functions behind
 the common interface, not a generic rule engine:

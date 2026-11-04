@@ -176,6 +176,13 @@ Deployment/build gotchas (static export, Caddy, apt timeouts) are in
 for its image, Key Vault for the LLM key, and Azure Storage Static Website for
 `frontend/out/`; Terraform lives in `infra/`. Cloudflare owns public DNS/TLS.
 
+Build the backend image with local Docker and push it to ACR; `az acr build`
+fails because the backend Dockerfile uses BuildKit cache mounts
+(`RUN --mount=type=cache`), which ACR's build service does not support.
+Terraform ignores the Container App image (`ignore_changes`), so a backend
+release is `docker build` + `docker push` of `cs-modulio-backend:<commit sha>`
+followed by `az containerapp update --image ...`, not a Terraform apply.
+
 Before applying infrastructure changes, run `terraform fmt -check` and
 `terraform validate` from `infra/`, then inspect `terraform plan`. Never commit
 `terraform.tfvars`, state, plans, credentials, or access tokens.

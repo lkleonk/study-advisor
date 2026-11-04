@@ -25,6 +25,8 @@ class SessionResponse(BaseModel):
 class DegreeInfo(BaseModel):
     id: str
     display_name: str
+    # Compact header label; equals display_name when the degree defines none.
+    short_name: str
     regulation: str
     plan_validation_enabled: bool
 

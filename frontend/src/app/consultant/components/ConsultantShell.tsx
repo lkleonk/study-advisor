@@ -20,7 +20,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { DEGREE_STORAGE_KEY, groupDegreesByLevel, useDegree } from "@/context/DegreeContext";
 import { useUsage } from "@/context/UsageContext";
 import { deleteSession } from "@/services/api";
-import type { RuleCheckResult, StudyPlan, UsageResponse } from "@/types/api";
+import type { DegreeInfo, RuleCheckResult, StudyPlan, UsageResponse } from "@/types/api";
 
 import { ChatTab } from "./ChatTab";
 import { ChatExportDialog } from "./ChatExportDialog";
@@ -67,6 +67,10 @@ const DAILY_REQUEST_ALLOWANCE_PREVIEW: UsageResponse = {
   diagnostic_tracing_enabled: false,
   quota_scope: "client_ip",
 };
+
+function degreeShortName(degree: DegreeInfo) {
+  return degree.short_name ?? degree.display_name;
+}
 
 function readStoredSessionId() {
   if (typeof window === "undefined") {
@@ -291,6 +295,7 @@ export function ConsultantShell() {
                 // Every degree name is rendered invisibly in the same grid cell, so the
                 // cell is always as wide as the longest name and the tabs never shift
                 // when the degree changes. The select itself hugs the current name.
+                // The header shows short names; the open menu lists full names.
                 <Box sx={{ display: "grid", "& > *": { gridArea: "1 / 1" } }}>
                   {degrees.map((degree) => (
                     <Box
@@ -306,12 +311,16 @@ export function ConsultantShell() {
                         pr: 3,
                       }}
                     >
-                      {degree.display_name}
+                      {degreeShortName(degree)}
                     </Box>
                   ))}
                   <Select
                     value={degrees.some((degree) => degree.id === effectiveDegreeId) ? effectiveDegreeId : ""}
                     onChange={(event) => requestDegreeSwitch(event.target.value)}
+                    renderValue={(id) => {
+                      const selected = degrees.find((degree) => degree.id === id);
+                      return selected ? degreeShortName(selected) : "";
+                    }}
                     variant="standard"
                     disableUnderline
                     inputProps={{ "aria-label": "Degree program" }}
@@ -342,7 +351,7 @@ export function ConsultantShell() {
                 </Box>
               ) : (
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                  {degrees[0]?.display_name ?? "Degree program"}
+                  {degrees[0] ? degreeShortName(degrees[0]) : "Degree program"}
                 </Typography>
               )}
             </Box>
