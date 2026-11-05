@@ -175,6 +175,9 @@ Deployment/build gotchas (static export, Caddy, apt timeouts) are in
 `docs/deployment.md`. Production uses Azure Container Apps for the backend, ACR
 for its image, Key Vault for the LLM key, and Azure Storage Static Website for
 `frontend/out/`; Terraform lives in `infra/`. Cloudflare owns public DNS/TLS.
+Azure resource and image names keep the old `cs-modulio` prefix on purpose
+(`project_name`): Azure cannot rename them, and recreating them would change the
+backend and storage endpoints. Do not rename them to match Unimodulio.
 
 Build the backend image with local Docker and push it to ACR; `az acr build`
 fails because the backend Dockerfile uses BuildKit cache mounts
