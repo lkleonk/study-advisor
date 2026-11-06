@@ -52,7 +52,9 @@ test("a student can choose a degree and receive a chat reply", async ({ page }) 
       // Capture the question and return a fixed assistant reply.
       sentMessage = request.postDataJSON().content;
       await route.fulfill({ json: {
-        reply: "The master's program requires 120 LP in total.",
+        reply: sentMessage === "Which modules are ungraded?"
+          ? "Known ungraded options include:\n\n- **Wissenschaftliches Arbeiten** — 5 LP\n- **Softwareprojekt B** — 10 LP\n\nCheck the [degree rules](https://www.fu-berlin.de/)."
+          : "The master's program requires 120 LP in total.",
         message_type: "degree_question",
         citations: [],
         rule_check_result: null,
@@ -80,4 +82,16 @@ test("a student can choose a degree and receive a chat reply", async ({ page }) 
   await expect(page.getByText("The master's program requires 120 LP in total.")).toBeVisible();
   expect(selectedDegree).toBe("msc_informatik");
   expect(sentMessage).toBe("How many LP do I need?");
+
+  // A list answer keeps semantic bullets, emphasis, and its source link in chat.
+  await page.getByPlaceholder("Message or upload a transcript PDF")
+    .fill("Which modules are ungraded?");
+  await page.getByRole("button", { name: "Send message" }).click();
+  const options = page.getByRole("list").filter({ hasText: "Wissenschaftliches Arbeiten" });
+  await expect(options.getByRole("listitem")).toHaveCount(2);
+  await expect(options.locator("strong")).toHaveText([
+    "Wissenschaftliches Arbeiten", "Softwareprojekt B",
+  ]);
+  await expect(page.getByRole("link", { name: "degree rules", exact: true }))
+    .toHaveAttribute("href", "https://www.fu-berlin.de/");
 });

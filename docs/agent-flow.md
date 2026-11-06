@@ -247,6 +247,12 @@ backend/app/services/nodes/answer_composer.py
 Purpose:
 
 - Produce the final assistant response.
+- Return readable Markdown inside the JSON `message`: a direct opening, one
+  bullet per module/course/option, selective bold labels, and numbered steps for
+  procedures. Short factual answers may stay plain prose. Put shared caveats
+  after the list without repeating unrelated rules. This shared prompt guidance
+  applies to every degree and question type; it is not a deterministic formatting
+  guarantee. JSON decoding and link sanitization preserve the Markdown for chat.
 
 Inputs:
 
