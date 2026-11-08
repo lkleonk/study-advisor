@@ -1,26 +1,10 @@
 import type { ProgramRuleSection, ProgramRulesCatalogue } from "@/types/api";
 
 export const RULE_GROUPS = [
-  {
-    id: "structure",
-    label: "Structure & credits",
-    hint: "How your degree fits together",
-  },
-  {
-    id: "modules",
-    label: "Choosing modules",
-    hint: "Options, requirements & limits",
-  },
-  {
-    id: "exams",
-    label: "Exams & thesis",
-    hint: "Registration, attempts & graduation",
-  },
-  {
-    id: "recognition",
-    label: "Recognition & abroad",
-    hint: "Earlier credits & special situations",
-  },
+  { id: "structure", label: "Structure & credits" },
+  { id: "modules", label: "Choosing modules" },
+  { id: "exams", label: "Exams & thesis" },
+  { id: "recognition", label: "Recognition & abroad" },
 ] as const;
 
 export type RuleGroupId = (typeof RULE_GROUPS)[number]["id"] | "all";
@@ -66,18 +50,28 @@ export function ruleGroup(section: ProgramRuleSection): RuleGroupId {
   return "modules";
 }
 
-export function normalizedRuleText(text: string): string {
-  return text
-    .normalize("NFKD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase()
-    .replace(/ß/g, "ss");
+const stripAccents = (text: string) =>
+  text.normalize("NFKD").replace(/\p{Diacritic}/gu, "");
+
+// Two spellings, so "Prüfung", "Pruefung" and "Prufung" all find each other.
+function ruleTextForms(text: string): [string, string] {
+  const lower = text.normalize("NFC").toLowerCase().replace(/ß/g, "ss");
+  const spelledOut = lower
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue");
+  return [stripAccents(lower), stripAccents(spelledOut)];
 }
 
 export function matchingRules(sections: ProgramRuleSection[], query: string) {
-  const words = normalizedRuleText(query).trim().split(/\s+/).filter(Boolean);
-  const matches = (text: string) =>
-    words.every((word) => normalizedRuleText(text).includes(word));
+  const words = query.trim().split(/\s+/).filter(Boolean).map(ruleTextForms);
+  const matches = (text: string) => {
+    const [plain, spelledOut] = ruleTextForms(text);
+    return words.every(
+      ([plainWord, spelledOutWord]) =>
+        plain.includes(plainWord) || spelledOut.includes(spelledOutWord),
+    );
+  };
   return sections.flatMap((section) => {
     const sectionMatches = matches(`${section.title} ${section.description}`);
     const items = sectionMatches
@@ -127,7 +121,6 @@ export function degreeOverview(catalogue: ProgramRulesCatalogue) {
               .replace(/^\d+\.\s*/, "")
               .replace(/\s*\(\d+ LP\)$/, ""),
             value: item.minimum!,
-            sectionId: section.id,
           },
         ];
       })
@@ -136,7 +129,6 @@ export function degreeOverview(catalogue: ProgramRulesCatalogue) {
         .map((item) => ({
           label: item.label,
           value: item.minimum!,
-          sectionId: overall!.id,
         }));
-  return { total: total?.minimum, cards };
+  return { cards };
 }

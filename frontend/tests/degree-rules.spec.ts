@@ -175,22 +175,25 @@ test("read the overview, browse topics, search globally, and copy the full rules
 }) => {
   await openRules(page);
   const overview = page.getByRole("region", { name: "Degree at a glance" });
-  await expect(overview.getByRole("button")).toHaveCount(4);
-  await expect(overview).toContainText("120 LP total");
+  await expect(overview).toContainText("70 LP");
+  await expect(overview).toContainText("Masterarbeit");
+  await expect(overview.getByRole("button")).toHaveCount(0);
+  await expect(overview).not.toContainText("120 LP");
   await expect(
     page.getByText("Exclude Wahlbereich from this allocation."),
   ).not.toBeVisible();
-  await overview
-    .getByRole("button", { name: "70 LP Informatik", exact: true })
+  await page
+    .getByRole("button", { name: "1. Informatik (70 LP)", exact: true })
     .click();
   await expect(
     page.getByText("Exclude Wahlbereich from this allocation."),
   ).toBeVisible();
 
-  await page
-    .getByRole("navigation", { name: "Rule topics" })
-    .getByRole("button", { name: /Choosing modules/ })
-    .click();
+  const ruleTabs = page.getByRole("tablist", { name: "Rule topics" });
+  await ruleTabs.getByRole("tab", { name: /Choosing modules/ }).click();
+  await expect(
+    ruleTabs.getByRole("tab", { name: /Choosing modules/ }),
+  ).toHaveAttribute("aria-selected", "true");
   await page
     .getByRole("button", { name: "Seminars & projects", exact: true })
     .click();
@@ -213,6 +216,9 @@ test("read the overview, browse topics, search globally, and copy the full rules
   await expect(
     page.getByText("Ask for an individual recognition decision."),
   ).not.toBeVisible();
+  await expect(
+    ruleTabs.locator('[role="tab"][aria-selected="true"]'),
+  ).toHaveCount(0);
   await page
     .getByRole("button", { name: "Copy all rules", exact: true })
     .click();
@@ -229,6 +235,12 @@ test("read the overview, browse topics, search globally, and copy the full rules
   await page
     .getByRole("textbox", { name: "Search all rules" })
     .fill("prufungsanmeldung");
+  await expect(
+    page.getByText("Register separately for the examination."),
+  ).toBeVisible();
+  await page
+    .getByRole("textbox", { name: "Search all rules" })
+    .fill("pruefungsanmeldung");
   await expect(
     page.getByText("Register separately for the examination."),
   ).toBeVisible();
@@ -269,14 +281,10 @@ test("degree changes clear old searches and show the new degree's credits", asyn
   await expect(
     page.getByRole("textbox", { name: "Search all rules" }),
   ).toHaveValue("");
-  await expect(
-    page.getByRole("region", { name: "Degree at a glance" }),
-  ).toContainText("180 LP total");
-  await expect(
-    page
-      .getByRole("region", { name: "Degree at a glance" })
-      .getByRole("button"),
-  ).toHaveCount(2);
+  const overview = page.getByRole("region", { name: "Degree at a glance" });
+  await expect(overview).toContainText("150 LP");
+  await expect(overview).toContainText("Kernfach Physik");
+  await expect(overview).not.toContainText("Informatik");
   await expect(
     page.getByText("Credits already counted in a Bachelor cannot count again."),
   ).not.toBeVisible();
@@ -291,8 +299,8 @@ test("the rules remain usable on a narrow screen", async ({
     page.getByRole("textbox", { name: "Search all rules" }),
   ).toBeVisible();
   await page
-    .getByRole("navigation", { name: "Rule topics" })
-    .getByRole("button", { name: /Recognition & abroad/ })
+    .getByRole("tablist", { name: "Rule topics" })
+    .getByRole("tab", { name: /Recognition & abroad/ })
     .click();
   await page
     .getByRole("button", { name: "Earlier credits", exact: true })

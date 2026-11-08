@@ -22,10 +22,9 @@ the project's `frontend/` directory.
   client-side as plain-text degree rules for pasting into an external AI
   (`buildDegreeRulesText` in `degreeRulesText.ts`: two framing lines plus the
   rules; Modulio's backend prompts are never included). For M.Sc. Informatik,
-  a compact overview shows the four degree components (70/10/10/30 LP), with
+  compact read-only tiles show the four degree components (70/10/10/30 LP), with
   values taken from catalogue items. Other degrees use their structured overall
-  requirements. Selecting a credit card opens its complete source section.
-  The same catalogue supplies chat reference context and copied rules.
+  requirements. The same catalogue supplies chat reference context and copied rules.
   Its checklist-planning section explains course-to-module placement, preserving
   flexible slots for future courses, and external recognition; the module-slot
   lists come from the backend catalogue rather than frontend-owned data.
@@ -48,21 +47,23 @@ the project's `frontend/` directory.
 ## Reading Degree Rules
 
 `degreeRulesPresentation.ts` groups catalogue sections into Structure & credits,
-Choosing modules, Exams & thesis, and Recognition & abroad. Section IDs choose
-presentation groups only; all numerical values and rule text come from the API.
-New section IDs fall back to Choosing modules, and All topics exposes every
-section. This is navigation, not another source of degree-validation logic.
+Choosing modules, Exams & thesis, and Recognition & abroad, shown as tabs
+attached to the rule list they control. Section IDs choose presentation groups
+only; all numerical values and rule text come from the API. New section IDs fall
+back to Choosing modules, and All topics exposes every section. This is
+navigation, not another source of degree-validation logic.
 
-The default Structure & credits group shows compact collapsed titles below the
-credit overview. Full descriptions, item text, ranges, and official references
+The credit tiles above the tabs are read-only. The default Structure & credits
+tab shows compact collapsed titles. Full descriptions, item text, ranges, and official references
 appear on expansion. Expand all / Collapse all applies to the visible group.
 Technical issue codes are tucked into developer-only Validation references.
 Regulation details, the full source note, catalogue version, and the optional
 escape-room link sit after the rules rather than before the overview.
 
-Search all rules searches the full catalogue regardless of the selected group.
-It matches titles, descriptions, item labels/text, and source labels/notes,
-ignoring accents and case. Matching items are shown expanded; a title or source
+The search field at the top of the rule panel searches the full catalogue
+regardless of the selected tab, and no tab is selected while searching. It matches titles,
+descriptions, item labels/text, and source labels/notes, ignoring accents and
+case and treating ü and ue (likewise ä, ö) as equal. Matching items are shown expanded; a title or source
 match shows the complete section. Clearing search returns to the selected group.
 Copy all rules always uses the original full catalogue, never the filtered view.
 A degree change resets group, search, expansion, and loaded content together.

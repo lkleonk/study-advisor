@@ -18,11 +18,13 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { DEV_TOOLS_ENABLED } from "@/config/publicConfig";
 import { useDegree } from "@/context/DegreeContext";
@@ -160,7 +162,6 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
   const [group, setGroup] = useState<RuleGroupId>("structure");
   const [query, setQuery] = useState("");
   const [expandedIds, setExpandedIds] = useState<string[]>([]);
-  const sectionElements = useRef<Record<string, HTMLDivElement | null>>({});
   const escapeRoomUrl = ESCAPE_ROOM_URL_BY_DEGREE[degreeId];
 
   const loadRules = useCallback(async () => {
@@ -208,20 +209,18 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
     visibleSections.length > 0 &&
     visibleSections.every((section) => expandedIds.includes(section.id));
 
-  const openOverviewDetails = (sectionId: string) => {
-    const section = catalogue?.sections.find((entry) => entry.id === sectionId);
-    if (!section) return;
-    setQuery("");
-    setGroup(ruleGroup(section));
-    setExpandedIds((ids) => [...new Set([...ids, sectionId])]);
-    window.requestAnimationFrame(() => {
-      const element = sectionElements.current[sectionId];
-      element?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      element
-        ?.querySelector<HTMLButtonElement>("button")
-        ?.focus({ preventScroll: true });
-    });
-  };
+  const availableGroups = !catalogue
+    ? []
+    : RULE_GROUPS.map((entry) => ({
+        ...entry,
+        count: catalogue.sections.filter(
+          (section) => ruleGroup(section) === entry.id,
+        ).length,
+      })).filter((entry) => entry.count > 0);
+  const activeTab =
+    !searching && availableGroups.some((entry) => entry.id === group)
+      ? group
+      : false;
 
   return (
     <Box
@@ -290,324 +289,293 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
         {catalogue && overview && (
           <>
             {overview.cards.length > 0 && (
-              <Box component="section" aria-label="Degree at a glance">
-                <Stack
-                  direction="row"
-                  sx={{
-                    alignItems: "baseline",
-                    justifyContent: "space-between",
-                    mb: 1,
-                    gap: 1,
-                  }}
-                >
-                  <Typography component="h3" variant="subtitle2">
-                    Your degree at a glance
-                  </Typography>
-                  {overview.total != null && (
+              <Box
+                component="section"
+                aria-label="Degree at a glance"
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xs: "repeat(2, minmax(0, 1fr))",
+                    md: `repeat(${Math.min(overview.cards.length, 4)}, minmax(0, 1fr))`,
+                  },
+                  gap: 1,
+                }}
+              >
+                {overview.cards.map((card) => (
+                  <Box
+                    key={card.label}
+                    sx={{
+                      px: 1.5,
+                      py: 1.25,
+                      borderRadius: 1,
+                      bgcolor: "action.hover",
+                    }}
+                  >
                     <Typography
-                      variant="body2"
-                      sx={{ color: "text.secondary", whiteSpace: "nowrap" }}
-                    >
-                      {overview.total} LP total
-                    </Typography>
-                  )}
-                </Stack>
-                <Box
-                  sx={{
-                    display: "grid",
-                    gridTemplateColumns: {
-                      xs: "repeat(2, minmax(0, 1fr))",
-                      md: `repeat(${Math.min(overview.cards.length, 4)}, minmax(0, 1fr))`,
-                    },
-                    gap: 1,
-                  }}
-                >
-                  {overview.cards.map((card) => (
-                    <Button
-                      key={card.label}
-                      variant="outlined"
-                      onClick={() => openOverviewDetails(card.sectionId)}
+                      component="div"
                       sx={{
-                        display: "block",
-                        textAlign: "left",
-                        p: 1.5,
-                        borderColor: "divider",
-                        bgcolor: "background.paper",
-                        color: "text.primary",
+                        color: "primary.main",
+                        fontSize: "1.4rem",
+                        lineHeight: 1.2,
+                        fontWeight: 700,
                       }}
                     >
-                      <Typography
+                      {card.value}{" "}
+                      <Box
                         component="span"
-                        sx={{
-                          display: "block",
-                          color: "primary.main",
-                          fontSize: "1.6rem",
-                          lineHeight: 1.2,
-                          fontWeight: 700,
-                        }}
+                        sx={{ fontSize: "0.8rem", fontWeight: 400 }}
                       >
-                        {card.value}{" "}
-                        <Box
-                          component="span"
-                          sx={{ fontSize: "0.8rem", fontWeight: 400 }}
-                        >
-                          LP
-                        </Box>
-                      </Typography>
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        sx={{ display: "block", mt: 0.5 }}
-                      >
-                        {card.label}
-                      </Typography>
-                    </Button>
-                  ))}
-                </Box>
+                        LP
+                      </Box>
+                    </Typography>
+                    <Typography variant="body2" sx={{ mt: 0.25 }}>
+                      {card.label}
+                    </Typography>
+                  </Box>
+                ))}
               </Box>
             )}
 
-            <Box
-              component="nav"
-              aria-label="Rule topics"
-              sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "repeat(2, minmax(0, 1fr))",
-                  md: "repeat(4, minmax(0, 1fr))",
-                },
-                gap: 1,
-              }}
-            >
-              {RULE_GROUPS.map((entry) => {
-                const count = catalogue.sections.filter(
-                  (section) => ruleGroup(section) === entry.id,
-                ).length;
-                if (!count) return null;
-                return (
-                  <Button
+            <Box>
+              <Tabs
+                value={activeTab}
+                onChange={(_, value: RuleGroupId) => {
+                  setGroup(value);
+                  setQuery("");
+                }}
+                aria-label="Rule topics"
+                variant="scrollable"
+                scrollButtons={false}
+                sx={{
+                  minHeight: 0,
+                  "& .MuiTabs-indicator": { display: "none" },
+                }}
+              >
+                {availableGroups.map((entry) => (
+                  <Tab
                     key={entry.id}
-                    aria-pressed={!searching && group === entry.id}
-                    onClick={() => {
-                      setGroup(entry.id);
-                      setQuery("");
-                    }}
+                    value={entry.id}
+                    id={`rules-tab-${entry.id}`}
+                    aria-controls="degree-rules-panel"
+                    label={
+                      <span>
+                        {entry.label}{" "}
+                        <Box
+                          component="span"
+                          sx={{
+                            display: { xs: "none", sm: "inline" },
+                            fontWeight: 400,
+                          }}
+                        >
+                          · {entry.count}
+                        </Box>
+                      </span>
+                    }
                     sx={{
-                      display: "block",
-                      textAlign: "left",
-                      px: 1.5,
+                      flex: "1 0 auto",
+                      minHeight: 0,
+                      px: 2,
                       py: 1.25,
+                      textTransform: "none",
+                      fontSize: "0.875rem",
+                      color: "text.secondary",
                       border: 1,
-                      borderColor:
-                        !searching && group === entry.id
-                          ? "primary.main"
-                          : "divider",
-                      bgcolor:
-                        !searching && group === entry.id
-                          ? "action.selected"
-                          : "background.paper",
-                      color: "text.primary",
+                      borderColor: "transparent",
+                      borderBottomColor: "divider",
+                      borderRadius: "8px 8px 0 0",
+                      "&.Mui-selected": {
+                        color: "text.primary",
+                        fontWeight: 700,
+                        bgcolor: "background.paper",
+                        borderColor: "divider",
+                        borderBottomColor: "background.paper",
+                      },
                     }}
+                  />
+                ))}
+              </Tabs>
+              <Box
+                id="degree-rules-panel"
+                role={activeTab ? "tabpanel" : undefined}
+                aria-labelledby={
+                  activeTab ? `rules-tab-${activeTab}` : undefined
+                }
+                sx={{
+                  border: 1,
+                  borderTop: 0,
+                  borderColor: "divider",
+                  borderRadius: "0 0 8px 8px",
+                  bgcolor: "background.paper",
+                  p: { xs: 1, md: 1.5 },
+                }}
+              >
+                <Stack
+                  direction="row"
+                  sx={{
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mb: 1,
+                  }}
+                >
+                  <TextField
+                    size="small"
+                    placeholder="Search all rules"
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    sx={{ flex: "1 1 240px", maxWidth: { sm: 360 } }}
+                    slotProps={{
+                      htmlInput: { "aria-label": "Search all rules" },
+                      input: {
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <SearchIcon fontSize="small" />
+                          </InputAdornment>
+                        ),
+                        endAdornment: query ? (
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="Clear rule search"
+                              size="small"
+                              onClick={() => setQuery("")}
+                            >
+                              <CloseIcon fontSize="small" />
+                            </IconButton>
+                          </InputAdornment>
+                        ) : undefined,
+                      },
+                    }}
+                  />
+                  <Stack
+                    direction="row"
+                    spacing={0.5}
+                    sx={{ alignItems: "center" }}
                   >
                     <Typography
                       component="span"
                       variant="body2"
-                      sx={{ display: "block", fontWeight: 700 }}
+                      aria-live="polite"
+                      sx={{ color: "text.secondary", mr: 0.5 }}
                     >
-                      {entry.label}{" "}
-                      <Box
-                        component="span"
-                        sx={{
-                          display: { xs: "none", sm: "inline" },
-                          color: "text.secondary",
-                          fontWeight: 400,
+                      {searching || group === "all"
+                        ? `${visibleSections.length} ${
+                            visibleSections.length === 1 ? "topic" : "topics"
+                          }`
+                        : ""}
+                    </Typography>
+                    {group !== "all" && (
+                      <Button
+                        size="small"
+                        onClick={() => {
+                          setGroup("all");
+                          setQuery("");
                         }}
                       >
-                        · {count}
-                      </Box>
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      sx={{
-                        display: { xs: "none", sm: "block" },
-                        color: "text.secondary",
-                        mt: 0.25,
-                      }}
-                    >
-                      {entry.hint}
-                    </Typography>
-                  </Button>
-                );
-              })}
-            </Box>
-
-            <Box>
-              <TextField
-                fullWidth
-                size="small"
-                label="Search all rules"
-                placeholder="Try ungraded, registration, or study abroad"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                slotProps={{
-                  input: {
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon fontSize="small" />
-                      </InputAdornment>
-                    ),
-                    endAdornment: query ? (
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="Clear rule search"
-                          size="small"
-                          onClick={() => setQuery("")}
+                        All topics
+                      </Button>
+                    )}
+                    {!searching && visibleSections.length > 0 && (
+                      <Button
+                        size="small"
+                        onClick={() =>
+                          setExpandedIds((ids) =>
+                            allExpanded
+                              ? ids.filter(
+                                  (id) =>
+                                    !visibleSections.some(
+                                      (section) => section.id === id,
+                                    ),
+                                )
+                              : [
+                                  ...new Set([
+                                    ...ids,
+                                    ...visibleSections.map(
+                                      (section) => section.id,
+                                    ),
+                                  ]),
+                                ],
+                          )
+                        }
+                      >
+                        {allExpanded ? "Collapse all" : "Expand all"}
+                      </Button>
+                    )}
+                  </Stack>
+                </Stack>
+                <Stack spacing={1}>
+                  {visibleSections.map((section) => {
+                    if (searching)
+                      return (
+                        <Paper
+                          key={section.id}
+                          variant="outlined"
+                          component="section"
+                          aria-label={section.title}
+                          sx={{ p: 2 }}
                         >
-                          <CloseIcon fontSize="small" />
-                        </IconButton>
-                      </InputAdornment>
-                    ) : undefined,
-                  },
-                }}
-              />
-              <Stack
-                direction="row"
-                sx={{
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  flexWrap: "wrap",
-                  gap: 0.5,
-                  mt: 1.25,
-                  mb: 0.75,
-                }}
-              >
-                <Typography
-                  component="h3"
-                  variant="subtitle2"
-                  aria-live="polite"
-                >
-                  {searching
-                    ? "Search results"
-                    : group === "all"
-                      ? "All topics"
-                      : RULE_GROUPS.find((entry) => entry.id === group)
-                          ?.label}{" "}
-                  · {visibleSections.length}{" "}
-                  {visibleSections.length === 1 ? "topic" : "topics"}
-                </Typography>
-                <Stack direction="row" spacing={0.5}>
-                  {group !== "all" && (
-                    <Button
-                      size="small"
-                      onClick={() => {
-                        setGroup("all");
-                        setQuery("");
-                      }}
+                          <Typography
+                            component="h4"
+                            variant="subtitle2"
+                            sx={{ mb: 1.5 }}
+                          >
+                            {section.title}
+                          </Typography>
+                          <RuleDetails section={section} />
+                        </Paper>
+                      );
+                    const expanded = expandedIds.includes(section.id);
+                    return (
+                      <Accordion
+                        key={section.id}
+                        expanded={expanded}
+                        onChange={(_, isExpanded) => {
+                          setExpandedIds((ids) =>
+                            isExpanded
+                              ? [...ids, section.id]
+                              : ids.filter((id) => id !== section.id),
+                          );
+                        }}
+                        disableGutters
+                        variant="outlined"
+                        slotProps={{ transition: { unmountOnExit: true } }}
+                        sx={{ "&::before": { display: "none" } }}
+                      >
+                        <AccordionSummary
+                          expandIcon={<ExpandMoreIcon />}
+                          aria-controls={`rules-${section.id}-content`}
+                          id={`rules-${section.id}-heading`}
+                        >
+                          <Typography
+                            component="h4"
+                            variant="body2"
+                            sx={{ fontWeight: 700, pr: 1 }}
+                          >
+                            {section.title}
+                          </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails id={`rules-${section.id}-content`}>
+                          <RuleDetails section={section} />
+                        </AccordionDetails>
+                      </Accordion>
+                    );
+                  })}
+                  {visibleSections.length === 0 && (
+                    <Paper
+                      variant="outlined"
+                      sx={{ p: 3, textAlign: "center" }}
                     >
-                      All topics
-                    </Button>
-                  )}
-                  {!searching && visibleSections.length > 0 && (
-                    <Button
-                      size="small"
-                      onClick={() =>
-                        setExpandedIds((ids) =>
-                          allExpanded
-                            ? ids.filter(
-                                (id) =>
-                                  !visibleSections.some(
-                                    (section) => section.id === id,
-                                  ),
-                              )
-                            : [
-                                ...new Set([
-                                  ...ids,
-                                  ...visibleSections.map(
-                                    (section) => section.id,
-                                  ),
-                                ]),
-                              ],
-                        )
-                      }
-                    >
-                      {allExpanded ? "Collapse all" : "Expand all"}
-                    </Button>
+                      <Typography variant="body2">
+                        No rules match “{query}”. Try another term or browse the
+                        topics.
+                      </Typography>
+                      <Button size="small" onClick={() => setQuery("")}>
+                        Clear search
+                      </Button>
+                    </Paper>
                   )}
                 </Stack>
-              </Stack>
-              <Stack spacing={1}>
-                {visibleSections.map((section) => {
-                  if (searching)
-                    return (
-                      <Paper
-                        key={section.id}
-                        variant="outlined"
-                        component="section"
-                        aria-label={section.title}
-                        sx={{ p: 2 }}
-                      >
-                        <Typography
-                          component="h4"
-                          variant="subtitle2"
-                          sx={{ mb: 1.5 }}
-                        >
-                          {section.title}
-                        </Typography>
-                        <RuleDetails section={section} />
-                      </Paper>
-                    );
-                  const expanded = expandedIds.includes(section.id);
-                  return (
-                    <Accordion
-                      key={section.id}
-                      ref={(element) => {
-                        sectionElements.current[section.id] = element;
-                      }}
-                      expanded={expanded}
-                      onChange={(_, isExpanded) => {
-                        setExpandedIds((ids) =>
-                          isExpanded
-                            ? [...ids, section.id]
-                            : ids.filter((id) => id !== section.id),
-                        );
-                      }}
-                      disableGutters
-                      variant="outlined"
-                      slotProps={{ transition: { unmountOnExit: true } }}
-                      sx={{ "&::before": { display: "none" } }}
-                    >
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls={`rules-${section.id}-content`}
-                        id={`rules-${section.id}-heading`}
-                      >
-                        <Typography
-                          component="h4"
-                          variant="body2"
-                          sx={{ fontWeight: 700, pr: 1 }}
-                        >
-                          {section.title}
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails id={`rules-${section.id}-content`}>
-                        <RuleDetails section={section} />
-                      </AccordionDetails>
-                    </Accordion>
-                  );
-                })}
-                {visibleSections.length === 0 && (
-                  <Paper variant="outlined" sx={{ p: 3, textAlign: "center" }}>
-                    <Typography variant="body2">
-                      No rules match “{query}”. Try another term or browse the
-                      topics.
-                    </Typography>
-                    <Button size="small" onClick={() => setQuery("")}>
-                      Clear search
-                    </Button>
-                  </Paper>
-                )}
-              </Stack>
+              </Box>
             </Box>
 
             <Box sx={{ borderTop: 1, borderColor: "divider", pt: 1.5 }}>
