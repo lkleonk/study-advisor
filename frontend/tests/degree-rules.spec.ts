@@ -298,10 +298,11 @@ test("the rules remain usable on a narrow screen", async ({
   await expect(
     page.getByRole("textbox", { name: "Search all rules" }),
   ).toBeVisible();
-  await page
-    .getByRole("tablist", { name: "Rule topics" })
-    .getByRole("tab", { name: /Recognition & abroad/ })
-    .click();
+  await expect(
+    page.getByRole("tablist", { name: "Rule topics" }),
+  ).toBeHidden();
+  await page.getByRole("combobox", { name: "Rule topic", exact: true }).click();
+  await page.getByRole("option", { name: /Recognition & abroad/ }).click();
   await page
     .getByRole("button", { name: "Earlier credits", exact: true })
     .click();

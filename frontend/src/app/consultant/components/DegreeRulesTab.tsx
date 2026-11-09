@@ -17,6 +17,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Link from "@mui/material/Link";
+import MenuItem from "@mui/material/MenuItem";
 import Paper from "@mui/material/Paper";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
@@ -230,6 +231,8 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
     !searching && availableGroups.some((entry) => entry.id === group)
       ? group
       : false;
+  const selectedTopic =
+    activeTab || (!searching && group === "all") ? group : "";
 
   return (
     <Box
@@ -326,6 +329,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 variant="scrollable"
                 scrollButtons={false}
                 sx={{
+                  display: { xs: "none", md: "flex" },
                   minHeight: 0,
                   "& .MuiTabs-indicator": { display: "none" },
                 }}
@@ -339,13 +343,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                     label={
                       <span>
                         {entry.label}{" "}
-                        <Box
-                          component="span"
-                          sx={{
-                            display: { xs: "none", sm: "inline" },
-                            fontWeight: 400,
-                          }}
-                        >
+                        <Box component="span" sx={{ fontWeight: 400 }}>
                           · {entry.count}
                         </Box>
                       </span>
@@ -356,7 +354,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                       px: 2,
                       py: 1.25,
                       textTransform: "none",
-                      fontSize: "0.875rem",
+                      fontSize: "1rem",
                       color: "text.secondary",
                       border: 1,
                       borderColor: "transparent",
@@ -381,13 +379,47 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 }
                 sx={{
                   border: 1,
-                  borderTop: 0,
+                  borderTop: { xs: 1, md: 0 },
                   borderColor: "divider",
-                  borderRadius: "0 0 8px 8px",
+                  borderRadius: { xs: "8px", md: "0 0 8px 8px" },
                   bgcolor: "background.paper",
                   p: { xs: 1, md: 1.5 },
                 }}
               >
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  value={selectedTopic}
+                  onChange={(event) => {
+                    setGroup(event.target.value as RuleGroupId);
+                    setQuery("");
+                  }}
+                  sx={{
+                    display: { xs: "flex", md: "none" },
+                    mb: 1,
+                    "& .MuiSelect-select": {
+                      fontSize: "1rem",
+                      fontWeight: 700,
+                    },
+                  }}
+                  slotProps={{
+                    select: {
+                      displayEmpty: true,
+                      SelectDisplayProps: { "aria-label": "Rule topic" },
+                    },
+                  }}
+                >
+                  <MenuItem value="" sx={{ display: "none" }}>
+                    Search results
+                  </MenuItem>
+                  {availableGroups.map((entry) => (
+                    <MenuItem key={entry.id} value={entry.id}>
+                      {entry.label} · {entry.count}
+                    </MenuItem>
+                  ))}
+                  <MenuItem value="all">All topics</MenuItem>
+                </TextField>
                 <Stack
                   direction="row"
                   sx={{
@@ -445,6 +477,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                     {group !== "all" && (
                       <Button
                         size="small"
+                        sx={{ display: { xs: "none", md: "inline-flex" } }}
                         onClick={() => {
                           setGroup("all");
                           setQuery("");

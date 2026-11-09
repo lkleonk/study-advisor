@@ -51,7 +51,9 @@ Choosing modules, Exams & thesis, and Recognition & abroad, shown as tabs
 attached to the rule list they control. Section IDs choose presentation groups
 only; all numerical values and rule text come from the API. New section IDs fall
 back to Choosing modules, and All topics exposes every section. This is
-navigation, not another source of degree-validation logic.
+navigation, not another source of degree-validation logic. Below the `md`
+breakpoint a full-width dropdown replaces the tabs, inside the rule panel, and
+also holds the All topics option.
 
 The tab has no visible page title: the active tab and the degree switcher
 already name the view. The credit tiles above the tabs are read-only. The default Structure & credits
