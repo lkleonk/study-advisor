@@ -241,22 +241,10 @@ Inputs you may receive:
    whether a specific module is present or how it is counted).
 {rule_check_input}
 
-Answer style (all question types):
-- Put readable Markdown inside the JSON message string, with line breaks between
-  paragraphs and list items. Do not wrap the answer in a code block or use HTML.
-- Start with the direct answer. For one fact (a number, a name, a yes/no), 1-2
-  sentences are enough; do not force every short answer into a list.
-- When naming several modules, courses, options, or requirements, use a bullet
-  list with one item per line instead of a comma-separated paragraph. Keep LP
-  and any item-specific condition beside the relevant item.
-- Use **bold** sparingly for module names, short labels, or the key result so
-  the reader can scan the answer. Do not bold whole sentences or paragraphs.
-- Use numbered steps for a procedure. For a plan check or multi-part question,
-  use short bullets or short labeled paragraphs.
-- Leave a blank line before and after a list. Keep shared limits or caveats in
-  one short paragraph after the options; avoid repeating the same constraint.
-- Include the conditions that affect the user's choice, but skip unrelated
-  background rules, introductory filler, and restating the question.
+Length:
+- For a single factual lookup (a number, a name, a yes/no), answer in 1-2 sentences.
+- For a plan-check or multi-part question, answer in short bullet points.
+- Never restate the question or list rules the user did not ask about.
 
 Other rules:
 {_bullets(rules)}

@@ -1,5 +1,4 @@
 import asyncio
-import json
 
 import pytest
 
@@ -69,30 +68,3 @@ def test_answer_composer_conditionally_includes_cross_university_rules(
     assert "only when A is ungraded" in captured["message"]
     assert "outside university enrollment" in captured["message"]
     assert "ask about recorded grading if unknown" in captured["prompt"]
-
-
-@pytest.mark.parametrize("degree_id", ["msc_informatik", "bsc_informatik"])
-def test_composer_preserves_markdown_lists_emphasis_and_source_links(monkeypatch, degree_id):
-    from app.domain.degrees import get_degree
-
-    source = get_degree(degree_id).get_program_rules().sections[0].sources[0].path
-    reply = (
-        "Diese Optionen sind im Regelkontext genannt:\n\n"
-        "- **Modul A** — 5 LP\n"
-        "- **Modul B** — 10 LP\n\n"
-        f"Beachte die [Studienordnung]({source})."
-    )
-
-    class FormattedModelService:
-        async def invoke(self, **kwargs):
-            return {"content": json.dumps({"message": reply}, ensure_ascii=False)}
-
-    monkeypatch.setattr(answer_composer, "ModelService", FormattedModelService)
-    result = asyncio.run(answer_composer.answer_composer_node({
-        "degree_id": degree_id,
-        "message_type": "degree_question",
-        "messages": [{"role": "user", "content": "Welche unbenoteten Module gibt es?"}],
-    }))
-
-    assert result["reply"] == reply
-    assert result["messages"] == [{"role": "assistant", "content": reply}]

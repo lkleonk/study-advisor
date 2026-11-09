@@ -40,10 +40,7 @@ NO_PLAN_VALIDATION_NOTE = (
 ANSWER_SCHEMA = {
     "type": "object",
     "properties": {
-        "message": {
-            "type": "string",
-            "description": "The user-facing answer in readable Markdown, with paragraphs and lists where useful.",
-        },
+        "message": {"type": "string"},
     },
     "required": ["message"],
 }
