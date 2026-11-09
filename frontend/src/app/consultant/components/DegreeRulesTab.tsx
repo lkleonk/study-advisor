@@ -47,6 +47,15 @@ const ESCAPE_ROOM_URL_BY_DEGREE: Record<string, string> = {
   msc_data_science: "https://degree-escape-room.vercel.app/",
 };
 
+const VISUALLY_HIDDEN = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  overflow: "hidden",
+  clip: "rect(0 0 0 0)",
+  whiteSpace: "nowrap",
+} as const;
+
 function RuleDetails({ section }: { section: ProgramRuleSection }) {
   return (
     <Stack spacing={2}>
@@ -226,41 +235,11 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
     <Box
       sx={{ height: "100%", overflowY: "auto", px: { xs: 1.5, md: 3 }, py: 2 }}
     >
+      {/* The active tab already names this view; keep a heading for screen readers. */}
+      <Typography component="h2" sx={VISUALLY_HIDDEN}>
+        Degree Rules
+      </Typography>
       <Stack spacing={2.5} sx={{ maxWidth: 1100, mx: "auto", minWidth: 0 }}>
-        <Box>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-            }}
-          >
-            <Typography variant="h2">Degree Rules</Typography>
-            <Tooltip title="Copies the complete catalogue, including topics hidden by your search or selected group.">
-              <span>
-                <Button
-                  size="small"
-                  startIcon={copied ? <CheckIcon /> : <ContentCopyIcon />}
-                  onClick={() => void copyDegreeRules()}
-                  disabled={!catalogue}
-                >
-                  {copied ? "Copied" : "Copy all rules"}
-                </Button>
-              </span>
-            </Tooltip>
-          </Stack>
-          {catalogue && (
-            <Typography
-              variant="body2"
-              sx={{ color: "text.secondary", mt: 0.5 }}
-            >
-              {catalogue.degree_program}
-            </Typography>
-          )}
-        </Box>
-
         {isLoading && (
           <Stack
             direction="row"
@@ -449,8 +428,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                   />
                   <Stack
                     direction="row"
-                    spacing={0.5}
-                    sx={{ alignItems: "center" }}
+                    sx={{ alignItems: "center", flexWrap: "wrap", gap: 0.5 }}
                   >
                     <Typography
                       component="span"
@@ -501,6 +479,15 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                         {allExpanded ? "Collapse all" : "Expand all"}
                       </Button>
                     )}
+                    <Tooltip title="Copies the complete catalogue, including topics hidden by your search or selected group.">
+                      <Button
+                        size="small"
+                        startIcon={copied ? <CheckIcon /> : <ContentCopyIcon />}
+                        onClick={() => void copyDegreeRules()}
+                      >
+                        {copied ? "Copied" : "Copy all rules"}
+                      </Button>
+                    </Tooltip>
                   </Stack>
                 </Stack>
                 <Stack spacing={1}>

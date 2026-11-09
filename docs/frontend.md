@@ -53,7 +53,8 @@ only; all numerical values and rule text come from the API. New section IDs fall
 back to Choosing modules, and All topics exposes every section. This is
 navigation, not another source of degree-validation logic.
 
-The credit tiles above the tabs are read-only. The default Structure & credits
+The tab has no visible page title: the active tab and the degree switcher
+already name the view. The credit tiles above the tabs are read-only. The default Structure & credits
 tab shows compact collapsed titles. Full descriptions, item text, ranges, and official references
 appear on expansion. Expand all / Collapse all applies to the visible group.
 Technical issue codes are tucked into developer-only Validation references.
@@ -65,7 +66,8 @@ regardless of the selected tab, and no tab is selected while searching. It match
 descriptions, item labels/text, and source labels/notes, ignoring accents and
 case and treating ü and ue (likewise ä, ö) as equal. Matching items are shown expanded; a title or source
 match shows the complete section. Clearing search returns to the selected group.
-Copy all rules always uses the original full catalogue, never the filtered view.
+Copy all rules sits in the rule panel's toolbar and always uses the original
+full catalogue, never the filtered view.
 A degree change resets group, search, expansion, and loaded content together.
 
 ## Conventions
