@@ -219,9 +219,17 @@ test("read the overview, browse topics, search globally, and copy the full rules
   await expect(
     ruleTabs.locator('[role="tab"][aria-selected="true"]'),
   ).toHaveCount(0);
-  await page
-    .getByRole("button", { name: "Copy all rules", exact: true })
+  await page.getByRole("button", { name: "Copy rules", exact: true }).click();
+  const copyDialog = page.getByRole("dialog", {
+    name: "Ask another AI about your degree",
+  });
+  await expect(copyDialog).toContainText("ChatGPT, Claude or Gemini");
+  await copyDialog
+    .getByRole("button", { name: "Copy rules", exact: true })
     .click();
+  await expect(copyDialog).toContainText("Copied. Paste it into your AI chat.");
+  await copyDialog.getByRole("button", { name: "Close", exact: true }).click();
+  await expect(copyDialog).toBeHidden();
   const copied = await page.evaluate(
     () => (window as Window & { copiedRules?: string }).copiedRules,
   );

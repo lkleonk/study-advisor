@@ -11,6 +11,11 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import CircularProgress from "@mui/material/CircularProgress";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -23,7 +28,6 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { useCallback, useEffect, useState } from "react";
 
@@ -169,6 +173,8 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copyDialogOpen, setCopyDialogOpen] = useState(false);
+  const [copyError, setCopyError] = useState<string | null>(null);
   const [group, setGroup] = useState<RuleGroupId>("structure");
   const [query, setQuery] = useState("");
   const [expandedIds, setExpandedIds] = useState<string[]>([]);
@@ -195,14 +201,22 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
     return () => window.clearTimeout(timer);
   }, [loadRules]);
 
+  const openCopyDialog = () => {
+    setCopied(false);
+    setCopyError(null);
+    setCopyDialogOpen(true);
+  };
+
   const copyDegreeRules = async () => {
     if (!catalogue) return;
+    setCopyError(null);
     try {
       await navigator.clipboard.writeText(buildDegreeRulesText(catalogue));
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      setError("Could not copy to the clipboard.");
+      setCopyError(
+        "Could not copy to the clipboard. Your browser may block it here.",
+      );
     }
   };
 
@@ -319,6 +333,114 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
             )}
 
             <Box>
+              <Stack
+                direction="row"
+                sx={{ alignItems: "center", flexWrap: "wrap", gap: 1 }}
+              >
+                <TextField
+                  size="small"
+                  placeholder="Search all rules"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  sx={{ flex: { xs: "1 1 100%", md: "0 1 360px" } }}
+                  slotProps={{
+                    htmlInput: { "aria-label": "Search all rules" },
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon fontSize="small" />
+                        </InputAdornment>
+                      ),
+                      endAdornment: query ? (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="Clear rule search"
+                            size="small"
+                            onClick={() => setQuery("")}
+                          >
+                            <CloseIcon fontSize="small" />
+                          </IconButton>
+                        </InputAdornment>
+                      ) : undefined,
+                    },
+                  }}
+                />
+                <Stack
+                  direction="row"
+                  sx={{
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 0.5,
+                    flex: { xs: "1 1 100%", md: "0 0 auto" },
+                    ml: { md: "auto" },
+                  }}
+                >
+                  {group !== "all" && (
+                    <Button
+                      size="small"
+                      sx={{ display: { xs: "none", md: "inline-flex" } }}
+                      onClick={() => {
+                        setGroup("all");
+                        setQuery("");
+                      }}
+                    >
+                      All topics
+                    </Button>
+                  )}
+                  {!searching && visibleSections.length > 0 && (
+                    <Button
+                      size="small"
+                      onClick={() =>
+                        setExpandedIds((ids) =>
+                          allExpanded
+                            ? ids.filter(
+                                (id) =>
+                                  !visibleSections.some(
+                                    (section) => section.id === id,
+                                  ),
+                              )
+                            : [
+                                ...new Set([
+                                  ...ids,
+                                  ...visibleSections.map(
+                                    (section) => section.id,
+                                  ),
+                                ]),
+                              ],
+                        )
+                      }
+                    >
+                      {allExpanded ? "Collapse all" : "Expand all"}
+                    </Button>
+                  )}
+                  <Button
+                    size="small"
+                    startIcon={<ContentCopyIcon />}
+                    onClick={openCopyDialog}
+                    sx={{ order: { xs: -1, md: 0 } }}
+                  >
+                    Copy rules
+                  </Button>
+                </Stack>
+              </Stack>
+              <Typography
+                variant="body2"
+                aria-live="polite"
+                sx={{
+                  color: "text.secondary",
+                  mt: 0.75,
+                  "&:empty": { display: "none" },
+                }}
+              >
+                {searching || group === "all"
+                  ? `${visibleSections.length} ${
+                      visibleSections.length === 1 ? "topic" : "topics"
+                    }`
+                  : ""}
+              </Typography>
+            </Box>
+
+            <Box>
               <Tabs
                 value={activeTab}
                 onChange={(_, value: RuleGroupId) => {
@@ -420,109 +542,6 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                   ))}
                   <MenuItem value="all">All topics</MenuItem>
                 </TextField>
-                <Stack
-                  direction="row"
-                  sx={{
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    gap: 1,
-                    mb: 1,
-                  }}
-                >
-                  <TextField
-                    size="small"
-                    placeholder="Search all rules"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    sx={{ flex: "1 1 240px", maxWidth: { sm: 360 } }}
-                    slotProps={{
-                      htmlInput: { "aria-label": "Search all rules" },
-                      input: {
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <SearchIcon fontSize="small" />
-                          </InputAdornment>
-                        ),
-                        endAdornment: query ? (
-                          <InputAdornment position="end">
-                            <IconButton
-                              aria-label="Clear rule search"
-                              size="small"
-                              onClick={() => setQuery("")}
-                            >
-                              <CloseIcon fontSize="small" />
-                            </IconButton>
-                          </InputAdornment>
-                        ) : undefined,
-                      },
-                    }}
-                  />
-                  <Stack
-                    direction="row"
-                    sx={{ alignItems: "center", flexWrap: "wrap", gap: 0.5 }}
-                  >
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      aria-live="polite"
-                      sx={{ color: "text.secondary", mr: 0.5 }}
-                    >
-                      {searching || group === "all"
-                        ? `${visibleSections.length} ${
-                            visibleSections.length === 1 ? "topic" : "topics"
-                          }`
-                        : ""}
-                    </Typography>
-                    {group !== "all" && (
-                      <Button
-                        size="small"
-                        sx={{ display: { xs: "none", md: "inline-flex" } }}
-                        onClick={() => {
-                          setGroup("all");
-                          setQuery("");
-                        }}
-                      >
-                        All topics
-                      </Button>
-                    )}
-                    {!searching && visibleSections.length > 0 && (
-                      <Button
-                        size="small"
-                        onClick={() =>
-                          setExpandedIds((ids) =>
-                            allExpanded
-                              ? ids.filter(
-                                  (id) =>
-                                    !visibleSections.some(
-                                      (section) => section.id === id,
-                                    ),
-                                )
-                              : [
-                                  ...new Set([
-                                    ...ids,
-                                    ...visibleSections.map(
-                                      (section) => section.id,
-                                    ),
-                                  ]),
-                                ],
-                          )
-                        }
-                      >
-                        {allExpanded ? "Collapse all" : "Expand all"}
-                      </Button>
-                    )}
-                    <Tooltip title="Copies the complete catalogue, including topics hidden by your search or selected group.">
-                      <Button
-                        size="small"
-                        startIcon={copied ? <CheckIcon /> : <ContentCopyIcon />}
-                        onClick={() => void copyDegreeRules()}
-                      >
-                        {copied ? "Copied" : "Copy all rules"}
-                      </Button>
-                    </Tooltip>
-                  </Stack>
-                </Stack>
                 <Stack spacing={1}>
                   {visibleSections.map((section) => {
                     if (searching)
@@ -650,6 +669,46 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 </Button>
               )}
             </Box>
+            <Dialog
+              open={copyDialogOpen}
+              onClose={() => setCopyDialogOpen(false)}
+              aria-labelledby="copy-rules-title"
+            >
+              <DialogTitle id="copy-rules-title">
+                Ask another AI about your degree
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Copy the rules for {catalogue.degree_program} and paste them
+                  into ChatGPT, Claude or Gemini to keep asking there.
+                </DialogContentText>
+                <DialogContentText variant="body2" sx={{ mt: 1.5 }}>
+                  The copy includes every topic, even ones hidden by your search
+                  or selected topic. Official regulations and the examination
+                  office remain authoritative.
+                </DialogContentText>
+                {copied && (
+                  <Alert severity="success" sx={{ mt: 2 }}>
+                    Copied. Paste it into your AI chat.
+                  </Alert>
+                )}
+                {copyError && (
+                  <Alert severity="error" sx={{ mt: 2 }}>
+                    {copyError}
+                  </Alert>
+                )}
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={() => setCopyDialogOpen(false)}>Close</Button>
+                <Button
+                  variant="contained"
+                  startIcon={copied ? <CheckIcon /> : <ContentCopyIcon />}
+                  onClick={() => void copyDegreeRules()}
+                >
+                  {copied ? "Copied" : "Copy rules"}
+                </Button>
+              </DialogActions>
+            </Dialog>
           </>
         )}
       </Stack>
