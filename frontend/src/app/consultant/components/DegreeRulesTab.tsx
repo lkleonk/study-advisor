@@ -519,18 +519,19 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 aria-label="Rule topics"
                 variant="scrollable"
                 scrollButtons={false}
-                sx={{
-                  display: { xs: "none", md: "flex" },
+                sx={(theme) => ({
+                  display: "none",
                   minHeight: 0,
+                  [theme.breakpoints.up("md")]: { display: "flex" },
                   "& .MuiTabs-indicator": { display: "none" },
-                }}
+                })}
               >
                 {availableGroups.map((entry) => (
                   <Tab
                     key={entry.id}
                     value={entry.id}
                     id={`rules-tab-${entry.id}`}
-                    aria-controls="degree-rules-panel"
+                    aria-controls="rule-topics-panel"
                     label={entry.label}
                     sx={{
                       flex: "1 0 auto",
@@ -540,15 +541,23 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                       textTransform: "none",
                       fontSize: "1rem",
                       color: "text.secondary",
+                      bgcolor: "action.hover",
                       border: 1,
-                      borderColor: "transparent",
-                      borderBottomColor: "divider",
+                      borderColor: "divider",
+                      // Bottom edge is the panel's top line, so it uses the
+                      // panel's stronger border colour.
+                      borderBottomColor: "text.disabled",
                       borderRadius: "8px 8px 0 0",
+                      // Cards touch: overlap neighbouring side borders.
+                      "& + &": { ml: "-1px" },
+                      "&:hover": { bgcolor: "action.selected" },
                       "&.Mui-selected": {
+                        position: "relative",
+                        zIndex: 1,
                         color: "text.primary",
                         fontWeight: 700,
                         bgcolor: "background.paper",
-                        borderColor: "divider",
+                        borderColor: "text.disabled",
                         borderBottomColor: "background.paper",
                       },
                     }}
@@ -556,20 +565,23 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 ))}
               </Tabs>
               <Box
-                id="degree-rules-panel"
+                id="rule-topics-panel"
                 role={activeTab ? "tabpanel" : undefined}
                 aria-labelledby={
                   activeTab ? `rules-tab-${activeTab}` : undefined
                 }
-                // Frame only on desktop, where it joins the selected tab.
-                sx={{
-                  border: { xs: 0, md: 1 },
-                  borderTop: 0,
-                  borderColor: "divider",
-                  borderRadius: { md: "0 0 8px 8px" },
-                  bgcolor: { md: "background.paper" },
-                  p: { xs: 0, md: 1.5 },
-                }}
+                // Frame only on desktop, where it joins the selected tab. One
+                // block keeps the order: border first, then colour and top.
+                sx={(theme) => ({
+                  [theme.breakpoints.up("md")]: {
+                    border: 1,
+                    borderTop: 0,
+                    borderColor: "text.disabled",
+                    borderRadius: "0 0 8px 8px",
+                    bgcolor: "background.paper",
+                    p: 1.5,
+                  },
+                })}
               >
                 <Stack spacing={1}>
                   {sectionGroups
