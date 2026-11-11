@@ -48,12 +48,15 @@ the project's `frontend/` directory.
 
 `degreeRulesPresentation.ts` groups catalogue sections into Structure & credits,
 Choosing modules, Exams & thesis, and Recognition & abroad, shown as tabs
-attached to the rule list they control. Section IDs choose presentation groups
+attached to the rule list they control. Tabs show only the group name, no
+section count. Section IDs choose presentation groups
 only; all numerical values and rule text come from the API. New section IDs fall
-back to Choosing modules, and All topics exposes every section. This is
-navigation, not another source of degree-validation logic. Below the `md`
-breakpoint a full-width dropdown replaces the tabs, inside the rule panel, and
-also holds the All topics option.
+back to Choosing modules, and All topics exposes every section under group
+headings. This is navigation, not another source of degree-validation logic.
+Below the `md` breakpoint there are no tabs and no topic picker: the panel always
+lists every section under the same group headings (decided via `useMediaQuery`,
+so the selected desktop tab does not filter the phone list). The topic count
+line appears only for search results.
 
 The tab has no visible page title: the active tab and the degree switcher
 already name the view. The credit tiles above the tabs are read-only. The default Structure & credits

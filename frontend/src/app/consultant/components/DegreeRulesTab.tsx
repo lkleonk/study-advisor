@@ -22,13 +22,14 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Link from "@mui/material/Link";
-import MenuItem from "@mui/material/MenuItem";
 import Paper from "@mui/material/Paper";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { useCallback, useEffect, useState } from "react";
 
 import { DEV_TOOLS_ENABLED } from "@/config/publicConfig";
@@ -54,8 +55,12 @@ const ESCAPE_ROOM_URL_BY_DEGREE: Record<string, string> = {
 
 const VISUALLY_HIDDEN = {
   position: "absolute",
-  width: 1,
-  height: 1,
+  // Strings on purpose: in MUI sx a bare 1 means 100%, which overflowed the page.
+  width: "1px",
+  height: "1px",
+  m: "-1px",
+  p: 0,
+  border: 0,
   overflow: "hidden",
   clip: "rect(0 0 0 0)",
   whiteSpace: "nowrap",
@@ -178,6 +183,9 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
   const [group, setGroup] = useState<RuleGroupId>("structure");
   const [query, setQuery] = useState("");
   const [expandedIds, setExpandedIds] = useState<string[]>([]);
+  const isDesktop = useMediaQuery(useTheme().breakpoints.up("md"), {
+    noSsr: true,
+  });
   const escapeRoomUrl = ESCAPE_ROOM_URL_BY_DEGREE[degreeId];
 
   const loadRules = useCallback(async () => {
@@ -222,12 +230,14 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
 
   const overview = catalogue ? degreeOverview(catalogue) : null;
   const searching = query.trim().length > 0;
+  // Small screens have no topic tabs: they always list every topic, grouped.
+  const shownGroup: RuleGroupId = isDesktop ? group : "all";
   const visibleSections = !catalogue
     ? []
     : searching
       ? matchingRules(catalogue.sections, query)
       : catalogue.sections.filter(
-          (section) => group === "all" || ruleGroup(section) === group,
+          (section) => shownGroup === "all" || ruleGroup(section) === shownGroup,
         );
   const allExpanded =
     visibleSections.length > 0 &&
@@ -235,18 +245,77 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
 
   const availableGroups = !catalogue
     ? []
-    : RULE_GROUPS.map((entry) => ({
-        ...entry,
-        count: catalogue.sections.filter(
-          (section) => ruleGroup(section) === entry.id,
-        ).length,
-      })).filter((entry) => entry.count > 0);
+    : RULE_GROUPS.filter((entry) =>
+        catalogue.sections.some((section) => ruleGroup(section) === entry.id),
+      );
   const activeTab =
     !searching && availableGroups.some((entry) => entry.id === group)
       ? group
       : false;
-  const selectedTopic =
-    activeTab || (!searching && group === "all") ? group : "";
+  const sectionGroups =
+    !searching && shownGroup === "all"
+      ? availableGroups
+          .map((entry) => ({
+            ...entry,
+            sections: visibleSections.filter(
+              (section) => ruleGroup(section) === entry.id,
+            ),
+          }))
+          .filter((entry) => entry.sections.length > 0)
+      : null;
+
+  const renderSection = (section: ProgramRuleSection) => {
+    if (searching)
+      return (
+        <Paper
+          key={section.id}
+          variant="outlined"
+          component="section"
+          aria-label={section.title}
+          sx={{ p: 2 }}
+        >
+          <Typography component="h4" variant="subtitle2" sx={{ mb: 1.5 }}>
+            {section.title}
+          </Typography>
+          <RuleDetails section={section} />
+        </Paper>
+      );
+    const expanded = expandedIds.includes(section.id);
+    return (
+      <Accordion
+        key={section.id}
+        expanded={expanded}
+        onChange={(_, isExpanded) => {
+          setExpandedIds((ids) =>
+            isExpanded
+              ? [...ids, section.id]
+              : ids.filter((id) => id !== section.id),
+          );
+        }}
+        disableGutters
+        variant="outlined"
+        slotProps={{ transition: { unmountOnExit: true } }}
+        sx={{ "&::before": { display: "none" } }}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls={`rules-${section.id}-content`}
+          id={`rules-${section.id}-heading`}
+        >
+          <Typography
+            component="h4"
+            variant="body2"
+            sx={{ fontWeight: 700, pr: 1 }}
+          >
+            {section.title}
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails id={`rules-${section.id}-content`}>
+          <RuleDetails section={section} />
+        </AccordionDetails>
+      </Accordion>
+    );
+  };
 
   return (
     <Box
@@ -432,7 +501,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                   "&:empty": { display: "none" },
                 }}
               >
-                {searching || group === "all"
+                {searching
                   ? `${visibleSections.length} ${
                       visibleSections.length === 1 ? "topic" : "topics"
                     }`
@@ -462,14 +531,7 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                     value={entry.id}
                     id={`rules-tab-${entry.id}`}
                     aria-controls="degree-rules-panel"
-                    label={
-                      <span>
-                        {entry.label}{" "}
-                        <Box component="span" sx={{ fontWeight: 400 }}>
-                          · {entry.count}
-                        </Box>
-                      </span>
-                    }
+                    label={entry.label}
                     sx={{
                       flex: "1 0 auto",
                       minHeight: 0,
@@ -499,106 +561,46 @@ function DegreeRulesForDegree({ degreeId }: { degreeId: string }) {
                 aria-labelledby={
                   activeTab ? `rules-tab-${activeTab}` : undefined
                 }
+                // Frame only on desktop, where it joins the selected tab.
                 sx={{
-                  border: 1,
-                  borderTop: { xs: 1, md: 0 },
+                  border: { xs: 0, md: 1 },
+                  borderTop: 0,
                   borderColor: "divider",
-                  borderRadius: { xs: "8px", md: "0 0 8px 8px" },
-                  bgcolor: "background.paper",
-                  p: { xs: 1, md: 1.5 },
+                  borderRadius: { md: "0 0 8px 8px" },
+                  bgcolor: { md: "background.paper" },
+                  p: { xs: 0, md: 1.5 },
                 }}
               >
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  value={selectedTopic}
-                  onChange={(event) => {
-                    setGroup(event.target.value as RuleGroupId);
-                    setQuery("");
-                  }}
-                  sx={{
-                    display: { xs: "flex", md: "none" },
-                    mb: 1,
-                    "& .MuiSelect-select": {
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                    },
-                  }}
-                  slotProps={{
-                    select: {
-                      displayEmpty: true,
-                      SelectDisplayProps: { "aria-label": "Rule topic" },
-                    },
-                  }}
-                >
-                  <MenuItem value="" sx={{ display: "none" }}>
-                    Search results
-                  </MenuItem>
-                  {availableGroups.map((entry) => (
-                    <MenuItem key={entry.id} value={entry.id}>
-                      {entry.label} · {entry.count}
-                    </MenuItem>
-                  ))}
-                  <MenuItem value="all">All topics</MenuItem>
-                </TextField>
                 <Stack spacing={1}>
-                  {visibleSections.map((section) => {
-                    if (searching)
-                      return (
-                        <Paper
-                          key={section.id}
-                          variant="outlined"
+                  {sectionGroups
+                    ? sectionGroups.map((entry, index) => (
+                        <Box
+                          key={entry.id}
                           component="section"
-                          aria-label={section.title}
-                          sx={{ p: 2 }}
+                          aria-labelledby={`rules-group-${entry.id}`}
                         >
                           <Typography
-                            component="h4"
+                            id={`rules-group-${entry.id}`}
+                            component="h3"
                             variant="subtitle2"
-                            sx={{ mb: 1.5 }}
+                            sx={{
+                              color: "text.secondary",
+                              fontWeight: 700,
+                              mt: index ? 3.5 : 0.5,
+                              mb: 1,
+                              pb: 0.5,
+                              borderBottom: 1,
+                              borderColor: "divider",
+                            }}
                           >
-                            {section.title}
+                            {entry.label}
                           </Typography>
-                          <RuleDetails section={section} />
-                        </Paper>
-                      );
-                    const expanded = expandedIds.includes(section.id);
-                    return (
-                      <Accordion
-                        key={section.id}
-                        expanded={expanded}
-                        onChange={(_, isExpanded) => {
-                          setExpandedIds((ids) =>
-                            isExpanded
-                              ? [...ids, section.id]
-                              : ids.filter((id) => id !== section.id),
-                          );
-                        }}
-                        disableGutters
-                        variant="outlined"
-                        slotProps={{ transition: { unmountOnExit: true } }}
-                        sx={{ "&::before": { display: "none" } }}
-                      >
-                        <AccordionSummary
-                          expandIcon={<ExpandMoreIcon />}
-                          aria-controls={`rules-${section.id}-content`}
-                          id={`rules-${section.id}-heading`}
-                        >
-                          <Typography
-                            component="h4"
-                            variant="body2"
-                            sx={{ fontWeight: 700, pr: 1 }}
-                          >
-                            {section.title}
-                          </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails id={`rules-${section.id}-content`}>
-                          <RuleDetails section={section} />
-                        </AccordionDetails>
-                      </Accordion>
-                    );
-                  })}
+                          <Stack spacing={1}>
+                            {entry.sections.map(renderSection)}
+                          </Stack>
+                        </Box>
+                      ))
+                    : visibleSections.map(renderSection)}
                   {visibleSections.length === 0 && (
                     <Paper
                       variant="outlined"

@@ -309,8 +309,21 @@ test("the rules remain usable on a narrow screen", async ({
   await expect(
     page.getByRole("tablist", { name: "Rule topics" }),
   ).toBeHidden();
-  await page.getByRole("combobox", { name: "Rule topic", exact: true }).click();
-  await page.getByRole("option", { name: /Recognition & abroad/ }).click();
+  await expect(page.getByRole("combobox", { name: "Rule topic" })).toHaveCount(
+    0,
+  );
+  for (const heading of [
+    "Structure & credits",
+    "Choosing modules",
+    "Exams & thesis",
+    "Recognition & abroad",
+  ])
+    await expect(
+      page.getByRole("heading", { name: heading, exact: true }),
+    ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Seminars & projects", exact: true }),
+  ).toBeVisible();
   await page
     .getByRole("button", { name: "Earlier credits", exact: true })
     .click();
